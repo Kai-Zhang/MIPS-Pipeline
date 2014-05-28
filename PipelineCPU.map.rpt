@@ -1,0 +1,626 @@
+Analysis & Synthesis report for PipelineCPU
+Wed May 28 14:58:59 2014
+Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "Controller:control"
+ 10. Port Connectivity Checks: "Register:register"
+ 11. Port Connectivity Checks: "Extender:extend"
+ 12. Port Connectivity Checks: "IF_ID:IF_ID_Reg"
+ 13. Port Connectivity Checks: "PC_count:pc"
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++------------------------------------+-------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed May 28 14:58:59 2014     ;
+; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
+; Revision Name                      ; PipelineCPU                               ;
+; Top-level Entity Name              ; PipelineCPU                               ;
+; Family                             ; Cyclone II                                ;
+; Total logic elements               ; 0                                         ;
+;     Total combinational functions  ; 0                                         ;
+;     Dedicated logic registers      ; 0                                         ;
+; Total registers                    ; 0                                         ;
+; Total pins                         ; 225                                       ;
+; Total virtual pins                 ; 0                                         ;
+; Total memory bits                  ; 0                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                         ;
+; Total PLLs                         ; 0                                         ;
++------------------------------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; PipelineCPU        ; PipelineCPU        ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-8 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                 ;
++----------------------------------+-----------------+------------------------+--------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path   ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------+---------+
+; Controller.v                     ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/Controller.v  ;         ;
+; Register.v                       ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/Register.v    ;         ;
+; PipelineCPU.v                    ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/PipelineCPU.v ;         ;
+; PC_count.v                       ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/PC_count.v    ;         ;
+; InstMem.v                        ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/InstMem.v     ;         ;
+; IF_ID.v                          ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/IF_ID.v       ;         ;
+; Extender.v                       ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/Extender.v    ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 225   ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |PipelineCPU               ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 225  ; 0            ; |PipelineCPU        ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Controller:control"                                                                                                                                                                         ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                                                                                                                          ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Op_code         ; Input  ; Warning  ; Input port expression (7 bits) is wider than the input port (6 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Funct           ; Input  ; Warning  ; Input port expression (7 bits) is wider than the input port (6 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Ext_op          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; RegDst          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; Shift_amountSrc ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; Jump            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; ALU_Shift_Sel   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; RegDt0          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; ALU_op          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; Shift_op        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; ALUSrcB         ; Output ; Warning  ; Output or bidir port (2 bits) is smaller than the port expression (3 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND.            ;
+; ALUSrcB[1..0]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; condition       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register:register"                                                                                                            ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                     ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
+; Rs_out ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (1 bits) it drives; bit(s) "Rs_out[31..1]" have no fanouts ;
+; Rs_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                         ;
+; Rt_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                         ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Extender:extend"                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; imm_32 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "IF_ID:IF_ID_Reg"                                                                        ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; PCP4_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "PC_count:pc"  ;
++--------+-------+----------+--------------+
+; Port   ; Type  ; Severity ; Details      ;
++--------+-------+----------+--------------+
+; NextPC ; Input ; Info     ; Stuck at GND ;
++--------+-------+----------+--------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
+    Info: Processing started: Wed May 28 14:58:58 2014
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PipelineCPU -c PipelineCPU
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Warning (12019): Can't analyze file -- file Muxs.v is missing
+Warning (12019): Can't analyze file -- file Instruction.v is missing
+Warning (12019): Can't analyze file -- file CPU.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file controller.v
+    Info (12023): Found entity 1: Controller
+Warning (12019): Can't analyze file -- file Barrel_Shifter.v is missing
+Warning (12019): Can't analyze file -- file ALU.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file register.v
+    Info (12023): Found entity 1: Register
+Info (12021): Found 1 design units, including 1 entities, in source file pipelinecpu.v
+    Info (12023): Found entity 1: PipelineCPU
+Info (12021): Found 1 design units, including 1 entities, in source file pc_count.v
+    Info (12023): Found entity 1: PC_count
+Info (12021): Found 1 design units, including 1 entities, in source file instmem.v
+    Info (12023): Found entity 1: InstMem
+Info (12021): Found 1 design units, including 1 entities, in source file if_id.v
+    Info (12023): Found entity 1: IF_ID
+Info (12021): Found 1 design units, including 1 entities, in source file extender.v
+    Info (12023): Found entity 1: Extender
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(15): created implicit net for "keep"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(45): created implicit net for "Ex_top_ID"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(46): created implicit net for "Rd_Rs_out_ID"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(60): created implicit net for "RegDst"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(60): created implicit net for "Jump"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(60): created implicit net for "ALU_Shift_Sel_ID"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(60): created implicit net for "Regdt0_ID"
+Info (12127): Elaborating entity "PipelineCPU" for the top level hierarchy
+Warning (10858): Verilog HDL warning at PipelineCPU.v(8): object PC_branch used but never assigned
+Warning (10858): Verilog HDL warning at PipelineCPU.v(8): object PC_jump used but never assigned
+Warning (10858): Verilog HDL warning at PipelineCPU.v(9): object PCSource used but never assigned
+Warning (10036): Verilog HDL or VHDL warning at PipelineCPU.v(28): object "Target_ID" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at PipelineCPU.v(29): object "LoadByte_ID" assigned a value but never read
+Warning (10030): Net "PC_branch" at PipelineCPU.v(8) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "PC_jump" at PipelineCPU.v(8) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "PCSource.00" at PipelineCPU.v(9) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "PCSource.01" at PipelineCPU.v(9) has no driver or initial value, using a default initial value '0'
+Warning (10034): Output port "PC_out" at PipelineCPU.v(3) has no driver
+Warning (10034): Output port "Inst_IF_out" at PipelineCPU.v(3) has no driver
+Warning (10034): Output port "Inst_ID_out" at PipelineCPU.v(3) has no driver
+Warning (10034): Output port "A_in" at PipelineCPU.v(4) has no driver
+Warning (10034): Output port "B_in" at PipelineCPU.v(4) has no driver
+Warning (10034): Output port "ALU_out" at PipelineCPU.v(4) has no driver
+Warning (10034): Output port "Shift_out" at PipelineCPU.v(5) has no driver
+Info (12128): Elaborating entity "PC_count" for hierarchy "PC_count:pc"
+Info (12128): Elaborating entity "InstMem" for hierarchy "InstMem:IM"
+Warning (10858): Verilog HDL warning at InstMem.v(5): object ram used but never assigned
+Warning (10030): Net "ram" at InstMem.v(5) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "IF_ID" for hierarchy "IF_ID:IF_ID_Reg"
+Info (12128): Elaborating entity "Extender" for hierarchy "Extender:extend"
+Info (12128): Elaborating entity "Register" for hierarchy "Register:register"
+Info (12128): Elaborating entity "Controller" for hierarchy "Controller:control"
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(12): inferring latch(es) for variable "ALUSrcB", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(12): inferring latch(es) for variable "Ext_op", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(12): inferring latch(es) for variable "ALU_op", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(12): inferring latch(es) for variable "RegDst", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(12): inferring latch(es) for variable "ALU_Shift_Sel", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(12): inferring latch(es) for variable "RegDt0", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(12): inferring latch(es) for variable "Shift_amountSrc", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(12): inferring latch(es) for variable "Shift_op", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "Shift_op[0]" at Controller.v(12)
+Info (10041): Inferred latch for "Shift_op[1]" at Controller.v(12)
+Info (10041): Inferred latch for "Shift_amountSrc" at Controller.v(12)
+Info (10041): Inferred latch for "RegDt0" at Controller.v(12)
+Info (10041): Inferred latch for "ALU_Shift_Sel" at Controller.v(12)
+Info (10041): Inferred latch for "RegDst" at Controller.v(12)
+Info (10041): Inferred latch for "ALU_op[0]" at Controller.v(12)
+Info (10041): Inferred latch for "ALU_op[1]" at Controller.v(12)
+Info (10041): Inferred latch for "ALU_op[2]" at Controller.v(12)
+Info (10041): Inferred latch for "ALU_op[3]" at Controller.v(12)
+Info (10041): Inferred latch for "Ext_op" at Controller.v(12)
+Info (10041): Inferred latch for "ALUSrcB[0]" at Controller.v(12)
+Info (10041): Inferred latch for "ALUSrcB[1]" at Controller.v(12)
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "PC_out[0]" is stuck at GND
+    Warning (13410): Pin "PC_out[1]" is stuck at GND
+    Warning (13410): Pin "PC_out[2]" is stuck at GND
+    Warning (13410): Pin "PC_out[3]" is stuck at GND
+    Warning (13410): Pin "PC_out[4]" is stuck at GND
+    Warning (13410): Pin "PC_out[5]" is stuck at GND
+    Warning (13410): Pin "PC_out[6]" is stuck at GND
+    Warning (13410): Pin "PC_out[7]" is stuck at GND
+    Warning (13410): Pin "PC_out[8]" is stuck at GND
+    Warning (13410): Pin "PC_out[9]" is stuck at GND
+    Warning (13410): Pin "PC_out[10]" is stuck at GND
+    Warning (13410): Pin "PC_out[11]" is stuck at GND
+    Warning (13410): Pin "PC_out[12]" is stuck at GND
+    Warning (13410): Pin "PC_out[13]" is stuck at GND
+    Warning (13410): Pin "PC_out[14]" is stuck at GND
+    Warning (13410): Pin "PC_out[15]" is stuck at GND
+    Warning (13410): Pin "PC_out[16]" is stuck at GND
+    Warning (13410): Pin "PC_out[17]" is stuck at GND
+    Warning (13410): Pin "PC_out[18]" is stuck at GND
+    Warning (13410): Pin "PC_out[19]" is stuck at GND
+    Warning (13410): Pin "PC_out[20]" is stuck at GND
+    Warning (13410): Pin "PC_out[21]" is stuck at GND
+    Warning (13410): Pin "PC_out[22]" is stuck at GND
+    Warning (13410): Pin "PC_out[23]" is stuck at GND
+    Warning (13410): Pin "PC_out[24]" is stuck at GND
+    Warning (13410): Pin "PC_out[25]" is stuck at GND
+    Warning (13410): Pin "PC_out[26]" is stuck at GND
+    Warning (13410): Pin "PC_out[27]" is stuck at GND
+    Warning (13410): Pin "PC_out[28]" is stuck at GND
+    Warning (13410): Pin "PC_out[29]" is stuck at GND
+    Warning (13410): Pin "PC_out[30]" is stuck at GND
+    Warning (13410): Pin "PC_out[31]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[0]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[1]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[2]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[3]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[4]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[5]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[6]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[7]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[8]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[9]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[10]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[11]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[12]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[13]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[14]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[15]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[16]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[17]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[18]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[19]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[20]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[21]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[22]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[23]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[24]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[25]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[26]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[27]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[28]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[29]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[30]" is stuck at GND
+    Warning (13410): Pin "Inst_IF_out[31]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[0]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[1]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[2]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[3]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[4]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[5]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[6]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[7]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[8]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[9]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[10]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[11]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[12]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[13]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[14]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[15]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[16]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[17]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[18]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[19]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[20]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[21]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[22]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[23]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[24]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[25]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[26]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[27]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[28]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[29]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[30]" is stuck at GND
+    Warning (13410): Pin "Inst_ID_out[31]" is stuck at GND
+    Warning (13410): Pin "A_in[0]" is stuck at GND
+    Warning (13410): Pin "A_in[1]" is stuck at GND
+    Warning (13410): Pin "A_in[2]" is stuck at GND
+    Warning (13410): Pin "A_in[3]" is stuck at GND
+    Warning (13410): Pin "A_in[4]" is stuck at GND
+    Warning (13410): Pin "A_in[5]" is stuck at GND
+    Warning (13410): Pin "A_in[6]" is stuck at GND
+    Warning (13410): Pin "A_in[7]" is stuck at GND
+    Warning (13410): Pin "A_in[8]" is stuck at GND
+    Warning (13410): Pin "A_in[9]" is stuck at GND
+    Warning (13410): Pin "A_in[10]" is stuck at GND
+    Warning (13410): Pin "A_in[11]" is stuck at GND
+    Warning (13410): Pin "A_in[12]" is stuck at GND
+    Warning (13410): Pin "A_in[13]" is stuck at GND
+    Warning (13410): Pin "A_in[14]" is stuck at GND
+    Warning (13410): Pin "A_in[15]" is stuck at GND
+    Warning (13410): Pin "A_in[16]" is stuck at GND
+    Warning (13410): Pin "A_in[17]" is stuck at GND
+    Warning (13410): Pin "A_in[18]" is stuck at GND
+    Warning (13410): Pin "A_in[19]" is stuck at GND
+    Warning (13410): Pin "A_in[20]" is stuck at GND
+    Warning (13410): Pin "A_in[21]" is stuck at GND
+    Warning (13410): Pin "A_in[22]" is stuck at GND
+    Warning (13410): Pin "A_in[23]" is stuck at GND
+    Warning (13410): Pin "A_in[24]" is stuck at GND
+    Warning (13410): Pin "A_in[25]" is stuck at GND
+    Warning (13410): Pin "A_in[26]" is stuck at GND
+    Warning (13410): Pin "A_in[27]" is stuck at GND
+    Warning (13410): Pin "A_in[28]" is stuck at GND
+    Warning (13410): Pin "A_in[29]" is stuck at GND
+    Warning (13410): Pin "A_in[30]" is stuck at GND
+    Warning (13410): Pin "A_in[31]" is stuck at GND
+    Warning (13410): Pin "B_in[0]" is stuck at GND
+    Warning (13410): Pin "B_in[1]" is stuck at GND
+    Warning (13410): Pin "B_in[2]" is stuck at GND
+    Warning (13410): Pin "B_in[3]" is stuck at GND
+    Warning (13410): Pin "B_in[4]" is stuck at GND
+    Warning (13410): Pin "B_in[5]" is stuck at GND
+    Warning (13410): Pin "B_in[6]" is stuck at GND
+    Warning (13410): Pin "B_in[7]" is stuck at GND
+    Warning (13410): Pin "B_in[8]" is stuck at GND
+    Warning (13410): Pin "B_in[9]" is stuck at GND
+    Warning (13410): Pin "B_in[10]" is stuck at GND
+    Warning (13410): Pin "B_in[11]" is stuck at GND
+    Warning (13410): Pin "B_in[12]" is stuck at GND
+    Warning (13410): Pin "B_in[13]" is stuck at GND
+    Warning (13410): Pin "B_in[14]" is stuck at GND
+    Warning (13410): Pin "B_in[15]" is stuck at GND
+    Warning (13410): Pin "B_in[16]" is stuck at GND
+    Warning (13410): Pin "B_in[17]" is stuck at GND
+    Warning (13410): Pin "B_in[18]" is stuck at GND
+    Warning (13410): Pin "B_in[19]" is stuck at GND
+    Warning (13410): Pin "B_in[20]" is stuck at GND
+    Warning (13410): Pin "B_in[21]" is stuck at GND
+    Warning (13410): Pin "B_in[22]" is stuck at GND
+    Warning (13410): Pin "B_in[23]" is stuck at GND
+    Warning (13410): Pin "B_in[24]" is stuck at GND
+    Warning (13410): Pin "B_in[25]" is stuck at GND
+    Warning (13410): Pin "B_in[26]" is stuck at GND
+    Warning (13410): Pin "B_in[27]" is stuck at GND
+    Warning (13410): Pin "B_in[28]" is stuck at GND
+    Warning (13410): Pin "B_in[29]" is stuck at GND
+    Warning (13410): Pin "B_in[30]" is stuck at GND
+    Warning (13410): Pin "B_in[31]" is stuck at GND
+    Warning (13410): Pin "ALU_out[0]" is stuck at GND
+    Warning (13410): Pin "ALU_out[1]" is stuck at GND
+    Warning (13410): Pin "ALU_out[2]" is stuck at GND
+    Warning (13410): Pin "ALU_out[3]" is stuck at GND
+    Warning (13410): Pin "ALU_out[4]" is stuck at GND
+    Warning (13410): Pin "ALU_out[5]" is stuck at GND
+    Warning (13410): Pin "ALU_out[6]" is stuck at GND
+    Warning (13410): Pin "ALU_out[7]" is stuck at GND
+    Warning (13410): Pin "ALU_out[8]" is stuck at GND
+    Warning (13410): Pin "ALU_out[9]" is stuck at GND
+    Warning (13410): Pin "ALU_out[10]" is stuck at GND
+    Warning (13410): Pin "ALU_out[11]" is stuck at GND
+    Warning (13410): Pin "ALU_out[12]" is stuck at GND
+    Warning (13410): Pin "ALU_out[13]" is stuck at GND
+    Warning (13410): Pin "ALU_out[14]" is stuck at GND
+    Warning (13410): Pin "ALU_out[15]" is stuck at GND
+    Warning (13410): Pin "ALU_out[16]" is stuck at GND
+    Warning (13410): Pin "ALU_out[17]" is stuck at GND
+    Warning (13410): Pin "ALU_out[18]" is stuck at GND
+    Warning (13410): Pin "ALU_out[19]" is stuck at GND
+    Warning (13410): Pin "ALU_out[20]" is stuck at GND
+    Warning (13410): Pin "ALU_out[21]" is stuck at GND
+    Warning (13410): Pin "ALU_out[22]" is stuck at GND
+    Warning (13410): Pin "ALU_out[23]" is stuck at GND
+    Warning (13410): Pin "ALU_out[24]" is stuck at GND
+    Warning (13410): Pin "ALU_out[25]" is stuck at GND
+    Warning (13410): Pin "ALU_out[26]" is stuck at GND
+    Warning (13410): Pin "ALU_out[27]" is stuck at GND
+    Warning (13410): Pin "ALU_out[28]" is stuck at GND
+    Warning (13410): Pin "ALU_out[29]" is stuck at GND
+    Warning (13410): Pin "ALU_out[30]" is stuck at GND
+    Warning (13410): Pin "ALU_out[31]" is stuck at GND
+    Warning (13410): Pin "Shift_out[0]" is stuck at GND
+    Warning (13410): Pin "Shift_out[1]" is stuck at GND
+    Warning (13410): Pin "Shift_out[2]" is stuck at GND
+    Warning (13410): Pin "Shift_out[3]" is stuck at GND
+    Warning (13410): Pin "Shift_out[4]" is stuck at GND
+    Warning (13410): Pin "Shift_out[5]" is stuck at GND
+    Warning (13410): Pin "Shift_out[6]" is stuck at GND
+    Warning (13410): Pin "Shift_out[7]" is stuck at GND
+    Warning (13410): Pin "Shift_out[8]" is stuck at GND
+    Warning (13410): Pin "Shift_out[9]" is stuck at GND
+    Warning (13410): Pin "Shift_out[10]" is stuck at GND
+    Warning (13410): Pin "Shift_out[11]" is stuck at GND
+    Warning (13410): Pin "Shift_out[12]" is stuck at GND
+    Warning (13410): Pin "Shift_out[13]" is stuck at GND
+    Warning (13410): Pin "Shift_out[14]" is stuck at GND
+    Warning (13410): Pin "Shift_out[15]" is stuck at GND
+    Warning (13410): Pin "Shift_out[16]" is stuck at GND
+    Warning (13410): Pin "Shift_out[17]" is stuck at GND
+    Warning (13410): Pin "Shift_out[18]" is stuck at GND
+    Warning (13410): Pin "Shift_out[19]" is stuck at GND
+    Warning (13410): Pin "Shift_out[20]" is stuck at GND
+    Warning (13410): Pin "Shift_out[21]" is stuck at GND
+    Warning (13410): Pin "Shift_out[22]" is stuck at GND
+    Warning (13410): Pin "Shift_out[23]" is stuck at GND
+    Warning (13410): Pin "Shift_out[24]" is stuck at GND
+    Warning (13410): Pin "Shift_out[25]" is stuck at GND
+    Warning (13410): Pin "Shift_out[26]" is stuck at GND
+    Warning (13410): Pin "Shift_out[27]" is stuck at GND
+    Warning (13410): Pin "Shift_out[28]" is stuck at GND
+    Warning (13410): Pin "Shift_out[29]" is stuck at GND
+    Warning (13410): Pin "Shift_out[30]" is stuck at GND
+    Warning (13410): Pin "Shift_out[31]" is stuck at GND
+Info (144001): Generated suppressed messages file D:/archexp/lab06/PipelineCPU.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk"
+Info (21057): Implemented 225 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 224 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 266 warnings
+    Info: Peak virtual memory: 398 megabytes
+    Info: Processing ended: Wed May 28 14:58:59 2014
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/archexp/lab06/PipelineCPU.map.smsg.
+
+
