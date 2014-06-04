@@ -23,7 +23,7 @@ IF_ID IF_ID_Reg(clk,Reset_IF_ID,Keep_IF_ID,PCP4_IF,Inst_IF,PCP4_ID,Inst_ID);
 //ID 
 wire [6:0]op,func;
 wire [4:0]Rs_ID,Rt_ID,Rd_ID,Shamt_ID;
-wire [4:0]Rs_Ex,Rt_Ex,Rd_Ex
+wire [4:0]Rs_Ex,Rt_Ex,Rd_Ex;
 wire [15:0]offset;
 wire [31:0]LoadAddr;
 wire [25:0]Target_ID,Target_Ex;
@@ -59,8 +59,10 @@ wire Shift_amountSrc_ID,Shift_amountSrc_Ex;
 wire Jump_ID,Jump_Ex;
 wire RegDt0_ID,RegDt0_Ex;
 wire [2:0]Condition_ID,Condition_Ex;
-Controller control(op,func,Shamt_ID,Rs_ID,Rt_ID,Ext_op_ID,RegDst,Shift_amountSrc_ID,Jump,ALU_Shift_Sel_ID,Regdt0_ID,
+Controller control(op,func,Shamt_ID,Rs_ID,Rt_ID,Ext_op_ID,RegDst_ID,Shift_amountSrc_ID,Jump_ID,ALUShift_Sel_ID,Regdt0_ID,
 ALU_op_ID,Shift_op_ID,ALUSrcB_ID,Condition_ID);
 
-ID_Ex ID_Ex_Reg(clk,)
+ID_Ex ID_Ex_Reg(clk,Rs_ID,Rt_ID,Rd_ID,offset_ID,RegDst_ID,Shift_amountSrc_ID,Jump_ID,ALUShift_Sel_ID,Regdt0_ID,
+ALU_op_ID,Shift_op_ID,ALUSrcB_ID,Condition_ID,Rs_Ex,Rt_Ex,Rd_Ex,offset_Ex,RegDst_Ex,Shift_amountSrc_Ex,Jump_Ex,
+ALUShift_Sel_Ex,Regdt0_Ex,ALU_op_Ex,Shift_op_Ex,ALUSrcB_Ex,Condition_Ex);
 endmodule

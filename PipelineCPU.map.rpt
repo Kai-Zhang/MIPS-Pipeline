@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PipelineCPU
-Wed May 28 14:58:59 2014
+Wed Jun 04 14:37:44 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -14,9 +14,9 @@ Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "Controller:control"
- 10. Port Connectivity Checks: "Register:register"
- 11. Port Connectivity Checks: "Extender:extend"
+  9. Port Connectivity Checks: "ID_Ex:ID_Ex_Reg"
+ 10. Port Connectivity Checks: "Controller:control"
+ 11. Port Connectivity Checks: "Register:register"
  12. Port Connectivity Checks: "IF_ID:IF_ID_Reg"
  13. Port Connectivity Checks: "PC_count:pc"
  14. Elapsed Time Per Partition
@@ -47,7 +47,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed May 28 14:58:59 2014     ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 04 14:37:44 2014     ;
 ; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; PipelineCPU                               ;
 ; Top-level Entity Name              ; PipelineCPU                               ;
@@ -176,6 +176,7 @@ applicable agreement for further details.
 ; InstMem.v                        ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/InstMem.v     ;         ;
 ; IF_ID.v                          ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/IF_ID.v       ;         ;
 ; Extender.v                       ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/Extender.v    ;         ;
+; ID_Ex.v                          ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/ID_Ex.v       ;         ;
 +----------------------------------+-----------------+------------------------+--------------------------------+---------+
 
 
@@ -228,25 +229,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Controller:control"                                                                                                                                                                         ;
-+-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port            ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Op_code         ; Input  ; Warning  ; Input port expression (7 bits) is wider than the input port (6 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; Funct           ; Input  ; Warning  ; Input port expression (7 bits) is wider than the input port (6 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; Ext_op          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-; RegDst          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-; Shift_amountSrc ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-; Jump            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-; ALU_Shift_Sel   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-; RegDt0          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-; ALU_op          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-; Shift_op        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-; ALUSrcB         ; Output ; Warning  ; Output or bidir port (2 bits) is smaller than the port expression (3 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND.            ;
-; ALUSrcB[1..0]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-; condition       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-+-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ID_Ex:ID_Ex_Reg"                                                                                   ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                             ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Rs_out              ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Rt_out              ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Rd_out              ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; offset_out          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; RegDst_out          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Shift_amountSrc_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Jump_out            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ALUShift_Sel_out    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; RegDt0_out          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ALU_op_out          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Shift_op_out        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ALUSrcB_out         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Condition_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Controller:control"                                                                                                                                                                 ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                          ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Op_code ; Input  ; Warning  ; Input port expression (7 bits) is wider than the input port (6 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Funct   ; Input  ; Warning  ; Input port expression (7 bits) is wider than the input port (6 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Ext_op  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; ALUSrcB ; Output ; Warning  ; Output or bidir port (2 bits) is smaller than the port expression (3 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND.            ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -258,15 +271,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Rs_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                         ;
 ; Rt_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                         ;
 +--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Extender:extend"                                                                      ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; imm_32 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -292,7 +296,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -302,7 +306,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Wed May 28 14:58:58 2014
+    Info: Processing started: Wed Jun 04 14:37:39 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PipelineCPU -c PipelineCPU
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Warning (12019): Can't analyze file -- file Muxs.v is missing
@@ -324,19 +328,19 @@ Info (12021): Found 1 design units, including 1 entities, in source file if_id.v
     Info (12023): Found entity 1: IF_ID
 Info (12021): Found 1 design units, including 1 entities, in source file extender.v
     Info (12023): Found entity 1: Extender
+Info (12021): Found 1 design units, including 1 entities, in source file id_ex.v
+    Info (12023): Found entity 1: ID_Ex
 Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(15): created implicit net for "keep"
-Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(45): created implicit net for "Ex_top_ID"
-Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(46): created implicit net for "Rd_Rs_out_ID"
-Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(60): created implicit net for "RegDst"
-Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(60): created implicit net for "Jump"
-Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(60): created implicit net for "ALU_Shift_Sel_ID"
-Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(60): created implicit net for "Regdt0_ID"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(47): created implicit net for "Ex_top_ID"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(48): created implicit net for "Rd_Rs_out_ID"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(62): created implicit net for "Regdt0_ID"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(67): created implicit net for "Regdt0_Ex"
 Info (12127): Elaborating entity "PipelineCPU" for the top level hierarchy
 Warning (10858): Verilog HDL warning at PipelineCPU.v(8): object PC_branch used but never assigned
 Warning (10858): Verilog HDL warning at PipelineCPU.v(8): object PC_jump used but never assigned
 Warning (10858): Verilog HDL warning at PipelineCPU.v(9): object PCSource used but never assigned
-Warning (10036): Verilog HDL or VHDL warning at PipelineCPU.v(28): object "Target_ID" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at PipelineCPU.v(29): object "LoadByte_ID" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at PipelineCPU.v(29): object "Target_ID" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at PipelineCPU.v(30): object "LoadByte_ID" assigned a value but never read
 Warning (10030): Net "PC_branch" at PipelineCPU.v(8) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "PC_jump" at PipelineCPU.v(8) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "PCSource.00" at PipelineCPU.v(9) has no driver or initial value, using a default initial value '0'
@@ -377,6 +381,19 @@ Info (10041): Inferred latch for "ALU_op[3]" at Controller.v(12)
 Info (10041): Inferred latch for "Ext_op" at Controller.v(12)
 Info (10041): Inferred latch for "ALUSrcB[0]" at Controller.v(12)
 Info (10041): Inferred latch for "ALUSrcB[1]" at Controller.v(12)
+Info (12128): Elaborating entity "ID_Ex" for hierarchy "ID_Ex:ID_Ex_Reg"
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "ALUSrcB_ID[2]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "ALUSrcB_ID[2]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "ALUSrcB_ID[2]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "ALUSrcB_ID[2]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "ALUSrcB_ID[2]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "ALUSrcB_ID[2]" is missing source, defaulting to GND
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "PC_out[0]" is stuck at GND
@@ -611,10 +628,10 @@ Warning (21074): Design contains 1 input pin(s) that do not drive logic
 Info (21057): Implemented 225 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 224 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 266 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 276 warnings
     Info: Peak virtual memory: 398 megabytes
-    Info: Processing ended: Wed May 28 14:58:59 2014
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Wed Jun 04 14:37:44 2014
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:01
 
 
