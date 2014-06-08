@@ -4,7 +4,8 @@ module Controller (
 	output reg Ext_op, RegDst, Shift_amountSrc, Jump, ALU_Shift_Sel, RegDt0,
 	output reg [3:0] ALU_op,
 	output reg [1:0] Shift_op, ALUSrcB,
-	output reg [2:0] condition
+	output reg [2:0] condition,
+	output reg MemWr, MemtoReg
 );
 
 	always @ (*)
@@ -22,6 +23,8 @@ module Controller (
 						ALU_Shift_Sel = 1'b0;
 						condition = 3'd0;
 						RegDt0 = 1'b0;
+						MemWr = 1'b0;
+						MemtoReg = 1'b0;
 					end
 					6'b100010:
 					begin
@@ -32,6 +35,8 @@ module Controller (
 						ALU_Shift_Sel = 1'b0;
 						condition = 3'd0;
 						RegDt0 = 1'b0;
+						MemWr = 1'b0;
+						MemtoReg = 1'b0;
 					end
 					6'b100011:
 					begin
@@ -42,6 +47,8 @@ module Controller (
 						ALU_Shift_Sel = 1'b0;
 						condition = 3'd0;
 						RegDt0 = 1'b0;
+						MemWr = 1'b0;
+						MemtoReg = 1'b0;
 					end
 					6'b000111:
 					begin
@@ -53,6 +60,8 @@ module Controller (
 						Shift_op = 2'd2;
 						condition = 3'd0;
 						RegDt0 = 1'b0;
+						MemWr = 1'b0;
+						MemtoReg = 1'b0;
 					end
 					6'b000010:
 					begin
@@ -64,6 +73,8 @@ module Controller (
 						Shift_op = 2'd3;
 						condition = 3'd0;
 						RegDt0 = 1'b0;
+						MemWr = 1'b0;
+						MemtoReg = 1'b0;
 					end
 					6'b101011:
 					begin
@@ -74,11 +85,8 @@ module Controller (
 						ALU_Shift_Sel = 1'b0;
 						condition = 3'd0;
 						RegDt0 = 1'b0;
-					end
-					default:
-					begin
-						Jump = 1'b0;
-						condition = 3'd0;
+						MemWr = 1'b0;
+						MemtoReg = 1'b0;
 					end
 				endcase
 			end
@@ -90,11 +98,15 @@ module Controller (
 				Jump = 1'b0;
 				condition = 3'd3;
 				RegDt0 = 1'b1;
+				MemWr = 1'b0;
+				MemtoReg = 1'b0;
 			end
 			6'b000010:
 			begin
 				Jump = 1'b1;
 				condition = 3'd0;
+				MemWr = 1'b0;
+				MemtoReg = 1'b0;
 			end
 			6'b001000:
 			begin
@@ -105,6 +117,8 @@ module Controller (
 				Jump = 1'b0;
 				ALU_Shift_Sel = 1'b0;
 				condition = 3'd0;
+				MemWr = 1'b0;
+				MemtoReg = 1'b0;
 			end
 			6'b001001:
 			begin
@@ -115,6 +129,8 @@ module Controller (
 				Jump = 1'b0;
 				ALU_Shift_Sel = 1'b0;
 				condition = 3'd0;
+				MemWr = 1'b0;
+				MemtoReg = 1'b0;
 			end
 			6'b001010:
 			begin
@@ -125,6 +141,8 @@ module Controller (
 				Jump = 1'b0;
 				ALU_Shift_Sel = 1'b0;
 				condition = 3'd0;
+				MemWr = 1'b0;
+				MemtoReg = 1'b0;
 			end
 			6'b001110:
 			begin
@@ -135,6 +153,8 @@ module Controller (
 				Jump = 1'b0;
 				ALU_Shift_Sel = 1'b0;
 				condition = 3'd0;
+				MemWr = 1'b0;
+				MemtoReg = 1'b0;
 			end
 			6'b001111:
 			begin
@@ -145,6 +165,8 @@ module Controller (
 				Jump = 1'b0;
 				ALU_Shift_Sel = 1'b0;
 				condition = 3'd0;
+				MemWr = 1'b0;
+				MemtoReg = 1'b0;
 			end
 			6'b011100:
 			begin
@@ -156,6 +178,8 @@ module Controller (
 						Jump = 1'b0;
 						ALU_Shift_Sel = 1'b0;
 						condition = 3'd0;
+						MemWr = 1'b0;
+						MemtoReg = 1'b0;
 					end
 					6'b100000:
 					begin
@@ -164,28 +188,48 @@ module Controller (
 						Jump = 1'b0;
 						ALU_Shift_Sel = 1'b0;
 						condition = 3'd0;
-					end
-					default:
-					begin
-						Jump = 1'b0;
-						condition = 3'd0;
+						MemWr = 1'b0;
+						MemtoReg = 1'b0;
 					end
 				endcase
 			end
 			6'b011111:
 			begin
-				ALUSrcB = 2'd0;
+				ALUSrcB = 2'd1;
 				Ext_op = 1'b1;
-				ALU_op = 4'b1010;
+				ALU_op = 4'b0000;
 				RegDst = 1'b1;
 				Jump = 1'b0;
 				ALU_Shift_Sel = 1'b0;
 				condition = 3'd0;
+				MemWr = 1'b0;
+				MemtoReg = 1'b0;
 			end
-			default:
+			6'b100011:
 			begin
+				ALUSrcB = 2'd0;
+				Ext_op = 1'b1;
+				ALU_op = 4'b1110;
+				RegDst = 1'b0;
 				Jump = 1'b0;
+				ALU_Shift_Sel = 1'b0;
 				condition = 3'd0;
+				RegDt0 = 1'b0;
+				MemWr = 1'b0;
+				MemtoReg = 1'b1;
+			end
+			6'b101011:
+			begin
+				ALUSrcB = 2'd0;
+				Ext_op = 1'b1;
+				ALU_op = 4'b1110;
+				RegDst = 1'b0;
+				Jump = 1'b0;
+				ALU_Shift_Sel = 1'b0;
+				condition = 3'd0;
+				RegDt0 = 1'b0;
+				MemWr = 1'b1;
+				MemtoReg = 1'b0;
 			end
 		endcase
 	end
