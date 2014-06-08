@@ -1,4 +1,4 @@
-module ID_Ex(
+module Ex_Mem(
 	input clk,
 	input [4:0]Rs_in,
 	input [4:0]Rt_in,

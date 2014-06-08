@@ -1173,7 +1173,7 @@ Rt[4] => ~NO_FANOUT~
 Ext_op <= Ext_op$latch.DB_MAX_OUTPUT_PORT_TYPE
 RegDst <= RegDst$latch.DB_MAX_OUTPUT_PORT_TYPE
 Shift_amountSrc <= Shift_amountSrc$latch.DB_MAX_OUTPUT_PORT_TYPE
-Jump <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+Jump <= Jump$latch.DB_MAX_OUTPUT_PORT_TYPE
 ALU_Shift_Sel <= ALU_Shift_Sel$latch.DB_MAX_OUTPUT_PORT_TYPE
 RegDt0 <= RegDt0$latch.DB_MAX_OUTPUT_PORT_TYPE
 ALU_op[0] <= ALU_op[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
@@ -1184,9 +1184,11 @@ Shift_op[0] <= Shift_op[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 Shift_op[1] <= <VCC>
 ALUSrcB[0] <= ALUSrcB[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 ALUSrcB[1] <= ALUSrcB[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
-condition[0] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
-condition[1] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+condition[0] <= condition[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+condition[1] <= condition[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 condition[2] <= <GND>
+MemWr <= MemWr$latch.DB_MAX_OUTPUT_PORT_TYPE
+MemtoReg <= MemtoReg$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |PipelineCPU|ID_Ex:ID_Ex_Reg

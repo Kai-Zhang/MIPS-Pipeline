@@ -1,6 +1,6 @@
 Analysis & Synthesis report for PipelineCPU
-Wed Jun 04 14:37:44 2014
-Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
+Sun Jun 08 21:08:16 2014
+Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
 ---------------------
@@ -47,8 +47,8 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jun 04 14:37:44 2014     ;
-; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
+; Analysis & Synthesis Status        ; Successful - Sun Jun 08 21:08:16 2014     ;
+; Quartus II 32-bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; PipelineCPU                               ;
 ; Top-level Entity Name              ; PipelineCPU                               ;
 ; Family                             ; Cyclone II                                ;
@@ -152,32 +152,32 @@ applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     1 processor            ; 100.0%      ;
-;     2-8 processors         ;   0.0%      ;
+;     2-4 processors         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                 ;
-+----------------------------------+-----------------+------------------------+--------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path   ; Library ;
-+----------------------------------+-----------------+------------------------+--------------------------------+---------+
-; Controller.v                     ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/Controller.v  ;         ;
-; Register.v                       ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/Register.v    ;         ;
-; PipelineCPU.v                    ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/PipelineCPU.v ;         ;
-; PC_count.v                       ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/PC_count.v    ;         ;
-; InstMem.v                        ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/InstMem.v     ;         ;
-; IF_ID.v                          ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/IF_ID.v       ;         ;
-; Extender.v                       ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/Extender.v    ;         ;
-; ID_Ex.v                          ; yes             ; User Verilog HDL File  ; D:/archexp/lab06/ID_Ex.v       ;         ;
-+----------------------------------+-----------------+------------------------+--------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                   ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                     ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
+; Controller.v                     ; yes             ; User Verilog HDL File  ; D:/Documents/GitRepository/colab06/Controller.v  ;         ;
+; Register.v                       ; yes             ; User Verilog HDL File  ; D:/Documents/GitRepository/colab06/Register.v    ;         ;
+; PipelineCPU.v                    ; yes             ; User Verilog HDL File  ; D:/Documents/GitRepository/colab06/PipelineCPU.v ;         ;
+; PC_count.v                       ; yes             ; User Verilog HDL File  ; D:/Documents/GitRepository/colab06/PC_count.v    ;         ;
+; InstMem.v                        ; yes             ; User Verilog HDL File  ; D:/Documents/GitRepository/colab06/InstMem.v     ;         ;
+; IF_ID.v                          ; yes             ; User Verilog HDL File  ; D:/Documents/GitRepository/colab06/IF_ID.v       ;         ;
+; Extender.v                       ; yes             ; User Verilog HDL File  ; D:/Documents/GitRepository/colab06/Extender.v    ;         ;
+; ID_Ex.v                          ; yes             ; User Verilog HDL File  ; D:/Documents/GitRepository/colab06/ID_Ex.v       ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -250,16 +250,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Controller:control"                                                                                                                                                                 ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Op_code ; Input  ; Warning  ; Input port expression (7 bits) is wider than the input port (6 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; Funct   ; Input  ; Warning  ; Input port expression (7 bits) is wider than the input port (6 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; Ext_op  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-; ALUSrcB ; Output ; Warning  ; Output or bidir port (2 bits) is smaller than the port expression (3 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND.            ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Controller:control"                                                                                                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                          ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Op_code  ; Input  ; Warning  ; Input port expression (7 bits) is wider than the input port (6 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Funct    ; Input  ; Warning  ; Input port expression (7 bits) is wider than the input port (6 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Ext_op   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; ALUSrcB  ; Output ; Warning  ; Output or bidir port (2 bits) is smaller than the port expression (3 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND.            ;
+; MemWr    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                         ;
+; MemtoReg ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                         ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -296,7 +298,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -304,18 +306,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
+Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Wed Jun 04 14:37:39 2014
+    Info: Processing started: Sun Jun 08 21:08:01 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PipelineCPU -c PipelineCPU
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
-Warning (12019): Can't analyze file -- file Muxs.v is missing
-Warning (12019): Can't analyze file -- file Instruction.v is missing
-Warning (12019): Can't analyze file -- file CPU.v is missing
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 3 design units, including 3 entities, in source file muxs.v
+    Info (12023): Found entity 1: Y_Mux
+    Info (12023): Found entity 2: Mux_4Way
+    Info (12023): Found entity 3: Mux_8Way
 Info (12021): Found 1 design units, including 1 entities, in source file controller.v
     Info (12023): Found entity 1: Controller
-Warning (12019): Can't analyze file -- file Barrel_Shifter.v is missing
-Warning (12019): Can't analyze file -- file ALU.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file barrel_shifter.v
+    Info (12023): Found entity 1: Barrel_Shifter
+Info (12021): Found 5 design units, including 5 entities, in source file alu.v
+    Info (12023): Found entity 1: Op_Decoder
+    Info (12023): Found entity 2: Adder
+    Info (12023): Found entity 3: ALU_Mux
+    Info (12023): Found entity 4: Leading_Counter
+    Info (12023): Found entity 5: ALU
 Info (12021): Found 1 design units, including 1 entities, in source file register.v
     Info (12023): Found entity 1: Register
 Info (12021): Found 1 design units, including 1 entities, in source file pipelinecpu.v
@@ -330,21 +339,23 @@ Info (12021): Found 1 design units, including 1 entities, in source file extende
     Info (12023): Found entity 1: Extender
 Info (12021): Found 1 design units, including 1 entities, in source file id_ex.v
     Info (12023): Found entity 1: ID_Ex
-Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(15): created implicit net for "keep"
-Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(47): created implicit net for "Ex_top_ID"
-Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(48): created implicit net for "Rd_Rs_out_ID"
-Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(62): created implicit net for "Regdt0_ID"
-Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(67): created implicit net for "Regdt0_Ex"
+Info (12021): Found 1 design units, including 1 entities, in source file ex_mem.v
+    Info (12023): Found entity 1: Ex_Mem
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(16): created implicit net for "keep"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(48): created implicit net for "Ex_top_ID"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(49): created implicit net for "Rd_Rs_out_ID"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(63): created implicit net for "Regdt0_ID"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(68): created implicit net for "Regdt0_Ex"
 Info (12127): Elaborating entity "PipelineCPU" for the top level hierarchy
-Warning (10858): Verilog HDL warning at PipelineCPU.v(8): object PC_branch used but never assigned
-Warning (10858): Verilog HDL warning at PipelineCPU.v(8): object PC_jump used but never assigned
-Warning (10858): Verilog HDL warning at PipelineCPU.v(9): object PCSource used but never assigned
-Warning (10036): Verilog HDL or VHDL warning at PipelineCPU.v(29): object "Target_ID" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at PipelineCPU.v(30): object "LoadByte_ID" assigned a value but never read
-Warning (10030): Net "PC_branch" at PipelineCPU.v(8) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "PC_jump" at PipelineCPU.v(8) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "PCSource.00" at PipelineCPU.v(9) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "PCSource.01" at PipelineCPU.v(9) has no driver or initial value, using a default initial value '0'
+Warning (10858): Verilog HDL warning at PipelineCPU.v(9): object PC_branch used but never assigned
+Warning (10858): Verilog HDL warning at PipelineCPU.v(9): object PC_jump used but never assigned
+Warning (10858): Verilog HDL warning at PipelineCPU.v(10): object PCSource used but never assigned
+Warning (10036): Verilog HDL or VHDL warning at PipelineCPU.v(30): object "Target_ID" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at PipelineCPU.v(31): object "LoadByte_ID" assigned a value but never read
+Warning (10030): Net "PC_branch" at PipelineCPU.v(9) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "PC_jump" at PipelineCPU.v(9) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "PCSource.00" at PipelineCPU.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "PCSource.01" at PipelineCPU.v(10) has no driver or initial value, using a default initial value '0'
 Warning (10034): Output port "PC_out" at PipelineCPU.v(3) has no driver
 Warning (10034): Output port "Inst_IF_out" at PipelineCPU.v(3) has no driver
 Warning (10034): Output port "Inst_ID_out" at PipelineCPU.v(3) has no driver
@@ -360,27 +371,40 @@ Info (12128): Elaborating entity "IF_ID" for hierarchy "IF_ID:IF_ID_Reg"
 Info (12128): Elaborating entity "Extender" for hierarchy "Extender:extend"
 Info (12128): Elaborating entity "Register" for hierarchy "Register:register"
 Info (12128): Elaborating entity "Controller" for hierarchy "Controller:control"
-Warning (10240): Verilog HDL Always Construct warning at Controller.v(12): inferring latch(es) for variable "ALUSrcB", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Controller.v(12): inferring latch(es) for variable "Ext_op", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Controller.v(12): inferring latch(es) for variable "ALU_op", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Controller.v(12): inferring latch(es) for variable "RegDst", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Controller.v(12): inferring latch(es) for variable "ALU_Shift_Sel", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Controller.v(12): inferring latch(es) for variable "RegDt0", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Controller.v(12): inferring latch(es) for variable "Shift_amountSrc", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Controller.v(12): inferring latch(es) for variable "Shift_op", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "Shift_op[0]" at Controller.v(12)
-Info (10041): Inferred latch for "Shift_op[1]" at Controller.v(12)
-Info (10041): Inferred latch for "Shift_amountSrc" at Controller.v(12)
-Info (10041): Inferred latch for "RegDt0" at Controller.v(12)
-Info (10041): Inferred latch for "ALU_Shift_Sel" at Controller.v(12)
-Info (10041): Inferred latch for "RegDst" at Controller.v(12)
-Info (10041): Inferred latch for "ALU_op[0]" at Controller.v(12)
-Info (10041): Inferred latch for "ALU_op[1]" at Controller.v(12)
-Info (10041): Inferred latch for "ALU_op[2]" at Controller.v(12)
-Info (10041): Inferred latch for "ALU_op[3]" at Controller.v(12)
-Info (10041): Inferred latch for "Ext_op" at Controller.v(12)
-Info (10041): Inferred latch for "ALUSrcB[0]" at Controller.v(12)
-Info (10041): Inferred latch for "ALUSrcB[1]" at Controller.v(12)
+Warning (10270): Verilog HDL Case Statement warning at Controller.v(16): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at Controller.v(173): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at Controller.v(13): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(13): inferring latch(es) for variable "ALUSrcB", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(13): inferring latch(es) for variable "Ext_op", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(13): inferring latch(es) for variable "ALU_op", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(13): inferring latch(es) for variable "RegDst", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(13): inferring latch(es) for variable "Jump", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(13): inferring latch(es) for variable "ALU_Shift_Sel", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(13): inferring latch(es) for variable "condition", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(13): inferring latch(es) for variable "RegDt0", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(13): inferring latch(es) for variable "MemWr", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(13): inferring latch(es) for variable "MemtoReg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(13): inferring latch(es) for variable "Shift_amountSrc", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Controller.v(13): inferring latch(es) for variable "Shift_op", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "Shift_op[0]" at Controller.v(13)
+Info (10041): Inferred latch for "Shift_op[1]" at Controller.v(13)
+Info (10041): Inferred latch for "Shift_amountSrc" at Controller.v(13)
+Info (10041): Inferred latch for "MemtoReg" at Controller.v(13)
+Info (10041): Inferred latch for "MemWr" at Controller.v(13)
+Info (10041): Inferred latch for "RegDt0" at Controller.v(13)
+Info (10041): Inferred latch for "condition[0]" at Controller.v(13)
+Info (10041): Inferred latch for "condition[1]" at Controller.v(13)
+Info (10041): Inferred latch for "condition[2]" at Controller.v(13)
+Info (10041): Inferred latch for "ALU_Shift_Sel" at Controller.v(13)
+Info (10041): Inferred latch for "Jump" at Controller.v(13)
+Info (10041): Inferred latch for "RegDst" at Controller.v(13)
+Info (10041): Inferred latch for "ALU_op[0]" at Controller.v(13)
+Info (10041): Inferred latch for "ALU_op[1]" at Controller.v(13)
+Info (10041): Inferred latch for "ALU_op[2]" at Controller.v(13)
+Info (10041): Inferred latch for "ALU_op[3]" at Controller.v(13)
+Info (10041): Inferred latch for "Ext_op" at Controller.v(13)
+Info (10041): Inferred latch for "ALUSrcB[0]" at Controller.v(13)
+Info (10041): Inferred latch for "ALUSrcB[1]" at Controller.v(13)
 Info (12128): Elaborating entity "ID_Ex" for hierarchy "ID_Ex:ID_Ex_Reg"
 Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "ALUSrcB_ID[2]" is missing source, defaulting to GND
@@ -620,7 +644,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "Shift_out[29]" is stuck at GND
     Warning (13410): Pin "Shift_out[30]" is stuck at GND
     Warning (13410): Pin "Shift_out[31]" is stuck at GND
-Info (144001): Generated suppressed messages file D:/archexp/lab06/PipelineCPU.map.smsg
+Info (144001): Generated suppressed messages file D:/Documents/GitRepository/colab06/PipelineCPU.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
@@ -628,16 +652,16 @@ Warning (21074): Design contains 1 input pin(s) that do not drive logic
 Info (21057): Implemented 225 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 224 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 276 warnings
-    Info: Peak virtual memory: 398 megabytes
-    Info: Processing ended: Wed Jun 04 14:37:44 2014
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:01
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 278 warnings
+    Info: Peak virtual memory: 334 megabytes
+    Info: Processing ended: Sun Jun 08 21:08:16 2014
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in D:/archexp/lab06/PipelineCPU.map.smsg.
+The suppressed messages can be found in D:/Documents/GitRepository/colab06/PipelineCPU.map.smsg.
 
 
