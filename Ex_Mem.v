@@ -1,47 +1,53 @@
 module Ex_Mem(
-	input clk,
-	input [4:0]Rs_in,
-	input [4:0]Rt_in,
-	input [4:0]Rd_in,
-	input [31:0]offset_in,
-	input RegDst_in,
-	input Shift_amountSrc_in,
-	input Jump_in,
-	input ALUShift_Sel_in,
-	input RegDt0_in,
-	input [3:0]ALU_op_in,
-	input [1:0]Shift_op_in,
-	input [2:0]ALUSrcB_in,
-	input [2:0]Condition_in,
-	output reg [4:0]Rs_out,
-	output reg [4:0]Rt_out,
-	output reg [4:0]Rd_out,
-	output reg [31:0]offset_out,
-	output reg RegDst_out,
-	output reg Shift_amountSrc_out,
-	output reg Jump_out,
-	output reg ALUShift_Sel_out,
-	output reg RegDt0_out,
-	output reg[3:0]ALU_op_out,
-	output reg [1:0]Shift_op_out,
-	output reg [2:0]ALUSrcB_out,
-	output reg [2:0]Condition_out
+input clk,
+input Reset,
+input [31:0]PC_Branch_in,PC_Jump_in,ALUShift_out_in,
+input [3:0]Rd_write_by_en_in,
+input Jump_in,
+input Less_in,
+input Zero_in,
+input Overflow_in,
+input [2:0]Condition_in,
+input RegWr_in,
+input [4:0]Rd_in,
+output reg[31:0]PC_Branch_out,PC_Jump_out,ALUShift_out_out,
+output reg[3:0]Rd_write_by_en_out,
+output reg Jump_out,
+output reg Less_out,
+output reg Zero_out,
+output reg Overflow_out,
+output reg[2:0]Condition_out,
+output reg RegWr_out,
+output reg [4:0]Rd_out
 );
+always @(negedge clk)
+begin 
+if (Reset)
+begin 
+	PC_Branch_out<=0;
+	PC_Jump_out<=0;
+	ALUShift_out_out<=0;
+	Rd_write_by_en_out<=0;
+	Jump_out<=0;
+	Less_out<=0;
+	Zero_out<=0;
+	Overflow_out<=0;
+	Condition_out<=0;
+	Rd_out<=0;
+end 
+else 
+begin 
+	PC_Branch_out<=PC_Branch_in;
+	PC_Jump_out<=PC_Jump_in;
+	ALUShift_out_out<=ALUShift_out_in;
+	Rd_write_by_en_out<=Rd_write_by_en_in;
+	Jump_out<=Jump_in;
+	Less_out<=Less_in;
+	Zero_out<=Zero_in;
+	Overflow_out<=Overflow_in;
+	Condition_out<=Condition_in;
+	Rd_out<=Rd_in;
+end 
+end 
 
-	always @(negedge clk)
-	begin 
-		Rs_out<=Rs_in;
-		Rt_out<=Rt_in;
-		Rd_out<=Rd_in;
-		offset_out<=offset_in;
-		RegDst_out<=RegDst_in;
-		Shift_amountSrc_out<=Shift_amountSrc_in;
-		Jump_out<=Jump_in;
-		ALUShift_Sel_out<=ALUShift_Sel_in;
-		RegDt0_out<=RegDt0_in;
-		ALU_op_out<=ALU_op_in;
-		Shift_op_out<=Shift_op_in;
-		ALUSrcB_out<=ALUSrcB_in;
-		Condition_out<=Condition_in;
-	end 
 endmodule

@@ -1,0 +1,445 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\archexp\lab06\simulation\modelsim
+vAdder
+IMJB:acQCiWKC<32]iGlfL1
+VoCXRR9DK^zY4]d6i6M5M43
+Z1 dD:\archexp\lab06\simulation\modelsim
+Z2 w1401866535
+Z3 8D:/archexp/lab06/ALU.v
+Z4 FD:/archexp/lab06/ALU.v
+L0 12
+Z5 OV;L;10.0d;49
+r1
+31
+Z6 !s108 1402319580.319000
+Z7 !s107 D:/archexp/lab06/ALU.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/archexp/lab06|D:/archexp/lab06/ALU.v|
+Z9 o-vlog01compat -work work -O0
+Z10 !s92 -vlog01compat -work work +incdir+D:/archexp/lab06 -O0
+n@adder
+!s100 7UnWBTQTgGBGzoj5c[k>D0
+!s85 0
+!s101 -O0
+vALU
+I]o844MHBi7kL<`6TEn:dL2
+V0kXL0GV4m[nl_e4Hj<7`50
+R1
+R2
+R3
+R4
+L0 127
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+n@a@l@u
+!s100 lli3<KmPZJ>bDEf_RCZJ=3
+!s85 0
+!s101 -O0
+vALU_Mux
+I5ROhZ`9B1KiE[[<9Oj86?3
+VDY<oc`VzIWfgXEOKeOYT:1
+R1
+R2
+R3
+R4
+L0 28
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+n@a@l@u_@mux
+!s100 MA[@a2@0PiXEa9MDcOfD81
+!s85 0
+!s101 -O0
+vControlHazard
+IN:J7R2f;2iTbl8E?G9l5O0
+VU^KQ?dX5PFjo538>O1>kJ0
+R1
+w1402298796
+8D:/archexp/lab06/ControlHazard.v
+FD:/archexp/lab06/ControlHazard.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@control@hazard
+!s100 mOoNbg5cP@RZ4SA;XXh0;3
+!s85 0
+!s108 1402319586.236000
+!s107 D:/archexp/lab06/ControlHazard.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/archexp/lab06|D:/archexp/lab06/ControlHazard.v|
+!s101 -O0
+vController
+IA[XbLOY]Zbe:T5?5b9hfY3
+VLB_I:<ieB2WR^b4i3cbeK1
+R1
+w1402318095
+8D:/archexp/lab06/Controller.v
+FD:/archexp/lab06/Controller.v
+L0 1
+R5
+r1
+31
+R9
+n@controller
+R10
+!s100 f`6Yn?U79fBNOJJc^8b6Q3
+!s85 0
+!s108 1402319579.944000
+!s107 D:/archexp/lab06/Controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/archexp/lab06|D:/archexp/lab06/Controller.v|
+!s101 -O0
+vEx_Mem
+I=Tg48Jm^:FV?P[E<[XUY>0
+V01;]A=G<7YZZzY3:QIC1n2
+R1
+w1402319331
+8D:/archexp/lab06/Ex_Mem.v
+FD:/archexp/lab06/Ex_Mem.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@ex_@mem
+!s100 =GHg9][0fhdI?kX9ZaIl=3
+!s85 0
+!s108 1402319585.585000
+!s107 D:/archexp/lab06/Ex_Mem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/archexp/lab06|D:/archexp/lab06/Ex_Mem.v|
+!s101 -O0
+vExtender
+I^L1XU4OO:j7>Gz@_oJ]`I0
+VMLV4?Y``K1OgCM6A^YPGH1
+R1
+w1401258493
+8D:/archexp/lab06/Extender.v
+FD:/archexp/lab06/Extender.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@extender
+!s100 aZFkBZjd>X4FK4Y4iU7H_2
+!s85 0
+!s108 1402319582.609000
+!s107 D:/archexp/lab06/Extender.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/archexp/lab06|D:/archexp/lab06/Extender.v|
+!s101 -O0
+vForwardUnit
+I083lgXzNWJan_PIFA@aOU3
+VJBB<R7_PggBoNWf]C>7[L2
+R1
+w1402319568
+8D:/archexp/lab06/ForwardUnit.v
+FD:/archexp/lab06/ForwardUnit.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@forward@unit
+!s100 Z<2SDORH^i96Q<AodX_M:2
+!s85 0
+!s108 1402319586.440000
+!s107 D:/archexp/lab06/ForwardUnit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/archexp/lab06|D:/archexp/lab06/ForwardUnit.v|
+!s101 -O0
+vID_Ex
+I03Hc=Bk3d`3Yz8H1INXFL2
+V0F3RHiA^ISk4;5@cVM97P0
+R1
+w1402317948
+8D:/archexp/lab06/ID_Ex.v
+FD:/archexp/lab06/ID_Ex.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@i@d_@ex
+!s100 2;fnFi`^m_K<P;LSzRUZ`3
+!s85 0
+!s108 1402319583.186000
+!s107 D:/archexp/lab06/ID_Ex.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/archexp/lab06|D:/archexp/lab06/ID_Ex.v|
+!s101 -O0
+vIF_ID
+I@iV[@6XWjM6EzHfLcehm:2
+V6^EkdDdUPF:n6=]VjSbAF2
+R1
+w1402299158
+8D:/archexp/lab06/IF_ID.v
+FD:/archexp/lab06/IF_ID.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@i@f_@i@d
+!s100 i`HQo?=R5;_26zkQTdNZ`0
+!s85 0
+!s108 1402319582.385000
+!s107 D:/archexp/lab06/IF_ID.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/archexp/lab06|D:/archexp/lab06/IF_ID.v|
+!s101 -O0
+vInstMem
+IaD_^IXZeRzBg<A`Y^WB=B3
+VzS^hEcOBWE7GeP`6K4ON=2
+R1
+w1402306503
+8D:/archexp/lab06/InstMem.v
+FD:/archexp/lab06/InstMem.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@inst@mem
+!s100 OmKHd==maU[6<W]YH04>z2
+!s85 0
+!s108 1402319582.177000
+!s107 D:/archexp/lab06/InstMem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/archexp/lab06|D:/archexp/lab06/InstMem.v|
+!s101 -O0
+vLeading_Counter
+I_blMX2>U>3dgTAf3UlPY63
+VDj]?=2oKVBnA7VflXgGI31
+R1
+R2
+R3
+R4
+L0 47
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+n@leading_@counter
+!s100 PnWADBzWMG3ozHIJ9?^d?0
+!s85 0
+!s101 -O0
+vMux_4Way
+IRWR5BiHTCTTg@]^VgO:oj0
+V`<JmmbkhLf27MJ6J3@58[2
+R1
+Z11 w1401866572
+Z12 8D:/archexp/lab06/Mux2.v
+Z13 FD:/archexp/lab06/Mux2.v
+L0 16
+R5
+r1
+31
+Z14 !s108 1402319584.119000
+Z15 !s107 D:/archexp/lab06/Mux2.v|
+Z16 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/archexp/lab06|D:/archexp/lab06/Mux2.v|
+R9
+R10
+n@mux_4@way
+!s100 gRN1=_5=KM?<fY4:P9ATe1
+!s85 0
+!s101 -O0
+vMux_8Way
+ISCnQFMC5QN3[ddzaoB7dh2
+VENlXEABXjo7^[;eo`24ki1
+R1
+R11
+R12
+R13
+L0 33
+R5
+r1
+31
+R14
+R15
+R16
+R9
+R10
+n@mux_8@way
+!s100 >`h;S@=lAUS7f>hP1cOMR1
+!s85 0
+!s101 -O0
+vOp_Decoder
+I;ZOC:3O`Q8J@ff>:1dl5c0
+VjhO1kHH>Djdd5m8:CU4^21
+R1
+R2
+R3
+R4
+L0 1
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+n@op_@decoder
+!s100 jMNiN6T<o:SVIX[=bEPLF2
+!s85 0
+!s101 -O0
+vPC_count
+IOeOz5<E1@UMn35NO_O<0H2
+V=o4b_7SN6NjOoULjf0YgK2
+R1
+w1402298211
+8D:/archexp/lab06/PC_count.v
+FD:/archexp/lab06/PC_count.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@p@c_count
+!s100 BBjnR3e5khjYWa]5n?0mm3
+!s85 0
+!s108 1402319581.991000
+!s107 D:/archexp/lab06/PC_count.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/archexp/lab06|D:/archexp/lab06/PC_count.v|
+!s101 -O0
+vPCSourceGen
+IDn?3HlXO=UT1B7<KTBzgN2
+Vn:B3o<DFVWJ@:OG4IIJdI1
+R1
+w1402299300
+8D:/archexp/lab06/PCSourceGen.v
+FD:/archexp/lab06/PCSourceGen.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@p@c@source@gen
+!s100 g4Dd=HE6[OWz[Y;<D^5im0
+!s85 0
+!s108 1402319585.794000
+!s107 D:/archexp/lab06/PCSourceGen.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/archexp/lab06|D:/archexp/lab06/PCSourceGen.v|
+!s101 -O0
+vPipelineCPU
+I@NBczPkjeUeM`aL8j46V[0
+VmN@W2RJ[`<dFLANPAc8=S3
+R1
+w1402319466
+8D:/archexp/lab06/PipelineCPU.v
+FD:/archexp/lab06/PipelineCPU.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@pipeline@c@p@u
+!s100 R^RTA35RcW8k@moi=GI<K2
+!s85 0
+!s108 1402319581.727000
+!s107 D:/archexp/lab06/PipelineCPU.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/archexp/lab06|D:/archexp/lab06/PipelineCPU.v|
+!s101 -O0
+vPipelineCPU_vlg_tst
+!s100 MVcE4^_n^dlg3hI;V;M]R2
+IY;1ZB@@1>DDMS8>DF^l;Q0
+VPcH2`zeEBSfAYXlcdC;RM3
+R1
+w1402307150
+8D:/archexp/lab06/simulation/modelsim/PipelineCPU.vt
+FD:/archexp/lab06/simulation/modelsim/PipelineCPU.vt
+L0 28
+R5
+r1
+!s85 0
+31
+!s108 1402319586.661000
+!s107 D:/archexp/lab06/simulation/modelsim/PipelineCPU.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/archexp/lab06/simulation/modelsim|D:/archexp/lab06/simulation/modelsim/PipelineCPU.vt|
+!s101 -O0
+R9
+!s92 -vlog01compat -work work +incdir+D:/archexp/lab06/simulation/modelsim -O0
+n@pipeline@c@p@u_vlg_tst
+vRegister
+I_Ez`]G;YVXC2gHO5>cW_]3
+V4ghn0:77N0?d12b9aKFVh1
+R1
+w1402318076
+8D:/archexp/lab06/Register.v
+FD:/archexp/lab06/Register.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@register
+!s100 <=hZYXP?n24>CKo<haY_I2
+!s85 0
+!s108 1402319580.983000
+!s107 D:/archexp/lab06/Register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/archexp/lab06|D:/archexp/lab06/Register.v|
+!s101 -O0
+vShifter
+ISG<OTaMYmF3SJ7cU1i0ab0
+V10@eaO_K4a:?B2JQMDc?R0
+R1
+w1402305282
+8D:/archexp/lab06/Shifter.v
+FD:/archexp/lab06/Shifter.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@shifter
+!s100 456Vkc5XF6?glmL`mQMgH1
+!s85 0
+!s108 1402319585.036000
+!s107 D:/archexp/lab06/Shifter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/archexp/lab06|D:/archexp/lab06/Shifter.v|
+!s101 -O0
+vY_Mux
+Ic<;LJ=DZX7HEP3XTHXziC0
+VQOn8_9GWOfCzDPN4F1K:@2
+R1
+R11
+R12
+R13
+L0 1
+R5
+r1
+31
+R14
+R15
+R16
+R9
+R10
+n@y_@mux
+!s100 njQjP3bB^BS@M2>ao2HjC2
+!s85 0
+!s101 -O0

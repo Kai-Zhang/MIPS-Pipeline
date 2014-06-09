@@ -1,0 +1,4 @@
+module ForwardUnit(
+input [4:0]Rs_Ex,Rt_Ex,Rd_Mem,
+input 
+)

@@ -1,6 +1,6 @@
 Flow report for PipelineCPU
-Sun Jun 08 21:08:16 2014
-Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Full Version
+Mon Jun 09 21:12:51 2014
+Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
 ---------------------
@@ -38,18 +38,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Sun Jun 08 21:08:16 2014     ;
-; Quartus II 32-bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
+; Flow Status                        ; Successful - Mon Jun 09 21:12:51 2014     ;
+; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; PipelineCPU                               ;
 ; Top-level Entity Name              ; PipelineCPU                               ;
 ; Family                             ; Cyclone II                                ;
-; Total logic elements               ; 0                                         ;
-;     Total combinational functions  ; 0                                         ;
-;     Dedicated logic registers      ; 0                                         ;
-; Total registers                    ; 0                                         ;
-; Total pins                         ; 225                                       ;
+; Total logic elements               ; 122                                       ;
+;     Total combinational functions  ; 93                                        ;
+;     Dedicated logic registers      ; 59                                        ;
+; Total registers                    ; 59                                        ;
+; Total pins                         ; 335                                       ;
 ; Total virtual pins                 ; 0                                         ;
-; Total memory bits                  ; 0                                         ;
+; Total memory bits                  ; 1,024                                     ;
 ; Embedded Multiplier 9-bit elements ; 0                                         ;
 ; Total PLLs                         ; 0                                         ;
 +------------------------------------+-------------------------------------------+
@@ -60,24 +60,31 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/08/2014 21:08:13 ;
+; Start date & time ; 06/09/2014 21:12:49 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PipelineCPU         ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                    ;
-+-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 25173941750126.140223289004172 ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                    ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)      ; <None>        ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                       ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; --          ; Top            ;
-+-------------------------------------+--------------------------------+---------------+-------------+----------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                              ;
++--------------------------------------+------------------------------------+---------------+-------------+---------------------+
+; Assignment Name                      ; Value                              ; Default Value ; Entity Name ; Section Id          ;
++--------------------------------------+------------------------------------+---------------+-------------+---------------------+
+; COMPILER_SIGNATURE_ID                ; 18413733062277.140231956904384     ; --            ; --          ; --                  ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                 ; --            ; --          ; PipelineCPU_vlg_tst ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; PipelineCPU_vlg_tst                ; --            ; --          ; eda_simulation      ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                        ; --            ; --          ; eda_simulation      ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)          ; <None>        ; --          ; --                  ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                    ; --            ; --          ; eda_simulation      ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/PipelineCPU.vt ; --            ; --          ; PipelineCPU_vlg_tst ;
+; EDA_TEST_BENCH_MODULE_NAME           ; PipelineCPU_vlg_tst                ; --            ; --          ; PipelineCPU_vlg_tst ;
+; EDA_TEST_BENCH_NAME                  ; PipelineCPU_vlg_tst                ; --            ; --          ; eda_simulation      ;
+; EDA_TIME_SCALE                       ; 1 ps                               ; --            ; --          ; eda_simulation      ;
+; PARTITION_COLOR                      ; 16764057                           ; --            ; --          ; Top                 ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING              ; --            ; --          ; Top                 ;
+; PARTITION_NETLIST_TYPE               ; SOURCE                             ; --            ; --          ; Top                 ;
++--------------------------------------+------------------------------------+---------------+-------------+---------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -85,8 +92,8 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 332 MB              ; 00:00:02                           ;
-; Total                ; 00:00:14     ; --                      ; --                  ; 00:00:02                           ;
+; Analysis & Synthesis ; 00:00:02     ; 1.0                     ; 416 MB              ; 00:00:02                           ;
+; Total                ; 00:00:02     ; --                      ; --                  ; 00:00:02                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -95,7 +102,7 @@ applicable agreement for further details.
 +----------------------+------------------+-----------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +----------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis ; John-PC          ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis ; zcl-PC           ; Windows 7 ; 6.1        ; x86_64         ;
 +----------------------+------------------+-----------+------------+----------------+
 
 
