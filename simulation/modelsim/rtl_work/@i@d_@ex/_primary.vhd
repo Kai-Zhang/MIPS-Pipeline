@@ -3,6 +3,7 @@ use verilog.vl_types.all;
 entity ID_Ex is
     port(
         clk             : in     vl_logic;
+        Reset           : in     vl_logic;
         Rs_in           : in     vl_logic_vector(4 downto 0);
         Rt_in           : in     vl_logic_vector(4 downto 0);
         Rd_in           : in     vl_logic_vector(4 downto 0);
@@ -18,7 +19,11 @@ entity ID_Ex is
         Shift_op_in     : in     vl_logic_vector(1 downto 0);
         ALUSrcB_in      : in     vl_logic_vector(1 downto 0);
         Condition_in    : in     vl_logic_vector(2 downto 0);
+        LoadType_in     : in     vl_logic_vector(1 downto 0);
+        LoadByte_in     : in     vl_logic_vector(1 downto 0);
         RegWr_in        : in     vl_logic;
+        MemWr_in        : in     vl_logic;
+        MemtoReg_in     : in     vl_logic;
         PC_in           : in     vl_logic_vector(31 downto 0);
         Target_in       : in     vl_logic_vector(25 downto 0);
         Shamt_in        : in     vl_logic_vector(4 downto 0);
@@ -37,7 +42,11 @@ entity ID_Ex is
         Shift_op_out    : out    vl_logic_vector(1 downto 0);
         ALUSrcB_out     : out    vl_logic_vector(1 downto 0);
         Condition_out   : out    vl_logic_vector(2 downto 0);
+        LoadType_out    : out    vl_logic_vector(1 downto 0);
+        LoadByte_out    : out    vl_logic_vector(1 downto 0);
         RegWr_out       : out    vl_logic;
+        MemWr_out       : out    vl_logic;
+        MemtoReg_out    : out    vl_logic;
         PC_out          : out    vl_logic_vector(31 downto 0);
         Target_Out      : out    vl_logic_vector(25 downto 0);
         Shamt_out       : out    vl_logic_vector(4 downto 0)

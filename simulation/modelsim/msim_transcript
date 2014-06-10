@@ -1,22 +1,38 @@
-# Reading F:/altera/12.0/modelsim_ase/tcl/vsim/pref.tcl 
+# Reading D:/ProgramFiles/altera/12.0/modelsim_ase/tcl/vsim/pref.tcl 
 # do PipelineCPU_run_msim_rtl_verilog.do 
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
 # vlib rtl_work
 # vmap work rtl_work
-# Copying f:\altera\12.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Copying D:\ProgramFiles\altera\12.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
-# ** Warning: Copied f:\altera\12.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+# ** Warning: Copied D:\ProgramFiles\altera\12.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -vlog01compat -work work +incdir+D:/archexp/lab06 {D:/archexp/lab06/Controller.v}
+# vlog -vlog01compat -work work +incdir+D:/Documents/GitRepository/colab06 {D:/Documents/GitRepository/colab06/Memory.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module Memory
+# 
+# Top level modules:
+# 	Memory
+# vlog -vlog01compat -work work +incdir+D:/Documents/GitRepository/colab06 {D:/Documents/GitRepository/colab06/Muxs.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module Y_Mux
+# -- Compiling module Mux_4Way
+# -- Compiling module Mux_8Way
+# 
+# Top level modules:
+# 	Y_Mux
+# 	Mux_4Way
+# 	Mux_8Way
+# vlog -vlog01compat -work work +incdir+D:/Documents/GitRepository/colab06 {D:/Documents/GitRepository/colab06/Controller.v}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
 # -- Compiling module Controller
 # 
 # Top level modules:
 # 	Controller
-# vlog -vlog01compat -work work +incdir+D:/archexp/lab06 {D:/archexp/lab06/ALU.v}
+# vlog -vlog01compat -work work +incdir+D:/Documents/GitRepository/colab06 {D:/Documents/GitRepository/colab06/ALU.v}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
 # -- Compiling module Op_Decoder
 # -- Compiling module Adder
@@ -27,90 +43,74 @@
 # Top level modules:
 # 	ALU_Mux
 # 	ALU
-# vlog -vlog01compat -work work +incdir+D:/archexp/lab06 {D:/archexp/lab06/Register.v}
+# vlog -vlog01compat -work work +incdir+D:/Documents/GitRepository/colab06 {D:/Documents/GitRepository/colab06/Register.v}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
 # -- Compiling module Register
 # 
 # Top level modules:
 # 	Register
-# vlog -vlog01compat -work work +incdir+D:/archexp/lab06 {D:/archexp/lab06/PipelineCPU.v}
+# vlog -vlog01compat -work work +incdir+D:/Documents/GitRepository/colab06 {D:/Documents/GitRepository/colab06/PipelineCPU.v}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
 # -- Compiling module PipelineCPU
 # 
 # Top level modules:
 # 	PipelineCPU
-# vlog -vlog01compat -work work +incdir+D:/archexp/lab06 {D:/archexp/lab06/PC_count.v}
+# vlog -vlog01compat -work work +incdir+D:/Documents/GitRepository/colab06 {D:/Documents/GitRepository/colab06/PC_count.v}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
 # -- Compiling module PC_count
 # 
 # Top level modules:
 # 	PC_count
-# vlog -vlog01compat -work work +incdir+D:/archexp/lab06 {D:/archexp/lab06/InstMem.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module InstMem
-# 
-# Top level modules:
-# 	InstMem
-# vlog -vlog01compat -work work +incdir+D:/archexp/lab06 {D:/archexp/lab06/IF_ID.v}
+# vlog -vlog01compat -work work +incdir+D:/Documents/GitRepository/colab06 {D:/Documents/GitRepository/colab06/IF_ID.v}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
 # -- Compiling module IF_ID
 # 
 # Top level modules:
 # 	IF_ID
-# vlog -vlog01compat -work work +incdir+D:/archexp/lab06 {D:/archexp/lab06/Extender.v}
+# vlog -vlog01compat -work work +incdir+D:/Documents/GitRepository/colab06 {D:/Documents/GitRepository/colab06/Extender.v}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
 # -- Compiling module Extender
 # 
 # Top level modules:
 # 	Extender
-# vlog -vlog01compat -work work +incdir+D:/archexp/lab06 {D:/archexp/lab06/ID_Ex.v}
+# vlog -vlog01compat -work work +incdir+D:/Documents/GitRepository/colab06 {D:/Documents/GitRepository/colab06/ID_Ex.v}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
 # -- Compiling module ID_Ex
 # 
 # Top level modules:
 # 	ID_Ex
-# vlog -vlog01compat -work work +incdir+D:/archexp/lab06 {D:/archexp/lab06/Mux2.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module Y_Mux
-# -- Compiling module Mux_4Way
-# -- Compiling module Mux_8Way
-# 
-# Top level modules:
-# 	Y_Mux
-# 	Mux_4Way
-# 	Mux_8Way
-# vlog -vlog01compat -work work +incdir+D:/archexp/lab06 {D:/archexp/lab06/Shifter.v}
+# vlog -vlog01compat -work work +incdir+D:/Documents/GitRepository/colab06 {D:/Documents/GitRepository/colab06/Shifter.v}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
 # -- Compiling module Shifter
 # 
 # Top level modules:
 # 	Shifter
-# vlog -vlog01compat -work work +incdir+D:/archexp/lab06 {D:/archexp/lab06/Ex_Mem.v}
+# vlog -vlog01compat -work work +incdir+D:/Documents/GitRepository/colab06 {D:/Documents/GitRepository/colab06/Ex_Mem.v}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
 # -- Compiling module Ex_Mem
 # 
 # Top level modules:
 # 	Ex_Mem
-# vlog -vlog01compat -work work +incdir+D:/archexp/lab06 {D:/archexp/lab06/PCSourceGen.v}
+# vlog -vlog01compat -work work +incdir+D:/Documents/GitRepository/colab06 {D:/Documents/GitRepository/colab06/PCSourceGen.v}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
 # -- Compiling module PCSourceGen
 # 
 # Top level modules:
 # 	PCSourceGen
-# vlog -vlog01compat -work work +incdir+D:/archexp/lab06 {D:/archexp/lab06/ControlHazard.v}
+# vlog -vlog01compat -work work +incdir+D:/Documents/GitRepository/colab06 {D:/Documents/GitRepository/colab06/Mem_Wr.v}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module ControlHazard
+# -- Compiling module Mem_Wr
 # 
 # Top level modules:
-# 	ControlHazard
-# vlog -vlog01compat -work work +incdir+D:/archexp/lab06 {D:/archexp/lab06/ForwardUnit.v}
+# 	Mem_Wr
+# vlog -vlog01compat -work work +incdir+D:/Documents/GitRepository/colab06 {D:/Documents/GitRepository/colab06/LoadProcess.v}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module ForwardUnit
+# -- Compiling module LoadProcess
 # 
 # Top level modules:
-# 	ForwardUnit
+# 	LoadProcess
 # 
-# vlog -vlog01compat -work work +incdir+D:/archexp/lab06/simulation/modelsim {D:/archexp/lab06/simulation/modelsim/PipelineCPU.vt}
+# vlog -vlog01compat -work work +incdir+D:/Documents/GitRepository/colab06/simulation/modelsim {D:/Documents/GitRepository/colab06/simulation/modelsim/PipelineCPU.vt}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
 # -- Compiling module PipelineCPU_vlg_tst
 # 
@@ -122,7 +122,6 @@
 # Loading work.PipelineCPU_vlg_tst
 # Loading work.PipelineCPU
 # Loading work.PC_count
-# Loading work.InstMem
 # Loading work.IF_ID
 # Loading work.Extender
 # Loading work.Register
@@ -135,12 +134,12 @@
 # Loading work.Leading_Counter
 # Loading work.Mux_8Way
 # Loading work.Shifter
+# Loading work.Mux_4Way
 # Loading work.Ex_Mem
 # Loading work.PCSourceGen
-# Loading work.ControlHazard
-# Loading work.ForwardUnit
-# ** Warning: (vsim-3015) D:/archexp/lab06/PipelineCPU.v(122): [PCDPC] - Port size (2 or 2) does not match connection size (3) for port 'ALUSrcB'. The port definition is at: D:/archexp/lab06/ForwardUnit.v(6).
-#         Region: /PipelineCPU_vlg_tst/i1/fw
+# Loading work.Memory
+# Loading work.LoadProcess
+# Loading work.Mem_Wr
 # 
 # add wave *
 # view structure
@@ -148,6 +147,6 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Running testbench
-# Break key hit 
-# Break in Module PipelineCPU_vlg_tst at D:/archexp/lab06/simulation/modelsim/PipelineCPU.vt line 72
+# Break in Module PipelineCPU_vlg_tst at D:/Documents/GitRepository/colab06/simulation/modelsim/PipelineCPU.vt line 75
+# Simulation Breakpoint: Break in Module PipelineCPU_vlg_tst at D:/Documents/GitRepository/colab06/simulation/modelsim/PipelineCPU.vt line 75
+# MACRO ./PipelineCPU_run_msim_rtl_verilog.do PAUSED at line 31

@@ -1,5 +1,6 @@
 module ID_Ex(
 input clk,
+input Reset,
 input [4:0]Rs_in,
 input [4:0]Rt_in,
 input [4:0]Rd_in,
@@ -41,6 +42,34 @@ output reg [25:0]Target_Out,
 output reg [4:0]Shamt_out
 );
 always @(negedge clk)
+begin
+if (Reset)
+begin
+	Rs_out<=0;
+	Rt_out<=0;
+	Rd_out<=0;
+	Rs_out_out<=0;
+	Rt_out_out<=0;
+	offset_out<=0;
+	RegDst_out<=0;
+	Shift_amountSrc_out<=0;
+	Jump_out<=0;
+	ALUShift_Sel_out<=0;
+	RegDt0_out<=0;
+	ALU_op_out<=0;
+	Shift_op_out<=0;
+	ALUSrcB_out<=0;
+	Condition_out<=0;
+	PC_out<=0;
+	Target_Out<=0;
+	Shamt_out<=0;
+	LoadType_out<=0;
+	LoadByte_out<=0;
+	RegWr_out<=0;
+	MemWr_out<=0;
+	MemtoReg_out<=0;
+end
+else
 begin 
 	Rs_out<=Rs_in;
 	Rt_out<=Rt_in;
@@ -65,5 +94,6 @@ begin
 	RegWr_out<=RegWr_in;
 	MemWr_out<=MemWr_in;
 	MemtoReg_out<=MemtoReg_in;
-end 
+end
+end
 endmodule

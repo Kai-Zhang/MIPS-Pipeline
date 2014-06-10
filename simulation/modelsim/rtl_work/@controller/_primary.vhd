@@ -17,6 +17,9 @@ entity Controller is
         Shift_op        : out    vl_logic_vector(1 downto 0);
         ALUSrcB         : out    vl_logic_vector(1 downto 0);
         condition       : out    vl_logic_vector(2 downto 0);
-        RegWr           : out    vl_logic
+        LoadType        : out    vl_logic_vector(1 downto 0);
+        RegWr           : out    vl_logic;
+        MemWr           : out    vl_logic;
+        MemtoReg        : out    vl_logic
     );
 end Controller;

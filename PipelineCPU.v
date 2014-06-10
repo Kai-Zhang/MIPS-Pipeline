@@ -17,9 +17,9 @@ assign PCP4_IF=PC+4;
 assign NextPC=(PCSource==2'b0)?PCP4_IF:(PCSource==2'b01)?PC_branch:PC_jump;
 wire [31:0]Inst_IF;
 //IF Register
-PC_count pc(clk,keep,NextPC,PC);
+PC_count pc(clk,Keep,NextPC,PC);
 //IF
-wire Reset_IF_ID,Keep_IF_ID,Reset_IF_Ex,Keep_IF_Ex;
+wire Reset_IF_ID,Keep_IF_ID,Reset_ID_Ex,Keep_ID_Ex,Reset_Ex_Mem,Keep_Ex_Mem,Reset_Mem_Wr,Keep_Mem_Wr;
 wire [31:0]PCP4_ID,PCP4_Ex;
 wire [31:0]Inst_ID,Inst_Ex;
 IF_ID IF_ID_Reg(clk,Reset_IF_ID,Keep_IF_ID,PCP4_IF,Inst_IF,PCP4_ID,Inst_ID);
@@ -53,7 +53,7 @@ assign Target_ID=Inst_ID[25:0];
 assign LoadAddr=offset_ID+PCP4_ID;
 assign LoadByte_ID=LoadAddr[1:0];
 //assign Rd_write_by_en=Rd_write_by_en_Mem;
-Extender extend(Ex_top_ID,offset,offset_ID);
+Extender extend(Ext_op_ID,offset,offset_ID);
 Register register(clk,Rs_ID,Rt_ID,Rd_Wr,Rd_in,RegWr_Wr,Rd_write_by_en_Wr,Rs_out_ID,Rt_out_ID);
 //Control Part
 wire [3:0]ALU_op_ID,ALU_op_Ex;
@@ -67,12 +67,12 @@ wire RegDst_ID,RegDst_Ex;
 wire Jump_ID,Jump_Ex,Jump_Mem;
 wire RegDt0_ID,RegDt0_Ex;
 wire [2:0]Condition_ID,Condition_Ex,Condition_Mem;
-Controller control(op,func,Shamt_ID,Rs_ID,Rt_ID,Ext_op_ID,RegDst_ID,Shift_amountSrc_ID,Jump_ID,ALUShift_Sel_ID,Regdt0_ID,
+Controller control(op,func,Shamt_ID,Rs_ID,Rt_ID,Ext_op_ID,RegDst_ID,Shift_amountSrc_ID,Jump_ID,ALUShift_Sel_ID,RegDt0_ID,
 ALU_op_ID,Shift_op_ID,ALUSrcB_ID,Condition_ID,LoadType_ID,RegWr_ID,MemWr_ID,MemtoReg_ID);
 
-ID_Ex ID_Ex_Reg(clk,Rs_ID,Rt_ID,Rd_ID,Rs_out_ID,Rt_out_ID,offset_ID,RegDst_ID,Shift_amountSrc_ID,Jump_ID,ALUShift_Sel_ID,Regdt0_ID,
+ID_Ex ID_Ex_Reg(clk,Reset_ID_Ex,Rs_ID,Rt_ID,Rd_ID,Rs_out_ID,Rt_out_ID,offset_ID,RegDst_ID,Shift_amountSrc_ID,Jump_ID,ALUShift_Sel_ID,RegDt0_ID,
 ALU_op_ID,Shift_op_ID,ALUSrcB_ID,Condition_ID,LoadType_ID,LoadByte_ID,RegWr_ID,MemWr_ID,MemtoReg_ID,PCP4_ID,Target_ID,Shamt_ID,
-Rs_Ex,Rt_Ex,Rd_Ex,Rs_out_Ex,Rt_out_Ex,offset_Ex,RegDst_Ex,Shift_amountSrc_Ex,Jump_Ex,ALUShift_Sel_Ex,Regdt0_Ex,ALU_op_Ex,
+Rs_Ex,Rt_Ex,Rd_Ex,Rs_out_Ex,Rt_out_Ex,offset_Ex,RegDst_Ex,Shift_amountSrc_Ex,Jump_Ex,ALUShift_Sel_Ex,RegDt0_Ex,ALU_op_Ex,
 Shift_op_Ex,ALUSrcB_Ex,Condition_Ex,LoadType_Ex,LoadByte_Ex,RegWr_Ex,MemWr_Ex,MemtoReg_Ex,PCP4_Ex,Target_Ex,Shamt_Ex);
 
 //Ex Part
@@ -80,7 +80,7 @@ wire [31:0]PC_Ex,PC_jump_Ex,PC_jump_Mem,PC_branch_Ex,PC_branch_Mem;
 wire [31:0]A,B,ALU_out,Shift_out,ALUShift_out_Ex,ALUShift_out_Mem,ALUShift_out_Wr;
 wire Zero,Zero_Ex,Zero_Mem,Overflow,Overflow_Ex,Overflow_Mem,Overflow_Wr,Less,Less_Ex,Less_Mem;
 wire [4:0]Shift_amount;
-wire [2:0]ALUSrcB;
+wire [1:0]ALUSrcB;
 wire [31:0]Result_out;
 assign PC_Ex=PCP4_Ex-4;
 assign PC_jump_Ex={PC_Ex[31:28],Target_Ex,2'b0};
@@ -103,14 +103,14 @@ assign Zero_Ex=Zero;
 wire [31:0]Din_Mem;
 wire [31:0]Data_Mem,Dout_Mem,Dout_Wr;
 assign Din_Mem=Rd_Mem;
-Ex_Mem Ex_mem_Reg(clk,Reset,PC_branch_Ex,PC_jump_Ex,ALUShift_out_Ex,Jump_Ex,Less_Ex,Zero_Ex,Overflow_Ex,Condition_Ex,
+Ex_Mem Ex_mem_Reg(clk,Reset_Mem_Wr,PC_branch_Ex,PC_jump_Ex,ALUShift_out_Ex,Jump_Ex,Less_Ex,Zero_Ex,Overflow_Ex,Condition_Ex,
 LoadType_Ex,LoadByte_Ex,RegWr_Ex,MemWr_Ex,MemtoReg_Ex,Rd_Ex,PC_branch_Mem,PC_jump_Mem,ALUShift_out_Mem,
 Jump_Mem,Less_Mem,Zero_Mem,Overflow_Mem,Condition_Mem,LoadType_Mem,LoadByte_Mem,RegWr_Mem,MemWr_Mem,MemtoReg_Mem,Rd_Mem);
 PCSourceGen PCSrc(PC_branch_Mem,PC_jump_Mem,Condition_Mem,Less_Mem,Zero_Mem,Jump_Mem,PCSource,PC_branch,PC_jump);
 Memory Instr_Data_Mem(MemWr_Mem,PC,ALUShift_out_Mem,Din_Mem,Inst_IF,Data_Mem);
 LoadProcess loadproc (RegWr_Mem,Data_Mem,LoadType_Mem,LoadByte_Mem,Dout_Mem,Rd_write_by_en_Mem);
 //Mem_Wr Reg
-Mem_Wr Mem_Wr_Reg(clk,Reset,ALUShift_out_Mem,Dout_Mem,Rd_write_by_en_Mem,Overflow_Mem,RegWr_Mem,MemtoReg_Mem,Rd_Mem,
+Mem_Wr Mem_Wr_Reg(clk,Reset_Mem_Wr,ALUShift_out_Mem,Dout_Mem,Rd_write_by_en_Mem,Overflow_Mem,RegWr_Mem,MemtoReg_Mem,Rd_Mem,
 ALUShift_out_Wr,Rd_write_by_en_Wr,Dout_Wr,Overflow_Wr,RegWr_Wr,MemtoReg_Wr,Rd_Wr);
 
 //Wr Part
@@ -125,7 +125,7 @@ assign B_in_out=B;
 assign Shift_out_out=Shift_out;
 assign Rs_out_out=Rs_out_Ex;
 assign Rt_out_out=Rt_out_Ex;
-ControlHazard ch(Keep,Reset);
+//ControlHazard ch(Keep,Reset);
 ForwardUnit fw(Rs_Ex,Rt_Ex,Rd_Mem,Rd_Wr,RegWr_Mem,RegWr_Wr,ALUSrcB_Ex,ALUSrcA,ALUSrcB);
 
 endmodule
