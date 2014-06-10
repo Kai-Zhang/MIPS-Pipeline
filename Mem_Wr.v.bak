@@ -1,0 +1,24 @@
+module Mem_Wr(
+	input Clk,
+	input [31:0] Result_in, Data_in,
+	input [4:0] rw_in,
+	input  EN0_in, EN1_in, EN2_in, EN3_in, MemtoReg_in, Overflow_in, RegWr_in,
+	output reg [31:0] Result_out, Data_out,
+	output reg [4:0] rw_out,
+	output reg EN0_out, EN1_out, EN2_out, EN3_out, MemtoReg_out, Overflow_out, RegWr_out 
+	);
+
+	always @(posedge Clk)
+	begin
+		Result_out <= Result_in;
+		Data_out <= Data_in;
+		rw_out <= rw_in;
+		EN0_out <= EN0_in;
+		EN1_out <= EN1_in;
+		EN2_out <= EN2_in;
+		EN3_out <= EN3_in;
+		MemtoReg_out <= MemtoReg_in;
+		Overflow_out <= Overflow_in;
+		RegWr_out <= RegWr_in;	
+	end
+endmodule

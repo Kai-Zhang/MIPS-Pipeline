@@ -5,7 +5,8 @@ module Controller (
 	output reg [3:0] ALU_op,
 	output reg [1:0] Shift_op, ALUSrcB,
 	output reg [2:0] condition,
-	output reg RegWr
+	output reg [1:0] LoadType,
+	output reg RegWr, MemWr, MemtoReg
 );
 
 	always @ (*)
@@ -26,7 +27,10 @@ module Controller (
 						Ext_op=1'b0;
 						Shift_amountSrc=1'b0;
 						Shift_op=2'b0;
+						LoadType=2'b00;
 						RegWr=1'b1;
+						MemWr=1'b0;
+						MemtoReg=1'b0;
 					end
 					6'b100010:
 					begin
@@ -40,7 +44,10 @@ module Controller (
 						Ext_op=1'b0;
 						Shift_amountSrc=1'b0;
 						Shift_op=2'b0;
+						LoadType=2'b00;
 						RegWr=1'b1;
+						MemWr=1'b0;
+						MemtoReg=1'b0;
 					end
 					6'b100011:
 					begin
@@ -54,7 +61,10 @@ module Controller (
 						Ext_op=1'b0;
 						Shift_amountSrc=1'b0;
 						Shift_op=2'b0;
+						LoadType=2'b00;
 						RegWr=1'b1;
+						MemWr=1'b0;
+						MemtoReg=1'b0;
 					end
 					6'b000111:
 					begin
@@ -68,7 +78,10 @@ module Controller (
 						condition = 3'd0;
 						RegDt0 = 1'b0;
 						Ext_op=1'b0;
+						LoadType=2'b00;
 						RegWr=1'b1;
+						MemWr=1'b0;
+						MemtoReg=1'b0;
 					end
 					6'b000010:
 					begin
@@ -82,7 +95,10 @@ module Controller (
 						condition = 3'd0;
 						RegDt0 = 1'b0;
 						Ext_op=1'b0;
+						LoadType=2'b00;
 						RegWr=1'b1;
+						MemWr=1'b0;
+						MemtoReg=1'b0;
 					end
 					6'b101011:
 					begin
@@ -96,7 +112,10 @@ module Controller (
 						condition = 3'd0;
 						RegDt0 = 1'b0;
 						Ext_op=1'b0;
+						LoadType=2'b00;
 						RegWr=1'b1;
+						MemWr=1'b0;
+						MemtoReg=1'b0;
 					end
 					default:
 					begin
@@ -110,7 +129,10 @@ module Controller (
 						condition = 3'd0;
 						RegDt0=1'b0;
 						Ext_op=1'b0;
+						LoadType=2'b00;
 						RegWr=1'b0;
+						MemWr=1'b0;
+						MemtoReg=1'b0;
 					end
 				endcase
 			end
@@ -126,7 +148,10 @@ module Controller (
 				condition = 3'd3;
 				RegDt0 = 1'b1;
 				Ext_op = 1'b1;
+				LoadType=2'b00;
 				RegWr=1'b1;
+				MemWr=1'b0;
+				MemtoReg=1'b0;
 			end
 			6'b000010:
 			begin
@@ -140,7 +165,10 @@ module Controller (
 				condition = 3'd0;
 				RegDt0 = 1'b0;
 				Ext_op = 1'b0;
+				LoadType=2'b00;
 				RegWr=1'b1;
+				MemWr=1'b0;
+				MemtoReg=1'b0;
 			end
 			6'b001000:
 			begin
@@ -154,7 +182,10 @@ module Controller (
 				condition = 3'd0;
 				RegDt0 = 1'b0;
 				Ext_op = 1'b1;
+				LoadType=2'b00;
 				RegWr=1'b1;
+				MemWr=1'b0;
+				MemtoReg=1'b0;
 			end
 			6'b001001:
 			begin
@@ -168,7 +199,10 @@ module Controller (
 				condition = 3'd0;
 				RegDt0 = 1'b0;
 				Ext_op = 1'b1;
+				LoadType=2'b00;
 				RegWr=1'b1;
+				MemWr=1'b0;
+				MemtoReg=1'b0;
 			end
 			6'b001010:
 			begin
@@ -182,7 +216,10 @@ module Controller (
 				condition = 3'd0;
 				RegDt0 = 1'b0;
 				Ext_op = 1'b1;
+				LoadType=2'b00;
 				RegWr=1'b1;
+				MemWr=1'b0;
+				MemtoReg=1'b0;
 			end
 			6'b001110:
 			begin
@@ -196,7 +233,10 @@ module Controller (
 				condition = 3'd0;
 				RegDt0 = 1'b0;
 				Ext_op = 1'b0;
+				LoadType=2'b00;
 				RegWr=1'b1;
+				MemWr=1'b0;
+				MemtoReg=1'b0;
 			end
 			6'b001111:
 			begin
@@ -210,7 +250,10 @@ module Controller (
 				condition = 3'd0;
 				RegDt0 = 1'b0;
 				Ext_op = 1'b0;
+				LoadType=2'b00;
 				RegWr=1'b1;
+				MemWr=1'b0;
+				MemtoReg=1'b0;
 			end
 			6'b011100:
 			begin
@@ -227,7 +270,10 @@ module Controller (
 						condition = 3'd0;
 						RegDt0=1'b0;
 						Ext_op=1'b0;
+						LoadType=2'b00;
 						RegWr=1'b1;
+						MemWr=1'b0;
+						MemtoReg=1'b0;
 					end
 					6'b100000:
 					begin
@@ -241,7 +287,10 @@ module Controller (
 						condition = 3'd0;
 						RegDt0=1'b0;
 						Ext_op=1'b0;
+						LoadType=2'b00;
 						RegWr=1'b1;
+						MemWr=1'b0;
+						MemtoReg=1'b0;
 					end
 					default:
 					begin
@@ -255,7 +304,10 @@ module Controller (
 						condition = 3'd0;
 						RegDt0=1'b0;
 						Ext_op=1'b0;
+						LoadType=2'b00;
 						RegWr=1'b1;
+						MemWr=1'b0;
+						MemtoReg=1'b0;
 					end
 				endcase
 			end
@@ -271,7 +323,10 @@ module Controller (
 				condition = 3'd0;
 				RegDt0=1'b0;
 				Ext_op = 1'b1;
+				LoadType=2'b00;
 				RegWr=1'b1;
+				MemWr=1'b0;
+				MemtoReg=1'b0;
 			end
 			6'b100011:
 			begin
@@ -285,7 +340,44 @@ module Controller (
 				condition = 3'd0;
 				RegDt0 = 1'b0;
 				Ext_op = 1'b1;
-				RegWr = 1'b0;
+				LoadType=2'b10;
+				RegWr = 1'b1;
+				MemWr=1'b0;
+				MemtoReg=1'b1;
+			end
+			6'b100010:
+			begin
+				ALUSrcB = 2'd0;
+				ALU_op = 4'b1110;
+				RegDst = 1'b0;
+				Jump = 1'b0;
+				Shift_amountSrc=1'b0;
+				Shift_op=2'b0;
+				ALU_Shift_Sel = 1'b0;
+				condition = 3'd0;
+				RegDt0 = 1'b0;
+				Ext_op = 1'b1;
+				LoadType=2'b01;
+				RegWr = 1'b1;
+				MemWr=1'b0;
+				MemtoReg=1'b1;
+			end
+			6'b100110:
+			begin
+				ALUSrcB = 2'd0;
+				ALU_op = 4'b1110;
+				RegDst = 1'b0;
+				Jump = 1'b0;
+				Shift_amountSrc=1'b0;
+				Shift_op=2'b0;
+				ALU_Shift_Sel = 1'b0;
+				condition = 3'd0;
+				RegDt0 = 1'b0;
+				Ext_op = 1'b1;
+				LoadType=2'b11;
+				RegWr = 1'b1;
+				MemWr=1'b0;
+				MemtoReg=1'b1;
 			end
 			6'b101011:
 			begin
@@ -299,7 +391,10 @@ module Controller (
 				condition = 3'd0;
 				RegDt0 = 1'b0;
 				Ext_op = 1'b1;
-				RegWr=1'b1;
+				LoadType=2'b00;
+				RegWr=1'b0;
+				MemWr=1'b1;
+				MemtoReg=1'b0;
 			end
 			default:
 			begin
@@ -313,7 +408,10 @@ module Controller (
 				condition = 3'd0;
 				RegDt0=1'b0;
 				Ext_op=1'b0;
+				LoadType=2'b00;
 				RegWr=1'b0;
+				MemWr=1'b0;
+				MemtoReg=1'b0;
 			end
 		endcase
 	end

@@ -15,7 +15,8 @@ input [3:0]ALU_op_in,
 input [1:0]Shift_op_in,
 input [1:0]ALUSrcB_in,
 input [2:0]Condition_in,
-input RegWr_in,
+input [1:0]LoadType_in,LoadByte_in,
+input RegWr_in,MemWr_in,MemtoReg_in,
 input [31:0]PC_in,
 input [25:0]Target_in,
 input [4:0]Shamt_in,
@@ -33,7 +34,8 @@ output reg[3:0]ALU_op_out,
 output reg [1:0]Shift_op_out,
 output reg [1:0]ALUSrcB_out,
 output reg [2:0]Condition_out,
-output reg RegWr_out,
+output reg [1:0]LoadType_out,LoadByte_out,
+output reg RegWr_out,MemWr_out,MemtoReg_out,
 output reg [31:0]PC_out,
 output reg [25:0]Target_Out,
 output reg [4:0]Shamt_out
@@ -58,5 +60,10 @@ begin
 	PC_out<=PC_in;
 	Target_Out<=Target_in;
 	Shamt_out<=Shamt_in;
+	LoadType_out<=LoadType_in;
+	LoadByte_out<=LoadByte_in;
+	RegWr_out<=RegWr_in;
+	MemWr_out<=MemWr_in;
+	MemtoReg_out<=MemtoReg_in;
 end 
 endmodule

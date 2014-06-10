@@ -1,6 +1,8 @@
-module InstMem(
-input [31:0]Addr,
-output [31:0]Inst
+module Memory(
+input Mem_Wr_en,
+input [31:0]Instr_Addr, Data_Addr,
+input [31:0]Din,
+output [31:0]Inst, Dout
 );
 reg [7:0] ram[32:0];
 integer i;
@@ -15,5 +17,8 @@ for (i=0;i<32;i=i+1)
 //addiu R3=R1+4 R3应等于80000002 无溢出，存入R3
 {ram[11],ram[10],ram[9],ram[8]}=32'b00100100001000110000000000000100;
 end 
-assign Inst={ram[Addr+3],ram[Addr+2],ram[Addr+1],ram[Addr]};
+assign {ram[Data_Addr+3],ram[Data_Addr+2],ram[Data_Addr+1],ram[Data_Addr]}=
+(Mem_Wr_en==1)?Din:{ram[Data_Addr+3],ram[Data_Addr+2],ram[Data_Addr+1],ram[Data_Addr]};
+assign Inst={ram[Instr_Addr+3],ram[Instr_Addr+2],ram[Instr_Addr+1],ram[Instr_Addr]};
+assign Dout={ram[Data_Addr+3],ram[Data_Addr+2],ram[Data_Addr+1],ram[Data_Addr]};
 endmodule

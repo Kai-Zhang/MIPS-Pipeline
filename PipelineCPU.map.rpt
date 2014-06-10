@@ -1,6 +1,6 @@
 Analysis & Synthesis report for PipelineCPU
-Mon Jun 09 21:12:51 2014
-Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
+Wed Jun 11 00:04:28 2014
+Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
 ---------------------
@@ -14,27 +14,42 @@ Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Registers Packed Into Inferred Megafunctions
- 14. Source assignments for Register:register|altsyncram:register_rtl_0|altsyncram_7g02:auto_generated
- 15. Parameter Settings for User Entity Instance: ALU:alu|Y_Mux:less_mux
- 16. Parameter Settings for User Entity Instance: ALU:alu|Y_Mux:se_mux
- 17. Parameter Settings for User Entity Instance: ALU:alu|Y_Mux:slt_mux
- 18. Parameter Settings for User Entity Instance: ALU:alu|Mux_8Way:rst_mux
- 19. Parameter Settings for Inferred Entity Instance: Register:register|altsyncram:register_rtl_0
- 20. altsyncram Parameter Settings by Entity Instance
- 21. Port Connectivity Checks: "ForwardUnit:fw"
- 22. Port Connectivity Checks: "ControlHazard:ch"
- 23. Port Connectivity Checks: "Ex_Mem:Ex_mem_Reg"
- 24. Port Connectivity Checks: "ALU:alu|Y_Mux:slt_mux"
- 25. Port Connectivity Checks: "ID_Ex:ID_Ex_Reg"
- 26. Port Connectivity Checks: "Controller:control"
- 27. Elapsed Time Per Partition
- 28. Analysis & Synthesis Messages
- 29. Analysis & Synthesis Suppressed Messages
+  9. Logic Cells Representing Combinational Loops
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Registers Packed Into Inferred Megafunctions
+ 15. Source assignments for Register:register|altsyncram:register_rtl_0|altsyncram_7g02:auto_generated
+ 16. Parameter Settings for User Entity Instance: ALU:alu|Y_Mux:less_mux
+ 17. Parameter Settings for User Entity Instance: ALU:alu|Y_Mux:se_mux
+ 18. Parameter Settings for User Entity Instance: ALU:alu|Y_Mux:slt_mux
+ 19. Parameter Settings for User Entity Instance: ALU:alu|Mux_8Way:rst_mux
+ 20. Parameter Settings for User Entity Instance: Shifter:shifter|Mux_4Way:header
+ 21. Parameter Settings for User Entity Instance: Shifter:shifter|Mux_4Way:layer0
+ 22. Parameter Settings for User Entity Instance: Shifter:shifter|Mux_4Way:layer1
+ 23. Parameter Settings for User Entity Instance: Shifter:shifter|Mux_4Way:layer2
+ 24. Parameter Settings for User Entity Instance: Shifter:shifter|Mux_4Way:layer3
+ 25. Parameter Settings for User Entity Instance: Shifter:shifter|Mux_4Way:layer4
+ 26. Parameter Settings for Inferred Entity Instance: Register:register|altsyncram:register_rtl_0
+ 27. altsyncram Parameter Settings by Entity Instance
+ 28. Port Connectivity Checks: "ForwardUnit:fw"
+ 29. Port Connectivity Checks: "ControlHazard:ch"
+ 30. Port Connectivity Checks: "Mem_Wr:Mem_Wr_Reg"
+ 31. Port Connectivity Checks: "Memory:Instr_Data_Mem"
+ 32. Port Connectivity Checks: "Ex_Mem:Ex_mem_Reg"
+ 33. Port Connectivity Checks: "Shifter:shifter|Mux_4Way:layer4"
+ 34. Port Connectivity Checks: "Shifter:shifter|Mux_4Way:layer3"
+ 35. Port Connectivity Checks: "Shifter:shifter|Mux_4Way:layer2"
+ 36. Port Connectivity Checks: "Shifter:shifter|Mux_4Way:layer1"
+ 37. Port Connectivity Checks: "Shifter:shifter|Mux_4Way:layer0"
+ 38. Port Connectivity Checks: "Shifter:shifter|Mux_4Way:header"
+ 39. Port Connectivity Checks: "ALU:alu|Y_Mux:slt_mux"
+ 40. Port Connectivity Checks: "ID_Ex:ID_Ex_Reg"
+ 41. Port Connectivity Checks: "Controller:control"
+ 42. Elapsed Time Per Partition
+ 43. Analysis & Synthesis Messages
+ 44. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -60,8 +75,8 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 09 21:12:51 2014     ;
-; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 11 00:04:28 2014     ;
+; Quartus II 32-bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; PipelineCPU                               ;
 ; Top-level Entity Name              ; PipelineCPU                               ;
 ; Family                             ; Cyclone II                                ;
@@ -165,50 +180,52 @@ applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     1 processor            ; 100.0%      ;
-;     2-8 processors         ;   0.0%      ;
+;     2-4 processors         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                   ;
-+-----------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path              ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                         ; Library ;
-+-----------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------+---------+
-; Controller.v                                  ; yes             ; User Verilog HDL File                                 ; D:/archexp/lab06/Controller.v                                        ;         ;
-; ALU.v                                         ; yes             ; User Verilog HDL File                                 ; D:/archexp/lab06/ALU.v                                               ;         ;
-; Register.v                                    ; yes             ; User Verilog HDL File                                 ; D:/archexp/lab06/Register.v                                          ;         ;
-; PipelineCPU.v                                 ; yes             ; User Verilog HDL File                                 ; D:/archexp/lab06/PipelineCPU.v                                       ;         ;
-; PC_count.v                                    ; yes             ; User Verilog HDL File                                 ; D:/archexp/lab06/PC_count.v                                          ;         ;
-; InstMem.v                                     ; yes             ; User Verilog HDL File                                 ; D:/archexp/lab06/InstMem.v                                           ;         ;
-; IF_ID.v                                       ; yes             ; User Verilog HDL File                                 ; D:/archexp/lab06/IF_ID.v                                             ;         ;
-; Extender.v                                    ; yes             ; User Verilog HDL File                                 ; D:/archexp/lab06/Extender.v                                          ;         ;
-; ID_Ex.v                                       ; yes             ; User Verilog HDL File                                 ; D:/archexp/lab06/ID_Ex.v                                             ;         ;
-; Mux2.v                                        ; yes             ; User Verilog HDL File                                 ; D:/archexp/lab06/Mux2.v                                              ;         ;
-; Shifter.v                                     ; yes             ; User Verilog HDL File                                 ; D:/archexp/lab06/Shifter.v                                           ;         ;
-; Ex_Mem.v                                      ; yes             ; User Verilog HDL File                                 ; D:/archexp/lab06/Ex_Mem.v                                            ;         ;
-; PCSourceGen.v                                 ; yes             ; User Verilog HDL File                                 ; D:/archexp/lab06/PCSourceGen.v                                       ;         ;
-; ControlHazard.v                               ; yes             ; User Verilog HDL File                                 ; D:/archexp/lab06/ControlHazard.v                                     ;         ;
-; ForwardUnit.v                                 ; yes             ; User Verilog HDL File                                 ; D:/archexp/lab06/ForwardUnit.v                                       ;         ;
-; altsyncram.tdf                                ; yes             ; Megafunction                                          ; f:/altera/12.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc                         ; yes             ; Megafunction                                          ; f:/altera/12.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                                   ; yes             ; Megafunction                                          ; f:/altera/12.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                                ; yes             ; Megafunction                                          ; f:/altera/12.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal120.inc                                ; yes             ; Megafunction                                          ; f:/altera/12.0/quartus/libraries/megafunctions/aglobal120.inc        ;         ;
-; a_rdenreg.inc                                 ; yes             ; Megafunction                                          ; f:/altera/12.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                                    ; yes             ; Megafunction                                          ; f:/altera/12.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                                    ; yes             ; Megafunction                                          ; f:/altera/12.0/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                                  ; yes             ; Megafunction                                          ; f:/altera/12.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_7g02.tdf                        ; yes             ; Auto-Generated Megafunction                           ; D:/archexp/lab06/db/altsyncram_7g02.tdf                              ;         ;
-; db/pipelinecpu.ram0_register_b87da43c.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/archexp/lab06/db/pipelinecpu.ram0_register_b87da43c.hdl.mif       ;         ;
-+-----------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                ;
++-----------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path              ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                      ; Library ;
++-----------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------+---------+
+; Memory.v                                      ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/Memory.v                                       ;         ;
+; Muxs.v                                        ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/Muxs.v                                         ;         ;
+; Controller.v                                  ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/Controller.v                                   ;         ;
+; ALU.v                                         ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/ALU.v                                          ;         ;
+; Register.v                                    ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/Register.v                                     ;         ;
+; PipelineCPU.v                                 ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/PipelineCPU.v                                  ;         ;
+; PC_count.v                                    ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/PC_count.v                                     ;         ;
+; IF_ID.v                                       ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/IF_ID.v                                        ;         ;
+; Extender.v                                    ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/Extender.v                                     ;         ;
+; ID_Ex.v                                       ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/ID_Ex.v                                        ;         ;
+; Shifter.v                                     ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/Shifter.v                                      ;         ;
+; Ex_Mem.v                                      ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/Ex_Mem.v                                       ;         ;
+; PCSourceGen.v                                 ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/PCSourceGen.v                                  ;         ;
+; ControlHazard.v                               ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/ControlHazard.v                                ;         ;
+; ForwardUnit.v                                 ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/ForwardUnit.v                                  ;         ;
+; Mem_Wr.v                                      ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/Mem_Wr.v                                       ;         ;
+; LoadProcess.v                                 ; yes             ; User Verilog HDL File                                 ; D:/Documents/GitRepository/colab06/LoadProcess.v                                  ;         ;
+; altsyncram.tdf                                ; yes             ; Megafunction                                          ; d:/programfiles/altera/12.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc                         ; yes             ; Megafunction                                          ; d:/programfiles/altera/12.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                                   ; yes             ; Megafunction                                          ; d:/programfiles/altera/12.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                                ; yes             ; Megafunction                                          ; d:/programfiles/altera/12.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal120.inc                                ; yes             ; Megafunction                                          ; d:/programfiles/altera/12.0/quartus/libraries/megafunctions/aglobal120.inc        ;         ;
+; a_rdenreg.inc                                 ; yes             ; Megafunction                                          ; d:/programfiles/altera/12.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                                    ; yes             ; Megafunction                                          ; d:/programfiles/altera/12.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                                    ; yes             ; Megafunction                                          ; d:/programfiles/altera/12.0/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                                  ; yes             ; Megafunction                                          ; d:/programfiles/altera/12.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_7g02.tdf                        ; yes             ; Auto-Generated Megafunction                           ; D:/Documents/GitRepository/colab06/db/altsyncram_7g02.tdf                         ;         ;
+; db/PipelineCPU.ram0_Register_b87da43c.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/Documents/GitRepository/colab06/db/PipelineCPU.ram0_Register_b87da43c.hdl.mif  ;         ;
++-----------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -267,171 +284,258 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+-----------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                          ;
-+--------------------------------------------+------------------------------------------------+
-; Register name                              ; Reason for Removal                             ;
-+--------------------------------------------+------------------------------------------------+
-; ID_Ex:ID_Ex_Reg|Rs_out[0..4]               ; Lost fanout                                    ;
-; ID_Ex:ID_Ex_Reg|Rt_out[0..4]               ; Lost fanout                                    ;
-; Ex_Mem:Ex_mem_Reg|Rd_out[4]                ; Lost fanout                                    ;
-; ID_Ex:ID_Ex_Reg|Rd_out[4]                  ; Lost fanout                                    ;
-; Ex_Mem:Ex_mem_Reg|Rd_out[3]                ; Lost fanout                                    ;
-; ID_Ex:ID_Ex_Reg|Rd_out[3]                  ; Lost fanout                                    ;
-; Ex_Mem:Ex_mem_Reg|Rd_out[2]                ; Lost fanout                                    ;
-; ID_Ex:ID_Ex_Reg|Rd_out[2]                  ; Lost fanout                                    ;
-; Ex_Mem:Ex_mem_Reg|Rd_out[1]                ; Lost fanout                                    ;
-; ID_Ex:ID_Ex_Reg|Rd_out[1]                  ; Lost fanout                                    ;
-; Ex_Mem:Ex_mem_Reg|Rd_out[0]                ; Lost fanout                                    ;
-; ID_Ex:ID_Ex_Reg|Rd_out[0]                  ; Lost fanout                                    ;
-; Ex_Mem:Ex_mem_Reg|PC_Jump_out[0,1]         ; Stuck at GND due to stuck port data_in         ;
-; ID_Ex:ID_Ex_Reg|Condition_out[2]           ; Stuck at GND due to stuck port data_in         ;
-; Ex_Mem:Ex_mem_Reg|Rd_write_by_en_out[0..3] ; Lost fanout                                    ;
-; Ex_Mem:Ex_mem_Reg|Condition_out[2]         ; Stuck at GND due to stuck port data_in         ;
-; ID_Ex:ID_Ex_Reg|offset_out[16..31]         ; Stuck at GND due to stuck port data_in         ;
-; ID_Ex:ID_Ex_Reg|Target_Out[6]              ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[0]       ;
-; ID_Ex:ID_Ex_Reg|offset_out[6]              ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[0]       ;
-; ID_Ex:ID_Ex_Reg|Target_Out[7]              ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[1]       ;
-; ID_Ex:ID_Ex_Reg|offset_out[7]              ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[1]       ;
-; ID_Ex:ID_Ex_Reg|Target_Out[8]              ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[2]       ;
-; ID_Ex:ID_Ex_Reg|offset_out[8]              ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[2]       ;
-; ID_Ex:ID_Ex_Reg|Target_Out[9]              ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[3]       ;
-; ID_Ex:ID_Ex_Reg|offset_out[9]              ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[3]       ;
-; ID_Ex:ID_Ex_Reg|Target_Out[10]             ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[4]       ;
-; ID_Ex:ID_Ex_Reg|offset_out[10]             ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[4]       ;
-; ID_Ex:ID_Ex_Reg|offset_out[0]              ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[0]      ;
-; ID_Ex:ID_Ex_Reg|offset_out[1]              ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[1]      ;
-; ID_Ex:ID_Ex_Reg|offset_out[2]              ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[2]      ;
-; ID_Ex:ID_Ex_Reg|offset_out[3]              ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[3]      ;
-; ID_Ex:ID_Ex_Reg|offset_out[4]              ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[4]      ;
-; ID_Ex:ID_Ex_Reg|offset_out[5]              ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[5]      ;
-; ID_Ex:ID_Ex_Reg|offset_out[11]             ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[11]     ;
-; ID_Ex:ID_Ex_Reg|offset_out[12]             ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[12]     ;
-; ID_Ex:ID_Ex_Reg|offset_out[13]             ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[13]     ;
-; ID_Ex:ID_Ex_Reg|offset_out[14]             ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[14]     ;
-; ID_Ex:ID_Ex_Reg|offset_out[15]             ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[15]     ;
-; ID_Ex:ID_Ex_Reg|Condition_out[1]           ; Merged with ID_Ex:ID_Ex_Reg|Condition_out[0]   ;
-; Ex_Mem:Ex_mem_Reg|Condition_out[1]         ; Merged with Ex_Mem:Ex_mem_Reg|Condition_out[0] ;
-; Ex_Mem:Ex_mem_Reg|PC_Branch_out[1]         ; Merged with Ex_Mem:Ex_mem_Reg|PC_Branch_out[0] ;
-; ID_Ex:ID_Ex_Reg|PC_out[1]                  ; Merged with ID_Ex:ID_Ex_Reg|PC_out[0]          ;
-; ID_Ex:ID_Ex_Reg|Shift_op_out[1]            ; Merged with ID_Ex:ID_Ex_Reg|ALUShift_Sel_out   ;
-; IF_ID:IF_ID_Reg|PCP4_out[1]                ; Merged with IF_ID:IF_ID_Reg|PCP4_out[0]        ;
-; PC_count:pc|PC[1]                          ; Merged with PC_count:pc|PC[0]                  ;
-; PC_count:pc|PC[0]                          ; Stuck at GND due to stuck port data_in         ;
-; IF_ID:IF_ID_Reg|PCP4_out[0]                ; Stuck at GND due to stuck port data_in         ;
-; ID_Ex:ID_Ex_Reg|PC_out[0]                  ; Stuck at GND due to stuck port data_in         ;
-; Ex_Mem:Ex_mem_Reg|PC_Branch_out[0]         ; Stuck at GND due to stuck port data_in         ;
-; IF_ID:IF_ID_Reg|Inst_out[0..31]            ; Stuck at GND due to stuck port data_in         ;
-; ID_Ex:ID_Ex_Reg|Shamt_out[0..4]            ; Stuck at GND due to stuck port data_in         ;
-; ID_Ex:ID_Ex_Reg|Target_Out[0..5,11..25]    ; Stuck at GND due to stuck port data_in         ;
-; ID_Ex:ID_Ex_Reg|Condition_out[0]           ; Stuck at GND due to stuck port data_in         ;
-; ID_Ex:ID_Ex_Reg|ALUSrcB_out[0,1]           ; Stuck at GND due to stuck port data_in         ;
-; ID_Ex:ID_Ex_Reg|Jump_out                   ; Stuck at GND due to stuck port data_in         ;
-; Ex_Mem:Ex_mem_Reg|Condition_out[0]         ; Stuck at GND due to stuck port data_in         ;
-; Ex_Mem:Ex_mem_Reg|Jump_out                 ; Stuck at GND due to stuck port data_in         ;
-; Ex_Mem:Ex_mem_Reg|PC_Jump_out[2..27]       ; Stuck at GND due to stuck port data_in         ;
-; ID_Ex:ID_Ex_Reg|Shift_op_out[0]            ; Stuck at GND due to stuck port data_in         ;
-; ID_Ex:ID_Ex_Reg|ALU_op_out[0..3]           ; Stuck at GND due to stuck port data_in         ;
-; ID_Ex:ID_Ex_Reg|ALUShift_Sel_out           ; Stuck at GND due to stuck port data_in         ;
-; ID_Ex:ID_Ex_Reg|Shift_amountSrc_out        ; Stuck at GND due to stuck port data_in         ;
-; PC_count:pc|PC[2]                          ; Merged with IF_ID:IF_ID_Reg|PCP4_out[2]        ;
-; PC_count:pc|PC[3]                          ; Merged with IF_ID:IF_ID_Reg|PCP4_out[3]        ;
-; PC_count:pc|PC[4]                          ; Merged with IF_ID:IF_ID_Reg|PCP4_out[4]        ;
-; PC_count:pc|PC[5]                          ; Merged with IF_ID:IF_ID_Reg|PCP4_out[5]        ;
-; PC_count:pc|PC[6]                          ; Merged with IF_ID:IF_ID_Reg|PCP4_out[6]        ;
-; PC_count:pc|PC[7]                          ; Merged with IF_ID:IF_ID_Reg|PCP4_out[7]        ;
-; PC_count:pc|PC[8]                          ; Merged with IF_ID:IF_ID_Reg|PCP4_out[8]        ;
-; PC_count:pc|PC[9]                          ; Merged with IF_ID:IF_ID_Reg|PCP4_out[9]        ;
-; PC_count:pc|PC[10]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[10]       ;
-; PC_count:pc|PC[11]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[11]       ;
-; PC_count:pc|PC[12]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[12]       ;
-; PC_count:pc|PC[13]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[13]       ;
-; PC_count:pc|PC[14]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[14]       ;
-; PC_count:pc|PC[15]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[15]       ;
-; PC_count:pc|PC[16]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[16]       ;
-; PC_count:pc|PC[17]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[17]       ;
-; PC_count:pc|PC[18]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[18]       ;
-; PC_count:pc|PC[19]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[19]       ;
-; PC_count:pc|PC[20]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[20]       ;
-; PC_count:pc|PC[21]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[21]       ;
-; PC_count:pc|PC[22]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[22]       ;
-; PC_count:pc|PC[23]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[23]       ;
-; PC_count:pc|PC[24]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[24]       ;
-; PC_count:pc|PC[25]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[25]       ;
-; PC_count:pc|PC[26]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[26]       ;
-; PC_count:pc|PC[27]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[27]       ;
-; PC_count:pc|PC[28]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[28]       ;
-; PC_count:pc|PC[29]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[29]       ;
-; PC_count:pc|PC[30]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[30]       ;
-; PC_count:pc|PC[31]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[31]       ;
-; IF_ID:IF_ID_Reg|PCP4_out[2]                ; Merged with ID_Ex:ID_Ex_Reg|PC_out[2]          ;
-; Total Number of Removed Registers = 204    ;                                                ;
-+--------------------------------------------+------------------------------------------------+
++-------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                ;
++--------------------------------------------------------+----+
+; Logic Cell Name                                        ;    ;
++--------------------------------------------------------+----+
+; A[0]~0                                                 ;    ;
+; A[1]~31                                                ;    ;
+; A[2]~30                                                ;    ;
+; A[3]~29                                                ;    ;
+; A[4]~28                                                ;    ;
+; A[5]~27                                                ;    ;
+; A[6]~26                                                ;    ;
+; A[7]~25                                                ;    ;
+; A[8]~1                                                 ;    ;
+; A[9]~24                                                ;    ;
+; A[10]~23                                               ;    ;
+; A[11]~22                                               ;    ;
+; A[12]~21                                               ;    ;
+; A[13]~20                                               ;    ;
+; A[14]~19                                               ;    ;
+; A[15]~18                                               ;    ;
+; A[16]~17                                               ;    ;
+; A[17]~16                                               ;    ;
+; A[18]~15                                               ;    ;
+; A[19]~14                                               ;    ;
+; A[20]~13                                               ;    ;
+; A[21]~12                                               ;    ;
+; A[22]~11                                               ;    ;
+; A[23]~10                                               ;    ;
+; A[24]~9                                                ;    ;
+; A[25]~8                                                ;    ;
+; A[26]~7                                                ;    ;
+; A[27]~6                                                ;    ;
+; A[28]~5                                                ;    ;
+; A[29]~4                                                ;    ;
+; A[30]~3                                                ;    ;
+; A[31]~2                                                ;    ;
+; Number of logic cells representing combinational loops ; 32 ;
++--------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                               ;
-+----------------------------------+---------------------------+----------------------------------------------------------------------------+
-; Register name                    ; Reason for Removal        ; Registers Removed due to This Register                                     ;
-+----------------------------------+---------------------------+----------------------------------------------------------------------------+
-; Ex_Mem:Ex_mem_Reg|PC_Jump_out[0] ; Stuck at GND              ; PC_count:pc|PC[0], IF_ID:IF_ID_Reg|PCP4_out[0], ID_Ex:ID_Ex_Reg|PC_out[0], ;
-;                                  ; due to stuck port data_in ; Ex_Mem:Ex_mem_Reg|PC_Branch_out[0], IF_ID:IF_ID_Reg|Inst_out[0],           ;
-;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[1], IF_ID:IF_ID_Reg|Inst_out[2],                  ;
-;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[3], IF_ID:IF_ID_Reg|Inst_out[4],                  ;
-;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[5], IF_ID:IF_ID_Reg|Inst_out[6],                  ;
-;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[7], IF_ID:IF_ID_Reg|Inst_out[8],                  ;
-;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[9], IF_ID:IF_ID_Reg|Inst_out[10],                 ;
-;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[11], IF_ID:IF_ID_Reg|Inst_out[12],                ;
-;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[13], IF_ID:IF_ID_Reg|Inst_out[14],                ;
-;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[15], IF_ID:IF_ID_Reg|Inst_out[16],                ;
-;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[17], IF_ID:IF_ID_Reg|Inst_out[18],                ;
-;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[19], IF_ID:IF_ID_Reg|Inst_out[20],                ;
-;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[21], IF_ID:IF_ID_Reg|Inst_out[22],                ;
-;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[23], IF_ID:IF_ID_Reg|Inst_out[24],                ;
-;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[25], IF_ID:IF_ID_Reg|Inst_out[26],                ;
-;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[27], IF_ID:IF_ID_Reg|Inst_out[28],                ;
-;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[29], IF_ID:IF_ID_Reg|Inst_out[30],                ;
-;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[31], ID_Ex:ID_Ex_Reg|Shamt_out[0],                ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|Shamt_out[1], ID_Ex:ID_Ex_Reg|Shamt_out[2],                ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|Shamt_out[3], ID_Ex:ID_Ex_Reg|Shamt_out[4],                ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[0], ID_Ex:ID_Ex_Reg|Target_Out[1],              ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[2], ID_Ex:ID_Ex_Reg|Target_Out[3],              ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[4], ID_Ex:ID_Ex_Reg|Target_Out[5],              ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[11], ID_Ex:ID_Ex_Reg|Target_Out[12],            ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[13], ID_Ex:ID_Ex_Reg|Target_Out[14],            ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[15], ID_Ex:ID_Ex_Reg|Target_Out[16],            ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[17], ID_Ex:ID_Ex_Reg|Target_Out[18],            ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[19], ID_Ex:ID_Ex_Reg|Target_Out[20],            ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[21], ID_Ex:ID_Ex_Reg|Target_Out[22],            ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[23], ID_Ex:ID_Ex_Reg|Target_Out[24],            ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[25], ID_Ex:ID_Ex_Reg|Condition_out[0],          ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|ALUSrcB_out[0], ID_Ex:ID_Ex_Reg|ALUSrcB_out[1],            ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|Jump_out, Ex_Mem:Ex_mem_Reg|Condition_out[0],              ;
-;                                  ;                           ; Ex_Mem:Ex_mem_Reg|Jump_out, Ex_Mem:Ex_mem_Reg|PC_Jump_out[2],              ;
-;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[3], Ex_Mem:Ex_mem_Reg|PC_Jump_out[4],        ;
-;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[5], Ex_Mem:Ex_mem_Reg|PC_Jump_out[6],        ;
-;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[7], Ex_Mem:Ex_mem_Reg|PC_Jump_out[8],        ;
-;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[9], Ex_Mem:Ex_mem_Reg|PC_Jump_out[10],       ;
-;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[11], Ex_Mem:Ex_mem_Reg|PC_Jump_out[12],      ;
-;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[13], Ex_Mem:Ex_mem_Reg|PC_Jump_out[14],      ;
-;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[15], Ex_Mem:Ex_mem_Reg|PC_Jump_out[16],      ;
-;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[17], Ex_Mem:Ex_mem_Reg|PC_Jump_out[18],      ;
-;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[19], Ex_Mem:Ex_mem_Reg|PC_Jump_out[20],      ;
-;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[21], Ex_Mem:Ex_mem_Reg|PC_Jump_out[22],      ;
-;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[23], Ex_Mem:Ex_mem_Reg|PC_Jump_out[24],      ;
-;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[25], Ex_Mem:Ex_mem_Reg|PC_Jump_out[26],      ;
-;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[27], ID_Ex:ID_Ex_Reg|Shift_op_out[0],        ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|ALU_op_out[0], ID_Ex:ID_Ex_Reg|ALU_op_out[1],              ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|ALU_op_out[2], ID_Ex:ID_Ex_Reg|ALU_op_out[3],              ;
-;                                  ;                           ; ID_Ex:ID_Ex_Reg|ALUShift_Sel_out, ID_Ex:ID_Ex_Reg|Shift_amountSrc_out      ;
-; Ex_Mem:Ex_mem_Reg|Rd_out[4]      ; Lost Fanouts              ; ID_Ex:ID_Ex_Reg|Rd_out[4]                                                  ;
-; Ex_Mem:Ex_mem_Reg|Rd_out[3]      ; Lost Fanouts              ; ID_Ex:ID_Ex_Reg|Rd_out[3]                                                  ;
-; Ex_Mem:Ex_mem_Reg|Rd_out[2]      ; Lost Fanouts              ; ID_Ex:ID_Ex_Reg|Rd_out[2]                                                  ;
-; Ex_Mem:Ex_mem_Reg|Rd_out[1]      ; Lost Fanouts              ; ID_Ex:ID_Ex_Reg|Rd_out[1]                                                  ;
-; Ex_Mem:Ex_mem_Reg|Rd_out[0]      ; Lost Fanouts              ; ID_Ex:ID_Ex_Reg|Rd_out[0]                                                  ;
-; ID_Ex:ID_Ex_Reg|Condition_out[2] ; Stuck at GND              ; Ex_Mem:Ex_mem_Reg|Condition_out[2]                                         ;
-;                                  ; due to stuck port data_in ;                                                                            ;
-+----------------------------------+---------------------------+----------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                   ;
++-----------------------------------------------------+------------------------------------------------+
+; Register name                                       ; Reason for Removal                             ;
++-----------------------------------------------------+------------------------------------------------+
+; Ex_Mem:Ex_mem_Reg|PC_Jump_out[0,1]                  ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|Condition_out[2]                    ; Stuck at GND due to stuck port data_in         ;
+; Ex_Mem:Ex_mem_Reg|Condition_out[2]                  ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|offset_out[16..31]                  ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|Target_Out[6]                       ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[0]       ;
+; ID_Ex:ID_Ex_Reg|offset_out[6]                       ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[0]       ;
+; ID_Ex:ID_Ex_Reg|Target_Out[7]                       ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[1]       ;
+; ID_Ex:ID_Ex_Reg|offset_out[7]                       ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[1]       ;
+; ID_Ex:ID_Ex_Reg|Target_Out[8]                       ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[2]       ;
+; ID_Ex:ID_Ex_Reg|offset_out[8]                       ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[2]       ;
+; ID_Ex:ID_Ex_Reg|Target_Out[9]                       ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[3]       ;
+; ID_Ex:ID_Ex_Reg|offset_out[9]                       ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[3]       ;
+; ID_Ex:ID_Ex_Reg|Target_Out[10]                      ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[4]       ;
+; ID_Ex:ID_Ex_Reg|offset_out[10]                      ; Merged with ID_Ex:ID_Ex_Reg|Shamt_out[4]       ;
+; ID_Ex:ID_Ex_Reg|offset_out[0]                       ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[0]      ;
+; ID_Ex:ID_Ex_Reg|offset_out[1]                       ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[1]      ;
+; ID_Ex:ID_Ex_Reg|offset_out[2]                       ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[2]      ;
+; ID_Ex:ID_Ex_Reg|offset_out[3]                       ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[3]      ;
+; ID_Ex:ID_Ex_Reg|offset_out[4]                       ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[4]      ;
+; ID_Ex:ID_Ex_Reg|offset_out[5]                       ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[5]      ;
+; ID_Ex:ID_Ex_Reg|offset_out[11]                      ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[11]     ;
+; ID_Ex:ID_Ex_Reg|Rd_out[0]                           ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[11]     ;
+; ID_Ex:ID_Ex_Reg|offset_out[12]                      ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[12]     ;
+; ID_Ex:ID_Ex_Reg|Rd_out[1]                           ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[12]     ;
+; ID_Ex:ID_Ex_Reg|offset_out[13]                      ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[13]     ;
+; ID_Ex:ID_Ex_Reg|Rd_out[2]                           ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[13]     ;
+; ID_Ex:ID_Ex_Reg|offset_out[14]                      ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[14]     ;
+; ID_Ex:ID_Ex_Reg|Rd_out[3]                           ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[14]     ;
+; ID_Ex:ID_Ex_Reg|offset_out[15]                      ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[15]     ;
+; ID_Ex:ID_Ex_Reg|Rd_out[4]                           ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[15]     ;
+; ID_Ex:ID_Ex_Reg|Rt_out[0]                           ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[16]     ;
+; ID_Ex:ID_Ex_Reg|Rt_out[1]                           ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[17]     ;
+; ID_Ex:ID_Ex_Reg|Rt_out[2]                           ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[18]     ;
+; ID_Ex:ID_Ex_Reg|Rt_out[3]                           ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[19]     ;
+; ID_Ex:ID_Ex_Reg|Rt_out[4]                           ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[20]     ;
+; ID_Ex:ID_Ex_Reg|Rs_out[0]                           ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[21]     ;
+; ID_Ex:ID_Ex_Reg|Rs_out[1]                           ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[22]     ;
+; ID_Ex:ID_Ex_Reg|Rs_out[2]                           ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[23]     ;
+; ID_Ex:ID_Ex_Reg|Rs_out[3]                           ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[24]     ;
+; ID_Ex:ID_Ex_Reg|Rs_out[4]                           ; Merged with ID_Ex:ID_Ex_Reg|Target_Out[25]     ;
+; ID_Ex:ID_Ex_Reg|Condition_out[1]                    ; Merged with ID_Ex:ID_Ex_Reg|Condition_out[0]   ;
+; Ex_Mem:Ex_mem_Reg|PC_Jump_out[13]                   ; Merged with Ex_Mem:Ex_mem_Reg|Rd_out[0]        ;
+; Ex_Mem:Ex_mem_Reg|PC_Jump_out[14]                   ; Merged with Ex_Mem:Ex_mem_Reg|Rd_out[1]        ;
+; Ex_Mem:Ex_mem_Reg|PC_Jump_out[15]                   ; Merged with Ex_Mem:Ex_mem_Reg|Rd_out[2]        ;
+; Ex_Mem:Ex_mem_Reg|PC_Jump_out[16]                   ; Merged with Ex_Mem:Ex_mem_Reg|Rd_out[3]        ;
+; Ex_Mem:Ex_mem_Reg|PC_Jump_out[17]                   ; Merged with Ex_Mem:Ex_mem_Reg|Rd_out[4]        ;
+; Ex_Mem:Ex_mem_Reg|Condition_out[1]                  ; Merged with Ex_Mem:Ex_mem_Reg|Condition_out[0] ;
+; Ex_Mem:Ex_mem_Reg|PC_Branch_out[1]                  ; Merged with Ex_Mem:Ex_mem_Reg|PC_Branch_out[0] ;
+; ID_Ex:ID_Ex_Reg|PC_out[1]                           ; Merged with ID_Ex:ID_Ex_Reg|PC_out[0]          ;
+; ID_Ex:ID_Ex_Reg|Shift_op_out[1]                     ; Merged with ID_Ex:ID_Ex_Reg|ALUShift_Sel_out   ;
+; IF_ID:IF_ID_Reg|PCP4_out[1]                         ; Merged with IF_ID:IF_ID_Reg|PCP4_out[0]        ;
+; PC_count:pc|PC[1]                                   ; Merged with PC_count:pc|PC[0]                  ;
+; PC_count:pc|PC[0]                                   ; Stuck at GND due to stuck port data_in         ;
+; IF_ID:IF_ID_Reg|PCP4_out[0]                         ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|PC_out[0]                           ; Stuck at GND due to stuck port data_in         ;
+; Ex_Mem:Ex_mem_Reg|PC_Branch_out[0]                  ; Stuck at GND due to stuck port data_in         ;
+; IF_ID:IF_ID_Reg|Inst_out[5..7,13..15,21..23,29..31] ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|MemtoReg_out                        ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|MemWr_out                           ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|LoadType_out[0,1]                   ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|Shamt_out[0,1]                      ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|Target_Out[5,13..15,21..23]         ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|ALUSrcB_out[0,1]                    ; Stuck at GND due to stuck port data_in         ;
+; Ex_Mem:Ex_mem_Reg|MemtoReg_out                      ; Stuck at GND due to stuck port data_in         ;
+; Ex_Mem:Ex_mem_Reg|Rd_out[2..4]                      ; Stuck at GND due to stuck port data_in         ;
+; Ex_Mem:Ex_mem_Reg|MemWr_out                         ; Stuck at GND due to stuck port data_in         ;
+; Ex_Mem:Ex_mem_Reg|LoadType_out[0,1]                 ; Stuck at GND due to stuck port data_in         ;
+; Ex_Mem:Ex_mem_Reg|PC_Jump_out[7..9,23..25]          ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|ALU_op_out[1..3]                    ; Stuck at GND due to stuck port data_in         ;
+; Mem_Wr:Mem_Wr_Reg|MemtoReg_out                      ; Stuck at GND due to stuck port data_in         ;
+; Mem_Wr:Mem_Wr_Reg|Rd_out[2..4]                      ; Stuck at GND due to stuck port data_in         ;
+; Mem_Wr:Mem_Wr_Reg|Data_out[0..3]                    ; Stuck at GND due to stuck port data_in         ;
+; IF_ID:IF_ID_Reg|Inst_out[1..4,9..12,17..20,25..28]  ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|LoadByte_out[1]                     ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|Shamt_out[3,4]                      ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|Target_Out[1..4,11,12,17..20,25]    ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|Condition_out[0]                    ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|ALU_op_out[0]                       ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|Jump_out                            ; Stuck at GND due to stuck port data_in         ;
+; IF_ID:IF_ID_Reg|Inst_out[0,8,16,24]                 ; Stuck at GND due to stuck port data_in         ;
+; Ex_Mem:Ex_mem_Reg|Rd_out[0,1]                       ; Stuck at GND due to stuck port data_in         ;
+; Ex_Mem:Ex_mem_Reg|LoadByte_out[1]                   ; Stuck at GND due to stuck port data_in         ;
+; Ex_Mem:Ex_mem_Reg|Condition_out[0]                  ; Stuck at GND due to stuck port data_in         ;
+; Ex_Mem:Ex_mem_Reg|Jump_out                          ; Stuck at GND due to stuck port data_in         ;
+; Ex_Mem:Ex_mem_Reg|PC_Jump_out[3..6,11,12,19..22,27] ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|RegWr_out                           ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|LoadByte_out[0]                     ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|Shamt_out[2]                        ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|Target_Out[0,16,24]                 ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|Shift_op_out[0]                     ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|ALUShift_Sel_out                    ; Stuck at GND due to stuck port data_in         ;
+; ID_Ex:ID_Ex_Reg|Shift_amountSrc_out                 ; Stuck at GND due to stuck port data_in         ;
+; Mem_Wr:Mem_Wr_Reg|Rd_out[0,1]                       ; Stuck at GND due to stuck port data_in         ;
+; Ex_Mem:Ex_mem_Reg|RegWr_out                         ; Stuck at GND due to stuck port data_in         ;
+; Ex_Mem:Ex_mem_Reg|LoadByte_out[0]                   ; Stuck at GND due to stuck port data_in         ;
+; Ex_Mem:Ex_mem_Reg|PC_Jump_out[2,10,18,26]           ; Stuck at GND due to stuck port data_in         ;
+; Mem_Wr:Mem_Wr_Reg|RegWr_out                         ; Stuck at GND due to stuck port data_in         ;
+; Mem_Wr:Mem_Wr_Reg|Rd_write_by_en_out[0..3]          ; Stuck at GND due to stuck port data_in         ;
+; PC_count:pc|PC[2]                                   ; Merged with IF_ID:IF_ID_Reg|PCP4_out[2]        ;
+; PC_count:pc|PC[3]                                   ; Merged with IF_ID:IF_ID_Reg|PCP4_out[3]        ;
+; PC_count:pc|PC[4]                                   ; Merged with IF_ID:IF_ID_Reg|PCP4_out[4]        ;
+; PC_count:pc|PC[5]                                   ; Merged with IF_ID:IF_ID_Reg|PCP4_out[5]        ;
+; PC_count:pc|PC[6]                                   ; Merged with IF_ID:IF_ID_Reg|PCP4_out[6]        ;
+; PC_count:pc|PC[7]                                   ; Merged with IF_ID:IF_ID_Reg|PCP4_out[7]        ;
+; PC_count:pc|PC[8]                                   ; Merged with IF_ID:IF_ID_Reg|PCP4_out[8]        ;
+; PC_count:pc|PC[9]                                   ; Merged with IF_ID:IF_ID_Reg|PCP4_out[9]        ;
+; PC_count:pc|PC[10]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[10]       ;
+; PC_count:pc|PC[11]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[11]       ;
+; PC_count:pc|PC[12]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[12]       ;
+; PC_count:pc|PC[13]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[13]       ;
+; PC_count:pc|PC[14]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[14]       ;
+; PC_count:pc|PC[15]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[15]       ;
+; PC_count:pc|PC[16]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[16]       ;
+; PC_count:pc|PC[17]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[17]       ;
+; PC_count:pc|PC[18]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[18]       ;
+; PC_count:pc|PC[19]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[19]       ;
+; PC_count:pc|PC[20]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[20]       ;
+; PC_count:pc|PC[21]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[21]       ;
+; PC_count:pc|PC[22]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[22]       ;
+; PC_count:pc|PC[23]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[23]       ;
+; PC_count:pc|PC[24]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[24]       ;
+; PC_count:pc|PC[25]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[25]       ;
+; PC_count:pc|PC[26]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[26]       ;
+; PC_count:pc|PC[27]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[27]       ;
+; PC_count:pc|PC[28]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[28]       ;
+; PC_count:pc|PC[29]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[29]       ;
+; PC_count:pc|PC[30]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[30]       ;
+; PC_count:pc|PC[31]                                  ; Merged with IF_ID:IF_ID_Reg|PCP4_out[31]       ;
+; IF_ID:IF_ID_Reg|PCP4_out[2]                         ; Merged with ID_Ex:ID_Ex_Reg|PC_out[2]          ;
+; Total Number of Removed Registers = 229             ;                                                ;
++-----------------------------------------------------+------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                        ;
++----------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+; Register name                    ; Reason for Removal        ; Registers Removed due to This Register                                              ;
++----------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+; Ex_Mem:Ex_mem_Reg|PC_Jump_out[0] ; Stuck at GND              ; PC_count:pc|PC[0], IF_ID:IF_ID_Reg|PCP4_out[0], ID_Ex:ID_Ex_Reg|PC_out[0],          ;
+;                                  ; due to stuck port data_in ; Ex_Mem:Ex_mem_Reg|PC_Branch_out[0], IF_ID:IF_ID_Reg|Inst_out[5],                    ;
+;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[6], IF_ID:IF_ID_Reg|Inst_out[7],                           ;
+;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[13], IF_ID:IF_ID_Reg|Inst_out[14],                         ;
+;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[15], IF_ID:IF_ID_Reg|Inst_out[21],                         ;
+;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[22], IF_ID:IF_ID_Reg|Inst_out[23],                         ;
+;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[29], IF_ID:IF_ID_Reg|Inst_out[30],                         ;
+;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[31], ID_Ex:ID_Ex_Reg|MemtoReg_out,                         ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|MemWr_out, ID_Ex:ID_Ex_Reg|LoadType_out[0],                         ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|LoadType_out[1], ID_Ex:ID_Ex_Reg|Shamt_out[0],                      ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|Shamt_out[1], ID_Ex:ID_Ex_Reg|Target_Out[5],                        ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[13], ID_Ex:ID_Ex_Reg|Target_Out[14],                     ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[15], ID_Ex:ID_Ex_Reg|Target_Out[21],                     ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[22], ID_Ex:ID_Ex_Reg|Target_Out[23],                     ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|ALUSrcB_out[0], ID_Ex:ID_Ex_Reg|ALUSrcB_out[1],                     ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|MemtoReg_out, Ex_Mem:Ex_mem_Reg|Rd_out[2],                        ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|Rd_out[3], Ex_Mem:Ex_mem_Reg|Rd_out[4],                           ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|MemWr_out, Ex_Mem:Ex_mem_Reg|LoadType_out[0],                     ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|LoadType_out[1], Ex_Mem:Ex_mem_Reg|PC_Jump_out[7],                ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[8], Ex_Mem:Ex_mem_Reg|PC_Jump_out[9],                 ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[23], Ex_Mem:Ex_mem_Reg|PC_Jump_out[24],               ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[25], ID_Ex:ID_Ex_Reg|ALU_op_out[1],                   ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|ALU_op_out[2], ID_Ex:ID_Ex_Reg|ALU_op_out[3],                       ;
+;                                  ;                           ; Mem_Wr:Mem_Wr_Reg|MemtoReg_out, Mem_Wr:Mem_Wr_Reg|Rd_out[2],                        ;
+;                                  ;                           ; Mem_Wr:Mem_Wr_Reg|Rd_out[3], Mem_Wr:Mem_Wr_Reg|Rd_out[4],                           ;
+;                                  ;                           ; Mem_Wr:Mem_Wr_Reg|Data_out[1], Mem_Wr:Mem_Wr_Reg|Data_out[2],                       ;
+;                                  ;                           ; Mem_Wr:Mem_Wr_Reg|Data_out[3], Mem_Wr:Mem_Wr_Reg|Data_out[0],                       ;
+;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[1], IF_ID:IF_ID_Reg|Inst_out[2],                           ;
+;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[3], IF_ID:IF_ID_Reg|Inst_out[4],                           ;
+;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[9], IF_ID:IF_ID_Reg|Inst_out[10],                          ;
+;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[11], IF_ID:IF_ID_Reg|Inst_out[12],                         ;
+;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[17], IF_ID:IF_ID_Reg|Inst_out[18],                         ;
+;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[19], IF_ID:IF_ID_Reg|Inst_out[20],                         ;
+;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[25], IF_ID:IF_ID_Reg|Inst_out[26],                         ;
+;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[27], IF_ID:IF_ID_Reg|Inst_out[28],                         ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|LoadByte_out[1], ID_Ex:ID_Ex_Reg|Shamt_out[3],                      ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|Shamt_out[4], ID_Ex:ID_Ex_Reg|Target_Out[1],                        ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[2], ID_Ex:ID_Ex_Reg|Target_Out[3],                       ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[4], ID_Ex:ID_Ex_Reg|Target_Out[11],                      ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[12], ID_Ex:ID_Ex_Reg|Target_Out[17],                     ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[18], ID_Ex:ID_Ex_Reg|Target_Out[19],                     ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[20], ID_Ex:ID_Ex_Reg|Target_Out[25],                     ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|Condition_out[0], ID_Ex:ID_Ex_Reg|ALU_op_out[0],                    ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|Jump_out, IF_ID:IF_ID_Reg|Inst_out[0], IF_ID:IF_ID_Reg|Inst_out[8], ;
+;                                  ;                           ; IF_ID:IF_ID_Reg|Inst_out[16], IF_ID:IF_ID_Reg|Inst_out[24],                         ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|Rd_out[0], Ex_Mem:Ex_mem_Reg|Rd_out[1],                           ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|LoadByte_out[1], Ex_Mem:Ex_mem_Reg|Condition_out[0],              ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|Jump_out, Ex_Mem:Ex_mem_Reg|PC_Jump_out[3],                       ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[4], Ex_Mem:Ex_mem_Reg|PC_Jump_out[5],                 ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[6], Ex_Mem:Ex_mem_Reg|PC_Jump_out[11],                ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[12], Ex_Mem:Ex_mem_Reg|PC_Jump_out[19],               ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[20], Ex_Mem:Ex_mem_Reg|PC_Jump_out[21],               ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[22], Ex_Mem:Ex_mem_Reg|PC_Jump_out[27],               ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|RegWr_out, ID_Ex:ID_Ex_Reg|LoadByte_out[0],                         ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|Shamt_out[2], ID_Ex:ID_Ex_Reg|Target_Out[0],                        ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|Target_Out[16], ID_Ex:ID_Ex_Reg|Target_Out[24],                     ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|Shift_op_out[0], ID_Ex:ID_Ex_Reg|ALUShift_Sel_out,                  ;
+;                                  ;                           ; ID_Ex:ID_Ex_Reg|Shift_amountSrc_out, Mem_Wr:Mem_Wr_Reg|Rd_out[0],                   ;
+;                                  ;                           ; Mem_Wr:Mem_Wr_Reg|Rd_out[1], Ex_Mem:Ex_mem_Reg|RegWr_out,                           ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|LoadByte_out[0], Ex_Mem:Ex_mem_Reg|PC_Jump_out[2],                ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[10], Ex_Mem:Ex_mem_Reg|PC_Jump_out[18],               ;
+;                                  ;                           ; Ex_Mem:Ex_mem_Reg|PC_Jump_out[26], Mem_Wr:Mem_Wr_Reg|RegWr_out,                     ;
+;                                  ;                           ; Mem_Wr:Mem_Wr_Reg|Rd_write_by_en_out[0], Mem_Wr:Mem_Wr_Reg|Rd_write_by_en_out[1],   ;
+;                                  ;                           ; Mem_Wr:Mem_Wr_Reg|Rd_write_by_en_out[2], Mem_Wr:Mem_Wr_Reg|Rd_write_by_en_out[3]    ;
+; ID_Ex:ID_Ex_Reg|Condition_out[2] ; Stuck at GND              ; Ex_Mem:Ex_mem_Reg|Condition_out[2]                                                  ;
+;                                  ; due to stuck port data_in ;                                                                                     ;
++----------------------------------+---------------------------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -459,14 +563,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------+
-; Registers Packed Into Inferred Megafunctions                                ;
-+-----------------------------------+----------------------------------+------+
-; Register Name                     ; Megafunction                     ; Type ;
-+-----------------------------------+----------------------------------+------+
-; ID_Ex:ID_Ex_Reg|Rs_out_out[0..31] ; Register:register|register_rtl_0 ; RAM  ;
-; ID_Ex:ID_Ex_Reg|Rt_out_out[0..31] ; Register:register|register_rtl_0 ; RAM  ;
-+-----------------------------------+----------------------------------+------+
++------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                       ;
++------------------------------------------+----------------------------------+------+
+; Register Name                            ; Megafunction                     ; Type ;
++------------------------------------------+----------------------------------+------+
+; ID_Ex:ID_Ex_Reg|Rs_out_out[0..31]        ; Register:register|register_rtl_0 ; RAM  ;
+; ID_Ex:ID_Ex_Reg|Rt_out_out[0..31]        ; Register:register|register_rtl_0 ; RAM  ;
+; Mem_Wr:Mem_Wr_Reg|ALUShift_out_out[0..7] ; Register:register|register_rtl_0 ; RAM  ;
+; Ex_Mem:Ex_mem_Reg|ALUShift_out_out[0..7] ; Register:register|register_rtl_0 ; RAM  ;
++------------------------------------------+----------------------------------+------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -515,6 +621,66 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+----------------------------------------------+
 ; DATA_WIDTH     ; 32    ; Signed Integer                               ;
 +----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Shifter:shifter|Mux_4Way:header ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; DATA_WIDTH     ; 1     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Shifter:shifter|Mux_4Way:layer0 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Shifter:shifter|Mux_4Way:layer1 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Shifter:shifter|Mux_4Way:layer2 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Shifter:shifter|Mux_4Way:layer3 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Shifter:shifter|Mux_4Way:layer4 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -617,15 +783,88 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Ex_Mem:Ex_mem_Reg"                                                                              ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port             ; Type   ; Severity ; Details                                                                             ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
-; PC_Jump_in[1..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; ALUShift_out_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; Overflow_out     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mem_Wr:Mem_Wr_Reg"                                                                                                                                                              ;
++--------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                                                                                 ;
++--------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Data_out     ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (32 bits) it drives.  The 28 most-significant bit(s) in the port expression will be connected to GND. ;
+; Overflow_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                     ;
++--------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "Memory:Instr_Data_Mem" ;
++------------+-------+----------+-------------------+
+; Port       ; Type  ; Severity ; Details           ;
++------------+-------+----------+-------------------+
+; Din[31..5] ; Input ; Info     ; Stuck at GND      ;
++------------+-------+----------+-------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "Ex_Mem:Ex_mem_Reg"      ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; PC_Jump_in[1..0] ; Input ; Info     ; Stuck at GND ;
++------------------+-------+----------+--------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "Shifter:shifter|Mux_4Way:layer4" ;
++---------------+-------+----------+--------------------------+
+; Port          ; Type  ; Severity ; Details                  ;
++---------------+-------+----------+--------------------------+
+; data_b[15..0] ; Input ; Info     ; Stuck at GND             ;
++---------------+-------+----------+--------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "Shifter:shifter|Mux_4Way:layer3" ;
++--------------+-------+----------+---------------------------+
+; Port         ; Type  ; Severity ; Details                   ;
++--------------+-------+----------+---------------------------+
+; data_b[7..0] ; Input ; Info     ; Stuck at GND              ;
++--------------+-------+----------+---------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "Shifter:shifter|Mux_4Way:layer2" ;
++--------------+-------+----------+---------------------------+
+; Port         ; Type  ; Severity ; Details                   ;
++--------------+-------+----------+---------------------------+
+; data_b[3..0] ; Input ; Info     ; Stuck at GND              ;
++--------------+-------+----------+---------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "Shifter:shifter|Mux_4Way:layer1" ;
++--------------+-------+----------+---------------------------+
+; Port         ; Type  ; Severity ; Details                   ;
++--------------+-------+----------+---------------------------+
+; data_b[1..0] ; Input ; Info     ; Stuck at GND              ;
++--------------+-------+----------+---------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "Shifter:shifter|Mux_4Way:layer0" ;
++-----------+-------+----------+------------------------------+
+; Port      ; Type  ; Severity ; Details                      ;
++-----------+-------+----------+------------------------------+
+; data_b[0] ; Input ; Info     ; Stuck at GND                 ;
++-----------+-------+----------+------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "Shifter:shifter|Mux_4Way:header" ;
++--------+-------+----------+---------------------------------+
+; Port   ; Type  ; Severity ; Details                         ;
++--------+-------+----------+---------------------------------+
+; data_a ; Input ; Info     ; Stuck at GND                    ;
+; data_b ; Input ; Info     ; Stuck at GND                    ;
+; data_d ; Input ; Info     ; Stuck at GND                    ;
++--------+-------+----------+---------------------------------+
 
 
 +---------------------------------------------------+
@@ -663,7 +902,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -671,11 +910,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
+Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Mon Jun 09 21:12:49 2014
+    Info: Processing started: Wed Jun 11 00:04:07 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PipelineCPU -c PipelineCPU
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file memory.v
+    Info (12023): Found entity 1: Memory
+Info (12021): Found 3 design units, including 3 entities, in source file muxs.v
+    Info (12023): Found entity 1: Y_Mux
+    Info (12023): Found entity 2: Mux_4Way
+    Info (12023): Found entity 3: Mux_8Way
 Info (12021): Found 1 design units, including 1 entities, in source file controller.v
     Info (12023): Found entity 1: Controller
 Info (12021): Found 5 design units, including 5 entities, in source file alu.v
@@ -690,18 +935,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file pipelin
     Info (12023): Found entity 1: PipelineCPU
 Info (12021): Found 1 design units, including 1 entities, in source file pc_count.v
     Info (12023): Found entity 1: PC_count
-Info (12021): Found 1 design units, including 1 entities, in source file instmem.v
-    Info (12023): Found entity 1: InstMem
 Info (12021): Found 1 design units, including 1 entities, in source file if_id.v
     Info (12023): Found entity 1: IF_ID
 Info (12021): Found 1 design units, including 1 entities, in source file extender.v
     Info (12023): Found entity 1: Extender
 Info (12021): Found 1 design units, including 1 entities, in source file id_ex.v
     Info (12023): Found entity 1: ID_Ex
-Info (12021): Found 3 design units, including 3 entities, in source file mux2.v
-    Info (12023): Found entity 1: Y_Mux
-    Info (12023): Found entity 2: Mux_4Way
-    Info (12023): Found entity 3: Mux_8Way
 Info (12021): Found 1 design units, including 1 entities, in source file shifter.v
     Info (12023): Found entity 1: Shifter
 Info (12021): Found 1 design units, including 1 entities, in source file ex_mem.v
@@ -712,26 +951,24 @@ Info (12021): Found 1 design units, including 1 entities, in source file control
     Info (12023): Found entity 1: ControlHazard
 Info (12021): Found 1 design units, including 1 entities, in source file forwardunit.v
     Info (12023): Found entity 1: ForwardUnit
+Info (12021): Found 1 design units, including 1 entities, in source file mem_wr.v
+    Info (12023): Found entity 1: Mem_Wr
+Info (12021): Found 1 design units, including 1 entities, in source file loadprocess.v
+    Info (12023): Found entity 1: LoadProcess
 Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(20): created implicit net for "keep"
-Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(54): created implicit net for "Ex_top_ID"
-Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(68): created implicit net for "Regdt0_ID"
-Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(73): created implicit net for "Regdt0_Ex"
-Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(101): created implicit net for "Reset"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(56): created implicit net for "Ex_top_ID"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(70): created implicit net for "Regdt0_ID"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(75): created implicit net for "Regdt0_Ex"
+Warning (10236): Verilog HDL Implicit Net warning at PipelineCPU.v(106): created implicit net for "Reset"
 Info (12127): Elaborating entity "PipelineCPU" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at PipelineCPU.v(35): object "LoadByte_ID" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at PipelineCPU.v(39): object "Rd_write_by_en" assigned a value but never read
-Warning (10858): Verilog HDL warning at PipelineCPU.v(82): object Result_out used but never assigned
-Warning (10030): Net "Result_out" at PipelineCPU.v(82) has no driver or initial value, using a default initial value '0'
+Warning (10858): Verilog HDL warning at PipelineCPU.v(84): object Result_out used but never assigned
+Warning (10030): Net "Result_out" at PipelineCPU.v(84) has no driver or initial value, using a default initial value '0'
 Info (12128): Elaborating entity "PC_count" for hierarchy "PC_count:pc"
-Info (12128): Elaborating entity "InstMem" for hierarchy "InstMem:IM"
-Warning (10855): Verilog HDL warning at InstMem.v(8): initial value for variable ram should be constant
-Warning (10030): Net "ram" at InstMem.v(5) has no driver or initial value, using a default initial value '0'
 Info (12128): Elaborating entity "IF_ID" for hierarchy "IF_ID:IF_ID_Reg"
 Info (12128): Elaborating entity "Extender" for hierarchy "Extender:extend"
 Info (12128): Elaborating entity "Register" for hierarchy "Register:register"
 Info (12128): Elaborating entity "Controller" for hierarchy "Controller:control"
 Info (12128): Elaborating entity "ID_Ex" for hierarchy "ID_Ex:ID_Ex_Reg"
-Warning (10034): Output port "RegWr_out" at ID_Ex.v(36) has no driver
 Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu"
 Info (12128): Elaborating entity "Adder" for hierarchy "ALU:alu|Adder:adder"
 Info (12128): Elaborating entity "Y_Mux" for hierarchy "ALU:alu|Y_Mux:less_mux"
@@ -740,12 +977,579 @@ Info (12128): Elaborating entity "Op_Decoder" for hierarchy "ALU:alu|Op_Decoder:
 Info (12128): Elaborating entity "Leading_Counter" for hierarchy "ALU:alu|Leading_Counter:lcz_counter"
 Info (12128): Elaborating entity "Mux_8Way" for hierarchy "ALU:alu|Mux_8Way:rst_mux"
 Info (12128): Elaborating entity "Shifter" for hierarchy "Shifter:shifter"
-Warning (10240): Verilog HDL Always Construct warning at Shifter.v(7): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct
+Info (12128): Elaborating entity "Mux_4Way" for hierarchy "Shifter:shifter|Mux_4Way:header"
+Info (12128): Elaborating entity "Mux_4Way" for hierarchy "Shifter:shifter|Mux_4Way:layer0"
 Info (12128): Elaborating entity "Ex_Mem" for hierarchy "Ex_Mem:Ex_mem_Reg"
-Warning (10034): Output port "RegWr_out" at Ex_Mem.v(20) has no driver
 Info (12128): Elaborating entity "PCSourceGen" for hierarchy "PCSourceGen:PCSrc"
+Info (12128): Elaborating entity "Memory" for hierarchy "Memory:Instr_Data_Mem"
+Warning (10855): Verilog HDL warning at Memory.v(10): initial value for variable ram should be constant
+Warning (10235): Verilog HDL Always Construct warning at Memory.v(23): variable "Data_Addr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (10041): Inferred latch for "ram[0][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[0][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[0][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[0][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[0][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[0][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[0][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[0][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[1][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[1][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[1][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[1][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[1][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[1][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[1][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[1][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[2][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[2][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[2][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[2][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[2][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[2][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[2][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[2][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[3][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[3][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[3][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[3][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[3][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[3][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[3][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[3][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[4][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[4][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[4][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[4][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[4][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[4][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[4][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[4][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[5][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[5][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[5][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[5][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[5][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[5][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[5][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[5][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[6][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[6][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[6][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[6][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[6][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[6][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[6][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[6][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[7][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[7][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[7][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[7][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[7][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[7][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[7][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[7][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[8][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[8][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[8][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[8][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[8][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[8][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[8][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[8][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[9][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[9][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[9][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[9][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[9][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[9][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[9][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[9][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[10][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[10][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[10][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[10][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[10][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[10][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[10][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[10][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[11][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[11][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[11][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[11][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[11][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[11][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[11][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[11][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[12][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[12][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[12][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[12][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[12][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[12][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[12][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[12][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[13][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[13][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[13][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[13][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[13][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[13][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[13][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[13][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[14][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[14][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[14][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[14][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[14][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[14][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[14][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[14][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[15][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[15][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[15][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[15][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[15][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[15][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[15][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[15][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[16][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[16][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[16][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[16][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[16][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[16][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[16][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[16][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[17][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[17][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[17][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[17][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[17][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[17][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[17][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[17][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[18][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[18][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[18][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[18][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[18][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[18][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[18][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[18][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[19][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[19][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[19][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[19][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[19][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[19][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[19][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[19][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[20][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[20][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[20][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[20][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[20][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[20][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[20][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[20][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[21][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[21][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[21][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[21][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[21][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[21][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[21][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[21][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[22][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[22][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[22][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[22][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[22][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[22][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[22][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[22][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[23][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[23][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[23][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[23][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[23][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[23][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[23][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[23][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[24][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[24][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[24][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[24][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[24][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[24][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[24][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[24][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[25][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[25][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[25][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[25][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[25][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[25][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[25][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[25][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[26][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[26][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[26][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[26][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[26][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[26][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[26][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[26][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[27][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[27][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[27][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[27][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[27][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[27][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[27][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[27][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[28][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[28][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[28][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[28][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[28][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[28][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[28][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[28][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[29][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[29][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[29][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[29][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[29][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[29][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[29][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[29][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[30][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[30][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[30][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[30][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[30][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[30][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[30][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[30][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[31][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[31][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[31][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[31][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[31][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[31][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[31][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[31][7]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[32][0]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[32][1]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[32][2]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[32][3]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[32][4]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[32][5]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[32][6]" at Memory.v(22)
+Info (10041): Inferred latch for "ram[32][7]" at Memory.v(22)
+Info (12128): Elaborating entity "LoadProcess" for hierarchy "LoadProcess:loadproc"
+Info (12128): Elaborating entity "Mem_Wr" for hierarchy "Mem_Wr:Mem_Wr_Reg"
+Warning (10230): Verilog HDL assignment warning at Mem_Wr.v(31): truncated value with size 32 to match size of target (4)
 Info (12128): Elaborating entity "ControlHazard" for hierarchy "ControlHazard:ch"
 Info (12128): Elaborating entity "ForwardUnit" for hierarchy "ForwardUnit:fw"
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[0][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[0][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[0][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[0][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[1][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[1][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[1][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[1][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[2][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[2][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[2][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[2][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[3][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[3][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[3][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[3][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[4][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[4][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[4][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[4][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[5][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[5][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[5][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[5][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[6][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[6][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[6][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[6][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[7][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[7][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[7][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[7][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[8][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[8][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[8][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[8][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[9][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[9][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[9][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[9][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[10][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[10][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[10][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[10][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[11][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[11][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[11][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[11][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[12][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[12][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[12][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[12][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[13][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[13][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[13][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[13][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[14][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[14][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[14][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[14][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[15][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[15][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[15][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[15][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[16][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[16][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[16][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[16][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[17][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[17][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[17][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[17][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[18][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[18][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[18][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[18][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[19][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[19][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[19][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[19][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[20][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[20][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[20][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[20][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[21][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[21][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[21][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[21][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[22][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[22][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[22][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[22][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[23][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[23][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[23][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[23][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[24][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[24][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[24][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[24][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[25][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[25][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[25][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[25][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[26][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[26][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[26][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[26][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[27][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[27][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[27][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[27][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[28][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[28][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[28][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[28][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[29][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[29][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[29][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[29][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[30][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[30][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[30][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[30][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[31][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[31][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[31][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[31][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[32][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[32][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[32][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[32][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[0][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[1][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[2][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[3][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[4][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[5][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[6][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[7][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[8][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[9][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[10][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[11][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[12][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[13][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[14][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[15][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[16][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[17][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[18][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[19][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[20][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[21][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[22][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[23][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[24][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[25][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[26][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[27][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[28][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[29][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[30][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[31][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[32][0]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[0][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[0][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[0][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[0][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[1][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[1][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[1][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[1][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[2][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[2][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[2][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[2][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[3][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[3][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[3][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[3][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[4][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[4][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[4][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[4][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[5][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[5][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[5][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[5][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[6][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[6][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[6][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[6][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[7][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[7][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[7][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[7][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[8][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[8][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[8][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[8][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[9][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[9][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[9][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[9][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[10][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[10][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[10][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[10][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[11][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[11][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[11][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[11][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[12][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[12][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[12][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[12][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[13][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[13][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[13][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[13][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[14][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[14][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[14][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[14][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[15][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[15][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[15][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[15][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[16][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[16][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[16][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[16][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[17][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[17][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[17][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[17][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[18][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[18][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[18][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[18][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[19][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[19][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[19][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[19][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[20][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[20][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[20][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[20][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[21][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[21][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[21][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[21][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[22][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[22][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[22][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[22][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[23][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[23][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[23][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[23][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[24][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[24][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[24][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[24][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[25][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[25][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[25][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[25][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[26][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[26][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[26][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[26][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[27][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[27][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[27][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[27][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[28][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[28][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[28][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[28][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[29][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[29][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[29][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[29][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[30][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[30][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[30][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[30][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[31][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[31][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[31][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[31][4]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[32][1]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[32][2]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[32][3]" is permanently disabled
+Warning (14025): LATCH primitive "Memory:Instr_Data_Mem|ram[32][4]" is permanently disabled
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "Register:register|register_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to BIDIR_DUAL_PORT
@@ -794,7 +1598,7 @@ Info (12133): Instantiated megafunction "Register:register|altsyncram:register_r
     Info (12134): Parameter "INIT_FILE" = "db/PipelineCPU.ram0_Register_b87da43c.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_7g02.tdf
     Info (12023): Found entity 1: altsyncram_7g02
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "PC_out[0]" is stuck at GND
     Warning (13410): Pin "PC_out[1]" is stuck at GND
@@ -878,8 +1682,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "Shift_amountSrc_Ex" is stuck at GND
     Warning (13410): Pin "PCP4_IF[0]" is stuck at GND
     Warning (13410): Pin "PCP4_IF[1]" is stuck at GND
-Info (17049): 24 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file D:/archexp/lab06/PipelineCPU.map.smsg
+Info (144001): Generated suppressed messages file D:/Documents/GitRepository/colab06/PipelineCPU.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 518 device resources after synthesis - the final resource count might be different
@@ -887,16 +1690,16 @@ Info (21057): Implemented 518 device resources after synthesis - the final resou
     Info (21059): Implemented 334 output pins
     Info (21061): Implemented 151 logic cells
     Info (21064): Implemented 32 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 98 warnings
-    Info: Peak virtual memory: 416 megabytes
-    Info: Processing ended: Mon Jun 09 21:12:51 2014
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 391 warnings
+    Info: Peak virtual memory: 341 megabytes
+    Info: Processing ended: Wed Jun 11 00:04:29 2014
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:06
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in D:/archexp/lab06/PipelineCPU.map.smsg.
+The suppressed messages can be found in D:/Documents/GitRepository/colab06/PipelineCPU.map.smsg.
 
 
