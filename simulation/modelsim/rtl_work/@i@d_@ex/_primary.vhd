@@ -10,6 +10,7 @@ entity ID_Ex is
         Rs_out_in       : in     vl_logic_vector(31 downto 0);
         Rt_out_in       : in     vl_logic_vector(31 downto 0);
         offset_in       : in     vl_logic_vector(31 downto 0);
+        offset_raw_in   : in     vl_logic_vector(15 downto 0);
         RegDst_in       : in     vl_logic;
         Shift_amountSrc_in: in     vl_logic;
         Jump_in         : in     vl_logic;
@@ -17,7 +18,7 @@ entity ID_Ex is
         RegDt0_in       : in     vl_logic;
         ALU_op_in       : in     vl_logic_vector(3 downto 0);
         Shift_op_in     : in     vl_logic_vector(1 downto 0);
-        ALUSrcB_in      : in     vl_logic_vector(1 downto 0);
+        ALUSrcB_in      : in     vl_logic_vector(2 downto 0);
         Condition_in    : in     vl_logic_vector(2 downto 0);
         LoadType_in     : in     vl_logic_vector(1 downto 0);
         LoadByte_in     : in     vl_logic_vector(1 downto 0);
@@ -33,6 +34,7 @@ entity ID_Ex is
         Rs_out_out      : out    vl_logic_vector(31 downto 0);
         Rt_out_out      : out    vl_logic_vector(31 downto 0);
         offset_out      : out    vl_logic_vector(31 downto 0);
+        offset_raw_out  : out    vl_logic_vector(15 downto 0);
         RegDst_out      : out    vl_logic;
         Shift_amountSrc_out: out    vl_logic;
         Jump_out        : out    vl_logic;
@@ -40,7 +42,7 @@ entity ID_Ex is
         RegDt0_out      : out    vl_logic;
         ALU_op_out      : out    vl_logic_vector(3 downto 0);
         Shift_op_out    : out    vl_logic_vector(1 downto 0);
-        ALUSrcB_out     : out    vl_logic_vector(1 downto 0);
+        ALUSrcB_out     : out    vl_logic_vector(2 downto 0);
         Condition_out   : out    vl_logic_vector(2 downto 0);
         LoadType_out    : out    vl_logic_vector(1 downto 0);
         LoadByte_out    : out    vl_logic_vector(1 downto 0);

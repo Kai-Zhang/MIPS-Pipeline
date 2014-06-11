@@ -1,4 +1,5 @@
 module Memory(
+input clk,
 input Mem_Wr_en,
 input [31:0]Instr_Addr, Data_Addr,
 input [31:0]Din,
@@ -8,8 +9,6 @@ reg [7:0] ram[131:0];
 integer i;
 initial
 begin 
-for (i=0;i<132;i=i+1)
-	ram[i]=8'b0;
 //add  R3=R1(7ffffffe)+R2(2) 溢出 R3应该保持不变
 ram[0]=8'b00000000;ram[1]=8'b00100010;ram[2]=8'b00011000;ram[3]=8'b00100000;
 		//addi R3=R1(7ffffffe)+4 溢出 R3应该保持不变
@@ -22,8 +21,8 @@ ram[12]=8'b00000000;ram[13]=8'b01101000;ram[14]=8'b00100000;ram[15]=8'b00100010;
 ram[16]=8'b00000000;ram[17]=8'b01101000;ram[18]=8'b00100000;ram[19]=8'b00100011;
 		//seb R13 R15 把R15低八位带符号扩展之后存入R13 R13=ffffff92
 ram[20]=8'b01111100;ram[21]=8'b00001111;ram[22]=8'b01101100;ram[23]=8'b00100000;
-		//lui R13 0x4344 R13=0x43440000 
-ram[24]=8'b00111100;ram[25]=8'b00001101;ram[26]=8'b01000011;ram[27]=8'b01000100;
+		//lui R11 0x4344 R11=0x43440000 
+ram[24]=8'b00111100;ram[25]=8'b00001011;ram[26]=8'b01000011;ram[27]=8'b01000100;
 		//xori R13 R12 0x3243 R12=43443243
 ram[28]=8'b00111001;ram[29]=8'b10101100;ram[30]=8'b00110010;ram[31]=8'b01000011;
 		//clo R6 R5 R6=12
@@ -92,7 +91,7 @@ ram[121]=8'b0;ram[122]=8'b0;ram[123]=8'b0;ram[124]=8'b0;
 ram[125]=8'b0;ram[126]=8'b0;ram[127]=8'b0;
 ram[128]=8'hf1;ram[129]=8'h1f;ram[130]=8'h3d;ram[131]=8'hd3;
 end 
-always @ (Din or Mem_Wr_en or Data_Addr)
+always @ (negedge clk)
 begin
 	if (Mem_Wr_en==1'b1)
 		{ram[Data_Addr],ram[Data_Addr+1],ram[Data_Addr+2],ram[Data_Addr+3]}=Din;

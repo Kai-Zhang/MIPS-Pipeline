@@ -1,6 +1,5 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="PipelineCPU">
-		<CBX_INST_ENTRY INSTANCE_NAME="|PipelineCPU|Register:register|altsyncram:register_rtl_0" CBX_FILE_NAME="altsyncram_7g02.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

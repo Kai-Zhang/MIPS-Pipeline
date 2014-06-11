@@ -14,6 +14,11 @@ integer i;
 initial
 begin 
 for (i=0;i<32;i=i+1) register[i]=i;
+		register[1] = 32'h7ffffffe;
+		register[8] = 32'h7ff32432;
+		register[15]= 32'h45349592;
+		register[5]=32'hfff12345;
+		register[30]=32'd128;
 	Rs_out=0;
 	Rt_out=0;
 end 

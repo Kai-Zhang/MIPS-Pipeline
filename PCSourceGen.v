@@ -18,7 +18,6 @@ begin
 	end 
 	else
 	begin 
-		
 		case (Condition)
 		3'b000:PCSource=0;
 		3'b001:PCSource=Zero;
@@ -30,7 +29,6 @@ begin
 		3'b111:PCSource=1;
 		default:PCSource=0;
 		endcase
-		
 	end 
 end 
 endmodule

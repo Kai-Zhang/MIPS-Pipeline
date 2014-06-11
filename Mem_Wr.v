@@ -13,6 +13,16 @@ output reg Overflow_out,
 output reg RegWr_out,MemtoReg_out,
 output reg [4:0]Rd_out
 );
+initial 
+begin 
+	ALUShift_out_out=0;
+	Rd_write_by_en_out=0;
+	Data_out=0;
+	Overflow_out=0;
+	RegWr_out=0;
+	Rd_out=0;
+	MemtoReg_out=0;
+end 
 always @(negedge clk)
 begin 
 if (Reset)

@@ -1,8 +1,9 @@
 module ForwardUnit(
 input [4:0]Rs_Ex,Rt_Ex,Rd_Mem,Rd_Wr,
 input RegWr_Mem,RegWr_Wr,
-input [1:0]ALUSrcB_Ex,
-output reg[1:0]ALUSrcA,ALUSrcB
+input [2:0]ALUSrcB_Ex,
+output reg[1:0]ALUSrcA,
+output reg [2:0]ALUSrcB
 );
 reg A1,A2,B1,B2;
 initial 

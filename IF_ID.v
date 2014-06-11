@@ -5,6 +5,11 @@ input Keep,
 input [31:0]PCP4_in,Inst_in,
 output reg [31:0]PCP4_out,Inst_out
 );
+initial 
+begin 
+	PCP4_out=0;
+	Inst_out=0;
+end 
 always @(negedge clk)
 begin 
 	if (Reset) 

@@ -20,6 +20,23 @@ output reg [1:0]LoadType_out,LoadByte_out,
 output reg RegWr_out,MemWr_out,MemtoReg_out,
 output reg [4:0]Rd_out
 );
+initial 
+begin 
+	PC_Branch_out=0;
+	PC_Jump_out=0;
+	ALUShift_out_out=0;
+	Jump_out=0;
+	Less_out=0;
+	Zero_out=0;
+	Overflow_out=0;
+	Condition_out=0;
+	LoadType_out=0;
+	LoadByte_out=0;
+	RegWr_out=0;
+	MemWr_out=0;
+	Rd_out=0;
+	MemtoReg_out=0;
+end 
 always @(negedge clk)
 begin 
 if (Reset)

@@ -15,7 +15,7 @@ entity Controller is
         RegDt0          : out    vl_logic;
         ALU_op          : out    vl_logic_vector(3 downto 0);
         Shift_op        : out    vl_logic_vector(1 downto 0);
-        ALUSrcB         : out    vl_logic_vector(1 downto 0);
+        ALUSrcB         : out    vl_logic_vector(2 downto 0);
         condition       : out    vl_logic_vector(2 downto 0);
         LoadType        : out    vl_logic_vector(1 downto 0);
         RegWr           : out    vl_logic;
