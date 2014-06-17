@@ -7,7 +7,7 @@ module Controller (
 	output reg [2:0] ALUSrcB,
 	output reg [2:0] condition,
 	output reg [1:0] LoadType,
-	output reg RegWr, MemWr, MemtoReg
+	output reg RegWr, MemWr, MemtoReg, Exception
 );
 
 	always @ (*)
@@ -32,6 +32,7 @@ module Controller (
 						RegWr=1'b1;
 						MemWr=1'b0;
 						MemtoReg=1'b0;
+						Exception=1'b0;
 					end
 					6'b100010:
 					begin
@@ -49,6 +50,7 @@ module Controller (
 						RegWr=1'b1;
 						MemWr=1'b0;
 						MemtoReg=1'b0;
+						Exception=1'b0;
 					end
 					6'b100011:
 					begin
@@ -66,6 +68,7 @@ module Controller (
 						RegWr=1'b1;
 						MemWr=1'b0;
 						MemtoReg=1'b0;
+						Exception=1'b0;
 					end
 					6'b000111:
 					begin
@@ -83,6 +86,7 @@ module Controller (
 						RegWr=1'b1;
 						MemWr=1'b0;
 						MemtoReg=1'b0;
+						Exception=1'b0;
 					end
 					6'b000010:
 					begin
@@ -100,6 +104,7 @@ module Controller (
 						RegWr=1'b1;
 						MemWr=1'b0;
 						MemtoReg=1'b0;
+						Exception=1'b0;
 					end
 					6'b101011:
 					begin
@@ -117,6 +122,7 @@ module Controller (
 						RegWr=1'b1;
 						MemWr=1'b0;
 						MemtoReg=1'b0;
+						Exception=1'b0;
 					end
 					default:
 					begin
@@ -134,6 +140,7 @@ module Controller (
 						RegWr=1'b0;
 						MemWr=1'b0;
 						MemtoReg=1'b0;
+						Exception=1'b1;
 					end
 				endcase
 			end
@@ -153,6 +160,7 @@ module Controller (
 				RegWr=1'b1;
 				MemWr=1'b0;
 				MemtoReg=1'b0;
+				Exception=1'b0;
 			end
 			6'b000010:
 			begin
@@ -170,6 +178,7 @@ module Controller (
 				RegWr=1'b1;
 				MemWr=1'b0;
 				MemtoReg=1'b0;
+				Exception=1'b0;
 			end
 			6'b001000:
 			begin
@@ -187,6 +196,7 @@ module Controller (
 				RegWr=1'b1;
 				MemWr=1'b0;
 				MemtoReg=1'b0;
+				Exception=1'b0;
 			end
 			6'b001001:
 			begin
@@ -204,6 +214,7 @@ module Controller (
 				RegWr=1'b1;
 				MemWr=1'b0;
 				MemtoReg=1'b0;
+				Exception=1'b0;
 			end
 			6'b001010:
 			begin
@@ -221,6 +232,7 @@ module Controller (
 				RegWr=1'b1;
 				MemWr=1'b0;
 				MemtoReg=1'b0;
+				Exception=1'b0;
 			end
 			6'b001110:
 			begin
@@ -238,6 +250,7 @@ module Controller (
 				RegWr=1'b1;
 				MemWr=1'b0;
 				MemtoReg=1'b0;
+				Exception=1'b0;
 			end
 			6'b001111:
 			begin
@@ -255,6 +268,7 @@ module Controller (
 				RegWr=1'b1;
 				MemWr=1'b0;
 				MemtoReg=1'b0;
+				Exception=1'b0;
 			end
 			6'b011100:
 			begin
@@ -275,6 +289,7 @@ module Controller (
 						RegWr=1'b1;
 						MemWr=1'b0;
 						MemtoReg=1'b0;
+						Exception=1'b0;
 					end
 					6'b100000:
 					begin
@@ -292,6 +307,7 @@ module Controller (
 						RegWr=1'b1;
 						MemWr=1'b0;
 						MemtoReg=1'b0;
+						Exception=1'b0;
 					end
 					default:
 					begin
@@ -309,6 +325,7 @@ module Controller (
 						RegWr=1'b1;
 						MemWr=1'b0;
 						MemtoReg=1'b0;
+						Exception=1'b1;
 					end
 				endcase
 			end
@@ -328,6 +345,7 @@ module Controller (
 				RegWr=1'b1;
 				MemWr=1'b0;
 				MemtoReg=1'b0;
+				Exception=1'b0;
 			end
 			6'b100011:
 			begin
@@ -345,6 +363,7 @@ module Controller (
 				RegWr = 1'b1;
 				MemWr=1'b0;
 				MemtoReg=1'b1;
+				Exception=1'b0;
 			end
 			6'b100010:
 			begin
@@ -362,6 +381,7 @@ module Controller (
 				RegWr = 1'b1;
 				MemWr=1'b0;
 				MemtoReg=1'b1;
+				Exception=1'b0;
 			end
 			6'b100110:
 			begin
@@ -379,6 +399,7 @@ module Controller (
 				RegWr = 1'b1;
 				MemWr=1'b0;
 				MemtoReg=1'b1;
+				Exception=1'b0;
 			end
 			6'b101011:
 			begin
@@ -396,6 +417,7 @@ module Controller (
 				RegWr=1'b0;
 				MemWr=1'b1;
 				MemtoReg=1'b0;
+				Exception=1'b0;
 			end
 			default:
 			begin
@@ -413,6 +435,7 @@ module Controller (
 				RegWr=1'b0;
 				MemWr=1'b0;
 				MemtoReg=1'b0;
+				Exception=1'b1;
 			end
 		endcase
 	end

@@ -13,8 +13,10 @@ wire [31:0]PC;
 wire [31:0]PC_branch,PC_jump,NextPC;
 wire [1:0]PCSource;
 wire Keep_PC;
+wire [31:0]Exception_Entry;
+assign Exception_Entry=32'h0;
 assign PCP4_IF=PC+4;
-assign NextPC=(PCSource==2'b0)?PCP4_IF:(PCSource==2'b01)?PC_branch:PC_jump;
+assign NextPC=(PCSource==2'b0)?PCP4_IF:(PCSource==2'b01)?PC_branch:(PCSource==2'b10)?PC_jump:Exception_Entry;
 wire [31:0]Inst_IF;
 //IF Register
 PC_count pc(clk,Keep_PC,NextPC,PC);
@@ -41,6 +43,7 @@ wire Ext_op_ID;
 wire RegWr_ID,RegWr_Ex,RegWr_Mem,RegWr_Wr;
 wire MemWr_ID,MemWr_Ex,MemWr_Mem;
 wire MemtoReg_ID,MemtoReg_Ex,MemtoReg_Mem,MemtoReg_Wr;
+wire Exception_ID,Exception_Ex,Exception_Mem;
 assign op=Inst_ID[31:26];
 assign Rs_ID=Inst_ID[25:21];
 assign Rs_ID_out=Rs_ID;
@@ -69,12 +72,12 @@ wire Jump_ID,Jump_Ex,Jump_Mem;
 wire RegDt0_ID,RegDt0_Ex;
 wire [2:0]Condition_ID,Condition_Ex,Condition_Mem;
 Controller control(op,func,Shamt_ID,Rs_ID,Rt_ID,Ext_op_ID,RegDst_ID,Shift_amountSrc_ID,Jump_ID,ALUShift_Sel_ID,RegDt0_ID,
-ALU_op_ID,Shift_op_ID,ALUSrcB_ID,Condition_ID,LoadType_ID,RegWr_ID,MemWr_ID,MemtoReg_ID);
+ALU_op_ID,Shift_op_ID,ALUSrcB_ID,Condition_ID,LoadType_ID,RegWr_ID,MemWr_ID,MemtoReg_ID,Exception_ID);
 
 ID_Ex ID_Ex_Reg(clk,Reset_ID_Ex,Rs_ID,Rt_ID,Rd_ID,Rs_out_ID,Rt_out_ID,offset_ID,offset_raw_ID,RegDst_ID,Shift_amountSrc_ID,Jump_ID,ALUShift_Sel_ID,RegDt0_ID,
-ALU_op_ID,Shift_op_ID,ALUSrcB_ID,Condition_ID,LoadType_ID,LoadByte_ID,RegWr_ID,MemWr_ID,MemtoReg_ID,PCP4_ID,Target_ID,Shamt_ID,
+ALU_op_ID,Shift_op_ID,ALUSrcB_ID,Condition_ID,LoadType_ID,LoadByte_ID,RegWr_ID,MemWr_ID,MemtoReg_ID,Exception_ID,PCP4_ID,Target_ID,Shamt_ID,
 Rs_Ex,Rt_Ex,Rd_Ex,Rs_out_Ex,Rt_out_Ex,offset_Ex,offset_raw_Ex,RegDst_Ex,Shift_amountSrc_Ex,Jump_Ex,ALUShift_Sel_Ex,RegDt0_Ex,ALU_op_Ex,
-Shift_op_Ex,ALUSrcB_Ex,Condition_Ex,LoadType_Ex,LoadByte_Ex,RegWr_Ex,MemWr_Ex,MemtoReg_Ex,PCP4_Ex,Target_Ex,Shamt_Ex);
+Shift_op_Ex,ALUSrcB_Ex,Condition_Ex,LoadType_Ex,LoadByte_Ex,RegWr_Ex,MemWr_Ex,MemtoReg_Ex,Exception_Ex,PCP4_Ex,Target_Ex,Shamt_Ex);
 
 //Ex Part
 wire [31:0]PC_Ex,PC_jump_Ex,PC_jump_Mem,PC_branch_Ex,PC_branch_Mem;
@@ -104,9 +107,10 @@ wire [31:0]Din_Mem;
 wire [31:0]Data_Mem,Dout_Mem,Dout_Wr;
 assign Din_Mem=Rd_Mem;
 Ex_Mem Ex_mem_Reg(clk,Reset_Ex_Mem,PC_branch_Ex,PC_jump_Ex,ALUShift_out_Ex,Jump_Ex,Less_Ex,Zero_Ex,Overflow_Ex,Condition_Ex,
-LoadType_Ex,LoadByte_Ex,RegWr_Ex,MemWr_Ex,MemtoReg_Ex,Rd_Ex,PC_branch_Mem,PC_jump_Mem,ALUShift_out_Mem,
-Jump_Mem,Less_Mem,Zero_Mem,Overflow_Mem,Condition_Mem,LoadType_Mem,LoadByte_Mem,RegWr_Mem,MemWr_Mem,MemtoReg_Mem,Rd_Mem);
-PCSourceGen PCSrc(PC_branch_Mem,PC_jump_Mem,Condition_Mem,Less_Mem,Zero_Mem,Jump_Mem,PCSource,PC_branch,PC_jump);
+LoadType_Ex,LoadByte_Ex,RegWr_Ex,MemWr_Ex,MemtoReg_Ex,Exception_Ex,Rd_Ex,PC_branch_Mem,PC_jump_Mem,ALUShift_out_Mem,
+Jump_Mem,Less_Mem,Zero_Mem,Overflow_Mem,Condition_Mem,LoadType_Mem,LoadByte_Mem,RegWr_Mem,MemWr_Mem,MemtoReg_Mem,Exception_Mem,
+Rd_Mem);
+PCSourceGen PCSrc(PC_branch_Mem,PC_jump_Mem,Condition_Mem,Less_Mem,Zero_Mem,Jump_Mem,Exception_Mem,PCSource,PC_branch,PC_jump);
 Memory Instr_Data_Mem(clk,MemWr_Mem,PC,ALUShift_out_Mem,Din_Mem,Inst_IF,Data_Mem);
 LoadProcess loadproc (RegWr_Mem,Data_Mem,LoadType_Mem,LoadByte_Mem,Dout_Mem,Rd_write_by_en_Mem);
 //Mem_Wr Reg

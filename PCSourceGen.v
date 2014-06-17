@@ -2,7 +2,7 @@ module PCSourceGen(
 input [31:0]PC_branch_Mem,
 input [31:0]PC_jump_Mem,
 input [2:0]Condition,
-input Less,Zero,Jump,
+input Less,Zero,Jump,Exception,
 output reg [1:0]PCSource,
 output reg [31:0]PC_branch,
 output reg [31:0]PC_jump
@@ -12,7 +12,11 @@ always @(*)
 begin 
 	PC_branch=PC_branch_Mem;
 	PC_jump=PC_jump_Mem;
-	if (Jump)
+	if (Exception)
+	begin
+		PCSource=3;
+	end
+	else if (Jump)
 	begin 
 		PCSource=2;
 	end 

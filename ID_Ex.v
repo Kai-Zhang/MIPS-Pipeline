@@ -18,7 +18,7 @@ input [1:0]Shift_op_in,
 input [2:0]ALUSrcB_in,
 input [2:0]Condition_in,
 input [1:0]LoadType_in,LoadByte_in,
-input RegWr_in,MemWr_in,MemtoReg_in,
+input RegWr_in,MemWr_in,MemtoReg_in,Exception_in,
 input [31:0]PC_in,
 input [25:0]Target_in,
 input [4:0]Shamt_in,
@@ -38,7 +38,7 @@ output reg [1:0]Shift_op_out,
 output reg [2:0]ALUSrcB_out,
 output reg [2:0]Condition_out,
 output reg [1:0]LoadType_out,LoadByte_out,
-output reg RegWr_out,MemWr_out,MemtoReg_out,
+output reg RegWr_out,MemWr_out,MemtoReg_out,Exception_out,
 output reg [31:0]PC_out,
 output reg [25:0]Target_Out,
 output reg [4:0]Shamt_out
@@ -69,6 +69,7 @@ begin
 	RegWr_out=0;
 	MemWr_out=0;
 	MemtoReg_out=0;
+	Exception_out=0;
 end 
 always @(negedge clk)
 begin
@@ -98,6 +99,7 @@ begin
 	RegWr_out<=0;
 	MemWr_out<=0;
 	MemtoReg_out<=0;
+	Exception_out<=0;
 end
 else
 begin 
@@ -125,6 +127,7 @@ begin
 	RegWr_out<=RegWr_in;
 	MemWr_out<=MemWr_in;
 	MemtoReg_out<=MemtoReg_in;
+	Exception_out<=Exception_in;
 end
 end
 endmodule

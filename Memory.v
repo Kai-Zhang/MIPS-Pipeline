@@ -3,12 +3,21 @@ input clk,
 input Mem_Wr_en,
 input [31:0]Instr_Addr, Data_Addr,
 input [31:0]Din,
-output [31:0]Inst, Dout
+output reg[31:0] Inst, Dout
 );
 reg [7:0] ram[131:0];
+reg [64:0] Instrcache[3:0];
+reg [1:0]ReadInstemp;
+reg CacheInsHit;
 integer i;
 initial
 begin 
+//cache init
+Instrcache[0]=65'b0;
+Instrcache[1]=65'b0;
+Instrcache[2]=65'b0;
+Instrcache[3]=65'b0;
+CacheInsHit=1'b0;
 //add  R3=R1(7ffffffe)+R2(2) 溢出 R3应该保持不变
 ram[0]=8'b00000000;ram[1]=8'b00100010;ram[2]=8'b00011000;ram[3]=8'b00100000;
 		//addi R3=R1(7ffffffe)+4 溢出 R3应该保持不变
@@ -93,9 +102,34 @@ ram[128]=8'hf1;ram[129]=8'h1f;ram[130]=8'h3d;ram[131]=8'hd3;
 end 
 always @ (negedge clk)
 begin
-	if (Mem_Wr_en==1'b1)
+	if (Mem_Wr_en==1'b1)//Write Allocate
+	begin 
 		{ram[Data_Addr],ram[Data_Addr+1],ram[Data_Addr+2],ram[Data_Addr+3]}=Din;
+	end
 end
-assign Inst={ram[Instr_Addr],ram[Instr_Addr+1],ram[Instr_Addr+2],ram[Instr_Addr+3]};
-assign Dout={ram[Data_Addr],ram[Data_Addr+1],ram[Data_Addr+2],ram[Data_Addr+3]};
+always @(posedge clk)
+begin 
+	ReadInstemp=Instr_Addr[3:2];
+	if (Instrcache[ReadInstemp][64]==1'b0)
+		begin 
+			Instrcache[ReadInstemp]={1'b1,Instr_Addr,ram[Instr_Addr],ram[Instr_Addr+1],ram[Instr_Addr+2],ram[Instr_Addr+3]};
+			CacheInsHit=1'b0;
+		end
+		else 
+		begin 
+			if (Instrcache[ReadInstemp][63:32]==Instr_Addr)
+			begin 
+				CacheInsHit=1'b1;
+			end
+			else 
+			begin 
+				Instrcache[ReadInstemp]={1'b1,Instr_Addr,ram[Instr_Addr],ram[Instr_Addr+1],ram[Instr_Addr+2],ram[Instr_Addr+3]};
+				CacheInsHit=1'b0;
+			end 
+		end 
+Inst=Instrcache[ReadInstemp][31:0];
+Dout={ram[Data_Addr],ram[Data_Addr+1],ram[Data_Addr+2],ram[Data_Addr+3]};
+end 
+//assign Inst={ram[Instr_Addr],ram[Instr_Addr+1],ram[Instr_Addr+2],ram[Instr_Addr+3]};
+//assign Dout={ram[Data_Addr],ram[Data_Addr+1],ram[Data_Addr+2],ram[Data_Addr+3]};
 endmodule

@@ -8,7 +8,7 @@ input Zero_in,
 input Overflow_in,
 input [2:0]Condition_in,
 input [1:0]LoadType_in,LoadByte_in,
-input RegWr_in,MemWr_in,MemtoReg_in,
+input RegWr_in,MemWr_in,MemtoReg_in,Exception_in,
 input [4:0]Rd_in,
 output reg[31:0]PC_Branch_out,PC_Jump_out,ALUShift_out_out,
 output reg Jump_out,
@@ -17,7 +17,7 @@ output reg Zero_out,
 output reg Overflow_out,
 output reg[2:0]Condition_out,
 output reg [1:0]LoadType_out,LoadByte_out,
-output reg RegWr_out,MemWr_out,MemtoReg_out,
+output reg RegWr_out,MemWr_out,MemtoReg_out,Exception_out,
 output reg [4:0]Rd_out
 );
 initial 
@@ -36,6 +36,7 @@ begin
 	MemWr_out=0;
 	Rd_out=0;
 	MemtoReg_out=0;
+	Exception_out=0;
 end 
 always @(negedge clk)
 begin 
@@ -55,6 +56,7 @@ begin
 	MemWr_out<=0;
 	Rd_out<=0;
 	MemtoReg_out<=0;
+	Exception_out<=0;
 end 
 else 
 begin 
@@ -72,6 +74,7 @@ begin
 	MemWr_out<=MemWr_in;
 	Rd_out<=Rd_in;
 	MemtoReg_out<=MemtoReg_in;
+	Exception_out<=Exception_in;
 end 
 end 
 
