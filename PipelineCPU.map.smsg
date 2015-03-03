@@ -1,1 +1,1 @@
-Info (10281): Verilog HDL Declaration information at PipelineCPU.v(6): object "PC" differs only in case from object "pc" in the same scope
+Info (10281): Verilog HDL Declaration information at PipelineCPU.v(11): object "PC" differs only in case from object "pc" in the same scope

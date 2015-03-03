@@ -1,0 +1,505 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\colab06\colab06\simulation\modelsim
+vAdder
+ID3AWclSY^5f0LbafIKZYH0
+VoCXRR9DK^zY4]d6i6M5M43
+Z1 dD:\colab06\colab06\simulation\modelsim
+Z2 w1401866535
+Z3 8D:/colab06/colab06/ALU.v
+Z4 FD:/colab06/colab06/ALU.v
+L0 12
+Z5 OV;L;10.0d;49
+r1
+31
+Z6 !s108 1402469852.830000
+Z7 !s107 D:/colab06/colab06/ALU.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/ALU.v|
+Z9 o-vlog01compat -work work -O0
+Z10 !s92 -vlog01compat -work work +incdir+D:/colab06/colab06 -O0
+n@adder
+!s100 7UnWBTQTgGBGzoj5c[k>D0
+!s85 0
+!s101 -O0
+vALU
+IFUB`b0X9m<j1[Ni?cN^1?2
+V0kXL0GV4m[nl_e4Hj<7`50
+R1
+R2
+R3
+R4
+L0 127
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+n@a@l@u
+!s100 lli3<KmPZJ>bDEf_RCZJ=3
+!s85 0
+!s101 -O0
+vALU_Mux
+IigJ2_7RWG?H@QkUgS9T=;2
+VDY<oc`VzIWfgXEOKeOYT:1
+R1
+R2
+R3
+R4
+L0 28
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+n@a@l@u_@mux
+!s100 MA[@a2@0PiXEa9MDcOfD81
+!s85 0
+!s101 -O0
+vControlHazard
+IWn1mjgbWgd3:6oz^LLl3k1
+VVN8`VMFXZj>GN=V8Rk8i<3
+R1
+w1402465235
+8D:/colab06/colab06/ControlHazard.v
+FD:/colab06/colab06/ControlHazard.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@control@hazard
+!s100 EQcDlNPGN0TD5az:zO]VU1
+!s85 0
+!s108 1402469856.114000
+!s107 D:/colab06/colab06/ControlHazard.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/ControlHazard.v|
+!s101 -O0
+vController
+Ii=b;kWk1kEK<JWQEN[Q0j0
+VN;X;O:=SaM8f8_PUSUe2f3
+R1
+w1402467460
+8D:/colab06/colab06/Controller.v
+FD:/colab06/colab06/Controller.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@controller
+!s100 `]`::`]i:V;7MVOM5BH3T3
+!s85 0
+!s108 1402469852.246000
+!s107 D:/colab06/colab06/Controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/Controller.v|
+!s101 -O0
+vEx_Mem
+I9dzOoizGmGK99K8[8@mZ32
+VAg0HJ1:73?0H9SZ>IW^nQ0
+R1
+w1402464822
+8D:/colab06/colab06/Ex_Mem.v
+FD:/colab06/colab06/Ex_Mem.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@ex_@mem
+!s100 o<EA?G0fDz<?zQ6k7F90Z0
+!s85 0
+!s108 1402469855.630000
+!s107 D:/colab06/colab06/Ex_Mem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/Ex_Mem.v|
+!s101 -O0
+vExtender
+I12KH6]iKjN=gTGSDZ]Qf30
+VMLV4?Y``K1OgCM6A^YPGH1
+R1
+w1401258493
+8D:/colab06/colab06/Extender.v
+FD:/colab06/colab06/Extender.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@extender
+!s100 aZFkBZjd>X4FK4Y4iU7H_2
+!s85 0
+!s108 1402469854.805000
+!s107 D:/colab06/colab06/Extender.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/Extender.v|
+!s101 -O0
+vForwardUnit
+IZ9NkT<153`<AlAXdY=V1z0
+V`KS^fVhGfKi6UfZg5aBfE3
+R1
+w1402467315
+8D:/colab06/colab06/ForwardUnit.v
+FD:/colab06/colab06/ForwardUnit.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@forward@unit
+!s100 53PKld=?z9lEiiZ32<C273
+!s85 0
+!s108 1402469856.463000
+!s107 D:/colab06/colab06/ForwardUnit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/ForwardUnit.v|
+!s101 -O0
+vID_Ex
+I=e]ZX7J7?7e?eZK7D1km[2
+VO71Mb:F;c_V[^D^:Y;gT?3
+R1
+w1402469312
+8D:/colab06/colab06/ID_Ex.v
+FD:/colab06/colab06/ID_Ex.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@i@d_@ex
+!s100 k[Dhc@JoIacSZ1Ulg1j7f1
+!s85 0
+!s108 1402469855.013000
+!s107 D:/colab06/colab06/ID_Ex.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/ID_Ex.v|
+!s101 -O0
+vIF_ID
+IeM0m]j1^>G<H7>IUfB0=I2
+V6^EkdDdUPF:n6=]VjSbAF2
+R1
+w1402464716
+8D:/colab06/colab06/IF_ID.v
+FD:/colab06/colab06/IF_ID.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@i@f_@i@d
+!s100 9lWI@l23j3LE;Q=^:>5@=2
+!s85 0
+!s108 1402469854.595000
+!s107 D:/colab06/colab06/IF_ID.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/IF_ID.v|
+!s101 -O0
+vLeading_Counter
+IbHE<CQoH[E;jn1;DKhLz:0
+VDj]?=2oKVBnA7VflXgGI31
+R1
+R2
+R3
+R4
+L0 47
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+n@leading_@counter
+!s100 PnWADBzWMG3ozHIJ9?^d?0
+!s85 0
+!s101 -O0
+vLoadProcess
+IO3XP>CNgAW?nR2P1UTT6P2
+VMb9Ao]Md<VIKAUY^0ba342
+R1
+w1402416056
+8D:/colab06/colab06/LoadProcess.v
+FD:/colab06/colab06/LoadProcess.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@load@process
+!s100 =Tbm8b1_9_ENbOlN6XS=H2
+!s85 0
+!s108 1402469856.858000
+!s107 D:/colab06/colab06/LoadProcess.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/LoadProcess.v|
+!s101 -O0
+vLoadUseDetector
+IWzYd_i=cGEGXQF>dO@W_30
+V3WiK]dQi[[<b9a=4T39783
+R1
+w1402469785
+8D:/colab06/colab06/LoadUseDetector.v
+FD:/colab06/colab06/LoadUseDetector.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@load@use@detector
+!s100 bXPPZ`;5[E;3oLZ3[:giY3
+!s85 0
+!s108 1402469857.032000
+!s107 D:/colab06/colab06/LoadUseDetector.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/LoadUseDetector.v|
+!s101 -O0
+vMem_Wr
+I@b>okVm_0E4_DlRYSnVVX0
+V;4SLGaMXV2Qb[Skf>bXKo0
+R1
+w1402464853
+8D:/colab06/colab06/Mem_Wr.v
+FD:/colab06/colab06/Mem_Wr.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@mem_@wr
+!s100 b2b1?Z86B_VDRE6315COj1
+!s85 0
+!s108 1402469856.680000
+!s107 D:/colab06/colab06/Mem_Wr.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/Mem_Wr.v|
+!s101 -O0
+vMemory
+I1V[?Pe@F89oWOb@i9R?g_1
+V=FXE`lPk<6z3ZljokVMMc0
+R1
+w1402467909
+8D:/colab06/colab06/Memory.v
+FD:/colab06/colab06/Memory.v
+L0 1
+R5
+r1
+31
+R9
+n@memory
+R10
+!s100 BjTh8;oe_A7`ZGj06U@c42
+!s85 0
+!s108 1402469851.710000
+!s107 D:/colab06/colab06/Memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/Memory.v|
+!s101 -O0
+vMux_4Way
+Io4B9C;C=K`YPlRli:I<LS0
+V`<JmmbkhLf27MJ6J3@58[2
+R1
+Z11 w1397143836
+Z12 8D:/colab06/colab06/Muxs.v
+Z13 FD:/colab06/colab06/Muxs.v
+L0 16
+R5
+r1
+31
+Z14 !s108 1402469851.893000
+Z15 !s107 D:/colab06/colab06/Muxs.v|
+Z16 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/Muxs.v|
+R9
+R10
+n@mux_4@way
+!s100 gRN1=_5=KM?<fY4:P9ATe1
+!s85 0
+!s101 -O0
+vMux_8Way
+I22G7QE:4OBES_^:^`?0FS1
+VENlXEABXjo7^[;eo`24ki1
+R1
+R11
+R12
+R13
+L0 33
+R5
+r1
+31
+R14
+R15
+R16
+R9
+R10
+n@mux_8@way
+!s100 >`h;S@=lAUS7f>hP1cOMR1
+!s85 0
+!s101 -O0
+vOp_Decoder
+IB<hXdmZXYU2:NhJCOmRDc3
+VjhO1kHH>Djdd5m8:CU4^21
+R1
+R2
+R3
+R4
+L0 1
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+n@op_@decoder
+!s100 jMNiN6T<o:SVIX[=bEPLF2
+!s85 0
+!s101 -O0
+vPC_count
+I<gNm3<9]P>1mn72fhcEI41
+V=o4b_7SN6NjOoULjf0YgK2
+R1
+w1402298211
+8D:/colab06/colab06/PC_count.v
+FD:/colab06/colab06/PC_count.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@p@c_count
+!s100 BBjnR3e5khjYWa]5n?0mm3
+!s85 0
+!s108 1402469854.372000
+!s107 D:/colab06/colab06/PC_count.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/PC_count.v|
+!s101 -O0
+vPCSourceGen
+ILej`53SPU@9_bZzkefOXl1
+Vn:B3o<DFVWJ@:OG4IIJdI1
+R1
+w1402465201
+8D:/colab06/colab06/PCSourceGen.v
+FD:/colab06/colab06/PCSourceGen.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@p@c@source@gen
+!s100 m4=^OTDS5ef9`7a@CG]hi3
+!s85 0
+!s108 1402469855.839000
+!s107 D:/colab06/colab06/PCSourceGen.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/PCSourceGen.v|
+!s101 -O0
+vPipelineCPU
+IOmoSd63eKW5l<e91P0mHm0
+VRfcX=BO;P]m2mYkZKkkNa2
+R1
+w1402469759
+8D:/colab06/colab06/PipelineCPU.v
+FD:/colab06/colab06/PipelineCPU.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@pipeline@c@p@u
+!s100 D`E6SSh7feJKek:`JaS8P1
+!s85 0
+!s108 1402469854.137000
+!s107 D:/colab06/colab06/PipelineCPU.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/PipelineCPU.v|
+!s101 -O0
+vPipelineCPU_vlg_tst
+!s100 ]0fe_k<O7YJb=]E5VNXE30
+IOW?VChn5g_g?k[gcF2KVO3
+VPcH2`zeEBSfAYXlcdC;RM3
+R1
+w1402466284
+8D:/colab06/colab06/simulation/modelsim/PipelineCPU.vt
+FD:/colab06/colab06/simulation/modelsim/PipelineCPU.vt
+L0 28
+R5
+r1
+!s85 0
+31
+!s108 1402469857.226000
+!s107 D:/colab06/colab06/simulation/modelsim/PipelineCPU.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06/simulation/modelsim|D:/colab06/colab06/simulation/modelsim/PipelineCPU.vt|
+!s101 -O0
+R9
+!s92 -vlog01compat -work work +incdir+D:/colab06/colab06/simulation/modelsim -O0
+n@pipeline@c@p@u_vlg_tst
+vRegister
+IT8?_S71J<>^SVT8JHij:Y1
+V4ghn0:77N0?d12b9aKFVh1
+R1
+w1402465834
+8D:/colab06/colab06/Register.v
+FD:/colab06/colab06/Register.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@register
+!s100 lZ0NSS2X=KL4kkf5BPmcO3
+!s85 0
+!s108 1402469853.915000
+!s107 D:/colab06/colab06/Register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/Register.v|
+!s101 -O0
+vShifter
+IM?<c6N7lWMk2ACL6oOldO2
+VggWhZ]GOX7<?31k677]0@1
+R1
+w1402413140
+8D:/colab06/colab06/Shifter.v
+FD:/colab06/colab06/Shifter.v
+L0 1
+R5
+r1
+31
+R9
+R10
+n@shifter
+!s100 0n3aezc]Z5KJ2NMS8WR`<0
+!s85 0
+!s108 1402469855.247000
+!s107 D:/colab06/colab06/Shifter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/colab06/colab06|D:/colab06/colab06/Shifter.v|
+!s101 -O0
+vY_Mux
+IN^bJn<:ac2A<[Qki0AeHP2
+VQOn8_9GWOfCzDPN4F1K:@2
+R1
+R11
+R12
+R13
+L0 1
+R5
+r1
+31
+R14
+R15
+R16
+R9
+R10
+n@y_@mux
+!s100 njQjP3bB^BS@M2>ao2HjC2
+!s85 0
+!s101 -O0
